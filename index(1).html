@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lux Auto Rentals — Dynamic Projections</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1319; --surface:#171D26; --surface-2:#1D2530; --line:#2A333F;
+    --ink:#F5F2EA; --muted:#9AA6B3; --faint:#66717E;
+    --gold:#D9B25A; --gold-lite:#F0D890; --gold-deep:#9A6E2E;
+    --steel:#8FB0C4; --bronze:#B8894A; --slate:#5E6B78; --clay:#B57C6E;
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:
+      radial-gradient(1100px 500px at 82% -8%, rgba(217,178,90,.10), transparent 60%),
+      var(--bg);
+    color:var(--ink);font-family:var(--sans);
+    font-feature-settings:"tnum" 1,"cv01" 1;line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 22px 64px}
+
+  header.brand{display:flex;align-items:center;gap:16px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+  .emblem{width:46px;height:46px;flex:none}
+  .brand-name{font-family:var(--serif);font-weight:600;font-size:22px;letter-spacing:.02em;line-height:1}
+  .brand-sub{font-size:10.5px;letter-spacing:.42em;color:var(--gold);margin-top:5px;padding-left:2px}
+  .brand-tag{margin-left:auto;text-align:right;color:var(--muted);font-size:12.5px;max-width:210px;line-height:1.35}
+
+  .hero{padding:34px 0 26px;border-bottom:1px solid var(--line)}
+  .hero-label{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--muted)}
+  .hero-fig{font-family:var(--serif);font-weight:600;font-size:clamp(52px,9vw,104px);line-height:.92;
+    margin:6px 0 2px;letter-spacing:-.01em;
+    background:linear-gradient(180deg,var(--gold-lite),var(--gold) 55%,var(--gold-deep));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero-sub{color:var(--muted);font-size:14.5px}
+  .hero-sub b{color:var(--ink);font-weight:600}
+  .hero-stats{display:flex;flex-wrap:wrap;gap:14px 40px;margin-top:22px}
+  .hstat{display:flex;flex-direction:column;gap:3px}
+  .hstat .v{font-size:22px;font-weight:600;color:var(--ink)}
+  .hstat .v.neg{color:var(--clay)}
+  .hstat .k{font-size:11.5px;color:var(--faint);letter-spacing:.02em}
+
+  .grid{display:grid;grid-template-columns:352px 1fr;gap:24px;margin-top:28px;align-items:start}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}}
+
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .panel h2{font-family:var(--serif);font-weight:500;font-size:17px;margin:0 0 2px}
+  .panel .hint{color:var(--faint);font-size:12px;margin:0 0 16px}
+  .group{margin:22px 0 0}
+  .group:first-of-type{margin-top:4px}
+  .group-title{font-size:12px;color:var(--gold);letter-spacing:.04em;margin:0 0 10px;
+    display:flex;align-items:center;gap:10px}
+  .group-title::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  .ctl{margin:11px 0}
+  .ctl-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:6px}
+  .ctl-top label{font-size:12.5px;color:var(--muted)}
+  .ctl-val{font-size:12.5px;font-weight:600;color:var(--gold);white-space:nowrap}
+  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:3px;
+    background:linear-gradient(90deg,var(--gold) var(--pct,50%),var(--line) var(--pct,50%));outline:none;margin:0}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;
+    background:var(--gold-lite);border:2px solid #2a2417;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.5)}
+  input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--gold-lite);
+    border:2px solid #2a2417;cursor:pointer}
+
+  .car{padding:13px 0;border-top:1px solid var(--line)}
+  .car:first-child{border-top:none;padding-top:2px}
+  .car.hv{background:linear-gradient(90deg,rgba(217,178,90,.06),transparent 70%);
+    margin:0 -20px;padding:13px 20px}
+  .car-head{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+  .car-head .nm{font-size:13.5px;color:var(--ink);flex:1}
+  .car-head .nm.off{color:var(--faint)}
+  .car-head .nm .tag{font-size:9.5px;letter-spacing:.06em;color:var(--gold);border:1px solid var(--gold-deep);
+    border-radius:20px;padding:1px 7px;margin-left:6px;vertical-align:1px}
+  .car-net{font-size:12.5px;font-weight:600;color:var(--gold)}
+  .switch{position:relative;width:34px;height:19px;flex:none;cursor:pointer}
+  .switch input{opacity:0;width:0;height:0}
+  .track{position:absolute;inset:0;background:var(--line);border-radius:20px;transition:.15s}
+  .track::before{content:"";position:absolute;width:13px;height:13px;left:3px;top:3px;background:var(--faint);
+    border-radius:50%;transition:.15s}
+  .switch input:checked + .track{background:rgba(217,178,90,.35)}
+  .switch input:checked + .track::before{transform:translateX(15px);background:var(--gold-lite)}
+
+  .num{display:flex;align-items:center;gap:8px;margin-top:9px}
+  .num label{font-size:12.5px;color:var(--muted);flex:1}
+  .num input{width:100px;background:var(--surface-2);border:1px solid var(--line);color:var(--ink);
+    font-family:var(--sans);font-size:13.5px;font-weight:500;padding:7px 9px;border-radius:8px;text-align:right}
+  .num input:focus{outline:none;border-color:var(--gold)}
+
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}
+  @media(max-width:640px){.cards{grid-template-columns:repeat(2,1fr)}}
+  .kpi{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:15px 16px}
+  .kpi .k{font-size:11.5px;color:var(--faint);margin-bottom:8px;line-height:1.3}
+  .kpi .v{font-size:24px;font-weight:600;letter-spacing:-.01em}
+  .kpi .v.gold{color:var(--gold)}
+  .kpi .v.neg{color:var(--clay)}
+  .kpi .foot{font-size:11px;color:var(--muted);margin-top:5px}
+
+  .chartbox{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px 20px;margin-bottom:20px}
+  .chartbox h3{font-family:var(--serif);font-weight:500;font-size:16px;margin:0}
+  .chartbox .cap{font-size:12px;color:var(--faint);margin:2px 0 14px}
+  .chartbox.two{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  @media(max-width:760px){.chartbox.two{grid-template-columns:1fr}}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:12px;color:var(--muted)}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .dot{width:9px;height:9px;border-radius:2px;display:inline-block}
+  svg{display:block;width:100%;height:auto;overflow:visible}
+  .chart-note{font-size:11.5px;color:var(--faint);margin-top:10px;line-height:1.45}
+  .flag{background:rgba(217,178,90,.08);border:1px solid var(--gold-deep);border-radius:10px;
+    padding:12px 14px;margin-bottom:20px;font-size:12.5px;color:var(--muted);line-height:1.5}
+  .flag b{color:var(--gold);font-weight:600}
+
+  footer{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);color:var(--faint);
+    font-size:12px;line-height:1.55}
+  footer b{color:var(--muted);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="brand">
+    <svg class="emblem" viewBox="-130 -130 260 260" aria-hidden="true">
+      <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#F5E1A0"/><stop offset="50%" stop-color="#D9B25A"/><stop offset="100%" stop-color="#A9772E"/>
+      </linearGradient></defs>
+      <circle r="112" fill="none" stroke="url(#g)" stroke-width="8"/>
+      <circle r="96" fill="none" stroke="url(#g)" stroke-width="2.5"/>
+      <g fill="url(#g)">
+        <path d="M -46 -52 L -22 -52 L -22 34 L 20 34 L 20 54 L -46 54 Z"/>
+        <path d="M 12 -52 L 36 -52 L 70 54 L 48 54 L 41 30 L 7 30 L 0 54 L -22 54 Z M 13 12 L 35 12 L 24 -26 Z"/>
+      </g>
+      <path d="M 0 -78 L 4 -70 L 12 -70 L 6 -64 L 8 -56 L 0 -61 L -8 -56 L -6 -64 L -12 -70 L -4 -70 Z" fill="url(#g)"/>
+    </svg>
+    <div><div class="brand-name">LUX</div><div class="brand-sub">AUTO&nbsp;RENTALS</div></div>
+    <div class="brand-tag">Dynamic fleet projections — Phoenix, AZ · drag any assumption to remodel</div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-label">Projected Year-1 cash margin</div>
+    <div class="hero-fig" id="heroFig">$0</div>
+    <div class="hero-sub">across <b id="heroCars">4</b> vehicles at <b id="heroUtil">45%</b> blended utilization, <b id="heroShare">80%</b> host share — before depreciation &amp; tax</div>
+    <div class="hero-stats">
+      <div class="hstat"><span class="v" id="sNet">$0</span><span class="k">Net host earnings / yr</span></div>
+      <div class="hstat"><span class="v" id="sAfter">$0</span><span class="k">Cash after depreciation / yr</span></div>
+      <div class="hstat"><span class="v" id="sMo">$0</span><span class="k">Stabilized cash / mo</span></div>
+      <div class="hstat"><span class="v" id="sBE">0%</span><span class="k">Cash break-even utilization</span></div>
+    </div>
+  </section>
+
+  <div class="grid">
+    <aside class="panel">
+      <h2>Assumptions</h2>
+      <p class="hint">Each car has its own rate, utilization, and monthly holding cost. Everything recalculates live.</p>
+
+      <div class="group">
+        <p class="group-title">Fleet</p>
+        <div id="carList"></div>
+      </div>
+
+      <div class="group">
+        <p class="group-title">Platform</p>
+        <div class="ctl">
+          <div class="ctl-top"><label for="share">Turo host share</label><span class="ctl-val" id="shareV">80%</span></div>
+          <input type="range" id="share" min="65" max="100" step="1" value="80">
+        </div>
+      </div>
+
+      <div class="group">
+        <p class="group-title">Shared costs</p>
+        <div class="num"><label>Cleaning &amp; detailing / mo</label><input type="number" id="clean" value="320" min="0" step="10"></div>
+        <div class="num"><label>Telematics, supplies, misc / mo</label><input type="number" id="misc" value="160" min="0" step="10"></div>
+      </div>
+
+      <div class="group">
+        <p class="group-title">Depreciation</p>
+        <div class="ctl">
+          <div class="ctl-top"><label for="dep">Fleet depreciation / mo</label><span class="ctl-val" id="depV">$1,600</span></div>
+          <input type="range" id="dep" min="0" max="4000" step="50" value="1600">
+        </div>
+        <p class="hint" style="margin:6px 0 0">Non-cash, but real. The Bentayga is past its steepest drop, but ultra-luxury still sheds value in dollars.</p>
+      </div>
+    </aside>
+
+    <main>
+      <div class="cards">
+        <div class="kpi"><div class="k">Gross bookings / yr</div><div class="v" id="kGross">$0</div><div class="foot">before platform fees</div></div>
+        <div class="kpi"><div class="k">Platform fees / yr</div><div class="v" id="kTuro">$0</div><div class="foot" id="kTuroPct">—</div></div>
+        <div class="kpi"><div class="k">Operating cost / yr</div><div class="v" id="kOpex">$0</div><div class="foot" id="kOpexMo">—</div></div>
+        <div class="kpi"><div class="k">Cash margin %</div><div class="v gold" id="kMargin">0%</div><div class="foot">of gross bookings</div></div>
+      </div>
+
+      <div class="flag" id="hvFlag" style="display:none">
+        <b>High-value vehicle in the fleet.</b> <span id="hvText"></span>
+      </div>
+
+      <div class="chartbox">
+        <h3>12-month ramp</h3>
+        <p class="cap">Utilization builds over the first quarter as reviews and search ranking accrue.</p>
+        <div id="chartRamp"></div>
+        <div class="legend">
+          <span><i class="dot" style="background:var(--gold)"></i>Net host earnings</span>
+          <span><i class="dot" style="background:var(--steel)"></i>Cash margin (after opex)</span>
+        </div>
+      </div>
+
+      <div class="chartbox">
+        <h3>Cumulative cash flow</h3>
+        <p class="cap">Running cash margin across Year 1 — the line steepens as the fleet stabilizes.</p>
+        <div id="chartCum"></div>
+      </div>
+
+      <div class="chartbox two">
+        <div>
+          <h3>Where each gross $ goes</h3>
+          <p class="cap">Split of gross bookings at your current settings.</p>
+          <div id="chartDonut"></div>
+          <div class="legend" id="donutLegend"></div>
+        </div>
+        <div>
+          <h3>Net contribution by car</h3>
+          <p class="cap">Monthly net host earnings, stabilized.</p>
+          <div id="chartCars"></div>
+          <p class="chart-note" id="carsNote"></p>
+        </div>
+      </div>
+
+      <footer>
+        <b>Planning model, not a guarantee.</b> Ramp assumes ~55% of stabilized utilization in month 1, climbing to full by month 4; costs are held flat through the ramp. Exotic-car defaults (rate, utilization, holding cost) vary widely by spec and market — validate the Bentayga against live Turo comps for a comparable Bentayga / Lamborghini Urus / Rolls-Royce Cullinan in Phoenix–Scottsdale before relying on them. Turo lets you set a different earnings plan per vehicle, so you can run a more conservative plan on the high-value car and a higher-share plan on the daily drivers.
+      </footer>
+    </main>
+  </div>
+</div>
+
+<script>
+/* per-car: rate ($/day), util (%), cost ($/mo insurance+upkeep) */
+const cars = [
+  {id:'e450', name:'2019 E450 Wagon',   rate:112, util:50, cost:300, on:true,  turo:true},
+  {id:'stel', name:'2021 Alfa Stelvio',  rate:102, util:50, cost:290, on:true,  turo:true},
+  {id:'a6',   name:'2020 Audi A6',       rate:97,  util:50, cost:280, on:true,  turo:true},
+  {id:'bent', name:'2018 Bentley Bentayga', rate:495, util:32, cost:900, on:true, turo:true, hv:true},
+  {id:'e350', name:'2011 E350 · off-platform', rate:55, util:40, cost:160, on:false, turo:false},
+];
+const P = {share:80, clean:320, misc:160, dep:1600, directShare:95};
+const DAYS = 30.4;
+const ramp = m => m<=1?0.55 : m<=2?0.70 : m<=3?0.85 : 1.0;
+
+const $ = s => document.querySelector(s);
+const money = n => '$'+Math.round(n).toLocaleString('en-US');
+const moneyK = n => Math.abs(n)>=1000 ? '$'+(n/1000).toFixed(n%1000===0?0:1)+'k' : '$'+Math.round(n);
+const clr = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+
+const carList = $('#carList');
+cars.forEach(c=>{
+  const wrap = document.createElement('div');
+  wrap.className='car'+(c.hv?' hv':'');
+  wrap.innerHTML = `
+    <div class="car-head">
+      <label class="switch"><input type="checkbox" ${c.on?'checked':''} data-on="${c.id}"><span class="track"></span></label>
+      <span class="nm ${c.on?'':'off'}" data-nm="${c.id}">${c.name}${c.hv?'<span class="tag">HIGH VALUE</span>':''}</span>
+      <span class="car-net" data-cnet="${c.id}"></span>
+    </div>
+    <div class="ctl">
+      <div class="ctl-top"><label>Avg daily rate</label><span class="ctl-val" data-rv="${c.id}">$${c.rate}</span></div>
+      <input type="range" data-rate="${c.id}" min="35" max="900" step="5" value="${c.rate}">
+    </div>
+    <div class="ctl">
+      <div class="ctl-top"><label>Utilization</label><span class="ctl-val" data-uv="${c.id}">${c.util}%</span></div>
+      <input type="range" data-util="${c.id}" min="10" max="80" step="1" value="${c.util}">
+    </div>
+    <div class="num"><label>Insurance + upkeep / mo</label><input type="number" data-cost="${c.id}" value="${c.cost}" min="0" step="10"></div>`;
+  carList.appendChild(wrap);
+});
+
+function compute(){
+  const on = cars.filter(c=>c.on);
+  let gross=0, net=0, holding=0, utilSum=0;
+  const perCar=[];
+  on.forEach(c=>{
+    const g = (c.util/100)*DAYS*c.rate;
+    const share = c.turo ? P.share/100 : P.directShare/100;
+    const n = g*share;
+    gross+=g; net+=n; holding+=c.cost; utilSum+=c.util;
+    perCar.push({name:c.name.replace(' · off-platform',''), net:n, turo:c.turo, hv:!!c.hv});
+  });
+  const platformFees = gross - net;
+  const opex = holding + P.clean + P.misc;   // fixed monthly (doesn't scale with utilization)
+  const cash = net - opex;
+  const afterDep = cash - P.dep;
+  const avgUtil = on.length ? utilSum/on.length : 0;
+  const beCash = net>0 ? avgUtil*opex/net : 0;
+
+  let aNet=0,aCash=0; const months=[];
+  for(let m=1;m<=12;m++){
+    const f=ramp(m), mNet=net*f, mCash=mNet-opex;
+    aNet+=mNet; aCash+=mCash; months.push({m,net:mNet,cash:mCash});
+  }
+  return {on,gross,net,platformFees,holding,opex,cash,afterDep,beCash,avgUtil,perCar,months,
+    aNet,aCash,aAfterDep:aCash-P.dep*12,
+    marginPct: gross>0?cash/gross*100:0, feePct: gross>0?platformFees/gross*100:0};
+}
+
+function render(){
+  const r = compute();
+  $('#heroFig').textContent = money(r.aCash);
+  $('#heroCars').textContent = r.on.length;
+  $('#heroUtil').textContent = r.avgUtil.toFixed(0)+'%';
+  $('#heroShare').textContent = P.share+'%';
+  $('#sNet').textContent = money(r.aNet);
+  const sa=$('#sAfter'); sa.textContent=money(r.aAfterDep); sa.classList.toggle('neg', r.aAfterDep<0);
+  $('#sMo').textContent = money(r.cash);
+  $('#sBE').textContent = r.beCash.toFixed(0)+'%';
+
+  $('#kGross').textContent = money(r.gross*12);
+  $('#kTuro').textContent = money(r.platformFees*12);
+  $('#kTuroPct').textContent = r.feePct.toFixed(0)+'% of gross';
+  $('#kOpex').textContent = money(r.opex*12);
+  $('#kOpexMo').textContent = money(r.opex)+' / mo';
+  $('#kMargin').textContent = r.marginPct.toFixed(0)+'%';
+
+  cars.forEach(c=>{
+    const el=document.querySelector(`[data-cnet="${c.id}"]`);
+    if(!c.on){el.textContent='off'; el.style.color='var(--faint)'; return;}
+    const g=(c.util/100)*DAYS*c.rate, n=g*(c.turo?P.share/100:P.directShare/100);
+    el.textContent=money(n)+'/mo'; el.style.color='var(--gold)';
+  });
+
+  const hv = r.perCar.find(c=>c.hv);
+  const flag=$('#hvFlag');
+  if(hv){
+    const shareOfNet = r.net>0 ? (hv.net/r.net*100) : 0;
+    flag.style.display='block';
+    $('#hvText').textContent = `The Bentayga is your single biggest earner — about ${shareOfNet.toFixed(0)}% of net revenue from one car. That's the upside and the risk: Turo requires an OEM tracker on high-value cars, insurance and Bentley upkeep run far higher (reflected in its holding cost), and one claim on a six-figure vehicle stings. Consider a conservative earnings plan and a higher renter-age floor on this one.`;
+  } else { flag.style.display='none'; }
+
+  drawRamp(r.months); drawCum(r.months); drawDonut(r); drawCars(r.perCar);
+}
+
+function drawRamp(months){
+  const W=720,H=300, pl=46,pr=8,pt=12,pb=28, iw=W-pl-pr, ih=H-pt-pb;
+  const nice=niceMax(Math.max(...months.map(d=>d.net),1)), gw=iw/12, bw=Math.min(15,gw*0.34);
+  let g='';
+  for(let i=0;i<=4;i++){const y=pt+ih*(1-i/4);
+    g+=`<line x1="${pl}" y1="${y}" x2="${W-pr}" y2="${y}" stroke="${clr('--line')}" stroke-width="1"/>`;
+    g+=`<text x="${pl-8}" y="${y+3.5}" text-anchor="end" font-size="10" fill="${clr('--faint')}">${moneyK(nice*i/4)}</text>`;}
+  months.forEach((d,i)=>{const cx=pl+gw*i+gw/2, hN=ih*(d.net/nice), hC=ih*(Math.max(d.cash,0)/nice);
+    g+=`<rect x="${cx-bw-1}" y="${pt+ih-hN}" width="${bw}" height="${hN}" rx="2" fill="${clr('--gold')}"><title>M${d.m} net ${money(d.net)}</title></rect>`;
+    g+=`<rect x="${cx+1}" y="${pt+ih-hC}" width="${bw}" height="${hC}" rx="2" fill="${clr('--steel')}"><title>M${d.m} cash ${money(d.cash)}</title></rect>`;
+    g+=`<text x="${cx}" y="${H-9}" text-anchor="middle" font-size="10" fill="${clr('--faint')}">${d.m}</text>`;});
+  $('#chartRamp').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="12 month ramp">${g}</svg>`;
+}
+
+function drawCum(months){
+  const W=720,H=240, pl=46,pr=10,pt=12,pb=26, iw=W-pl-pr, ih=H-pt-pb;
+  let cum=0; const pts=months.map(d=>{cum+=d.cash; return {m:d.m,v:cum};});
+  const min=Math.min(0,...pts.map(p=>p.v)), max=Math.max(...pts.map(p=>p.v),1);
+  const niceHi=niceMax(max), niceLo=min<0?-niceMax(-min):0, span=niceHi-niceLo||1;
+  const x=i=>pl+iw*(i/(pts.length-1)), y=v=>pt+ih*(1-(v-niceLo)/span);
+  let g='';
+  for(let i=0;i<=4;i++){const val=niceLo+span*i/4, yy=pt+ih*(1-i/4);
+    g+=`<line x1="${pl}" y1="${yy}" x2="${W-pr}" y2="${yy}" stroke="${clr('--line')}" stroke-width="1"/>`;
+    g+=`<text x="${pl-8}" y="${yy+3.5}" text-anchor="end" font-size="10" fill="${clr('--faint')}">${moneyK(val)}</text>`;}
+  if(niceLo<0){const yz=y(0);g+=`<line x1="${pl}" y1="${yz}" x2="${W-pr}" y2="${yz}" stroke="${clr('--faint')}" stroke-width="1"/>`;}
+  let line=`M ${x(0)} ${y(pts[0].v)}`, area=`M ${x(0)} ${y(0)} L ${x(0)} ${y(pts[0].v)}`;
+  pts.forEach((p,i)=>{ if(i){line+=` L ${x(i)} ${y(p.v)}`; area+=` L ${x(i)} ${y(p.v)}`;} });
+  area+=` L ${x(pts.length-1)} ${y(0)} Z`;
+  g+=`<defs><linearGradient id="cumfill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="${clr('--gold')}" stop-opacity=".30"/><stop offset="100%" stop-color="${clr('--gold')}" stop-opacity="0"/></linearGradient></defs>`;
+  g+=`<path d="${area}" fill="url(#cumfill)"/><path d="${line}" fill="none" stroke="${clr('--gold')}" stroke-width="2.5" stroke-linejoin="round"/>`;
+  pts.forEach((p,i)=>{ g+=`<circle cx="${x(i)}" cy="${y(p.v)}" r="2.6" fill="${clr('--gold-lite')}"><title>M${p.m} ${money(p.v)}</title></circle>`;
+    g+=`<text x="${x(i)}" y="${H-8}" text-anchor="middle" font-size="10" fill="${clr('--faint')}">${p.m}</text>`; });
+  $('#chartCum').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="cumulative cash">${g}</svg>`;
+}
+
+function drawDonut(r){
+  const segs=[
+    {label:'Your cash margin', val:Math.max(r.cash,0), color:clr('--gold')},
+    {label:'Platform / Turo fees', val:r.platformFees, color:clr('--gold-deep')},
+    {label:'Insurance + upkeep', val:r.holding, color:clr('--steel')},
+    {label:'Cleaning', val:P.clean, color:clr('--slate')},
+    {label:'Misc', val:P.misc, color:clr('--clay')},
+  ].filter(s=>s.val>0);
+  const total=segs.reduce((s,x)=>s+x.val,0)||1;
+  const cx=110,cy=110,R=92,r0=58; let a=-Math.PI/2, g='';
+  segs.forEach(s=>{const ang=s.val/total*Math.PI*2, a2=a+ang, large=ang>Math.PI?1:0;
+    const p=(rad,an)=>[cx+rad*Math.cos(an),cy+rad*Math.sin(an)];
+    const[x1,y1]=p(R,a),[x2,y2]=p(R,a2),[x3,y3]=p(r0,a2),[x4,y4]=p(r0,a);
+    g+=`<path d="M ${x1} ${y1} A ${R} ${R} 0 ${large} 1 ${x2} ${y2} L ${x3} ${y3} A ${r0} ${r0} 0 ${large} 0 ${x4} ${y4} Z" fill="${s.color}"><title>${s.label} ${money(s.val)}</title></path>`; a=a2;});
+  g+=`<text x="${cx}" y="${cy-4}" text-anchor="middle" font-size="26" font-weight="600" fill="${clr('--ink')}" font-family="var(--serif)">${(Math.max(r.cash,0)/total*100).toFixed(0)}%</text>`;
+  g+=`<text x="${cx}" y="${cy+16}" text-anchor="middle" font-size="10.5" fill="${clr('--faint')}">kept as margin</text>`;
+  $('#chartDonut').innerHTML=`<svg viewBox="0 0 220 220" role="img" aria-label="cost split">${g}</svg>`;
+  $('#donutLegend').innerHTML=segs.map(s=>`<span><i class="dot" style="background:${s.color}"></i>${s.label}</span>`).join('');
+}
+
+function drawCars(perCar){
+  if(!perCar.length){$('#chartCars').innerHTML='<p class="chart-note">No vehicles enabled.</p>';$('#carsNote').textContent='';return;}
+  const W=340, rowH=46, H=perCar.length*rowH+8, pl=6, pr=8;
+  const max=Math.max(...perCar.map(c=>c.net),1), bw=W-pl-pr-96;
+  let g='';
+  perCar.forEach((c,i)=>{const y=i*rowH+8, w=bw*(c.net/max), col=c.hv?clr('--gold-lite'):c.turo?clr('--gold'):clr('--steel');
+    g+=`<text x="${pl}" y="${y+9}" font-size="12" fill="${clr('--muted')}">${c.name}</text>`;
+    g+=`<rect x="${pl}" y="${y+16}" width="${bw}" height="10" rx="5" fill="${clr('--line')}"/>`;
+    g+=`<rect x="${pl}" y="${y+16}" width="${w}" height="10" rx="5" fill="${col}"/>`;
+    g+=`<text x="${W-pr}" y="${y+9}" text-anchor="end" font-size="12" font-weight="600" fill="${clr('--ink')}">${money(c.net)}/mo</text>`;});
+  $('#chartCars').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="per car net">${g}</svg>`;
+  const off=perCar.find(c=>!c.turo);
+  $('#carsNote').textContent = off ? 'Steel bar = off-platform (direct rental) — keeps a higher share but needs your own booking & coverage.' : 'Brightest bar = high-value vehicle. Its outsized share is your revenue engine and your concentration risk.';
+}
+
+function niceMax(v){ if(v<=0)return 1; const p=Math.pow(10,Math.floor(Math.log10(v))); const n=v/p;
+  const s=n<=1?1:n<=2?2:n<=2.5?2.5:n<=5?5:10; return s*p; }
+
+function setSliderFill(el){ const min=+el.min,max=+el.max; el.style.setProperty('--pct',((el.value-min)/(max-min)*100)+'%'); }
+document.querySelectorAll('input[type=range]').forEach(setSliderFill);
+
+$('#share').addEventListener('input',e=>{P.share=+e.target.value;$('#shareV').textContent=P.share+'%';setSliderFill(e.target);render();});
+$('#dep').addEventListener('input',e=>{P.dep=+e.target.value;$('#depV').textContent=money(P.dep);setSliderFill(e.target);render();});
+['clean','misc'].forEach(id=>$('#'+id).addEventListener('input',e=>{P[id]=Math.max(0,+e.target.value||0);render();}));
+
+cars.forEach(c=>{
+  document.querySelector(`[data-on="${c.id}"]`).addEventListener('change',e=>{
+    c.on=e.target.checked; document.querySelector(`[data-nm="${c.id}"]`).classList.toggle('off',!c.on); render();});
+  const rs=document.querySelector(`[data-rate="${c.id}"]`); setSliderFill(rs);
+  rs.addEventListener('input',e=>{c.rate=+e.target.value;document.querySelector(`[data-rv="${c.id}"]`).textContent='$'+c.rate;setSliderFill(e.target);render();});
+  const us=document.querySelector(`[data-util="${c.id}"]`); setSliderFill(us);
+  us.addEventListener('input',e=>{c.util=+e.target.value;document.querySelector(`[data-uv="${c.id}"]`).textContent=c.util+'%';setSliderFill(e.target);render();});
+  document.querySelector(`[data-cost="${c.id}"]`).addEventListener('input',e=>{c.cost=Math.max(0,+e.target.value||0);render();});
+});
+
+render();
+</script>
+</body>
+</html>
