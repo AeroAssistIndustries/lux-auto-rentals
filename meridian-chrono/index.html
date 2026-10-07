@@ -153,6 +153,71 @@ h3{font-size:1.2rem;line-height:1.25}
 .hero-tag span{font-size:.88rem;color:var(--muted)}
 .hero-feature:hover .hero-tag strong{text-decoration:underline}
 
+/* Hero slideshow */
+.hero-show{position:relative;aspect-ratio:4/5;max-width:480px;width:100%;margin-left:auto;border-radius:240px 240px 6px 6px;overflow:hidden;background:#1A2F2A;box-shadow:0 40px 80px -40px rgba(0,0,0,.7);outline:1px solid rgba(201,174,120,.35);outline-offset:10px}
+.hero-show .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.1s ease;text-decoration:none;color:inherit;display:block}
+.hero-show .slide.is-on{opacity:1;z-index:1}
+.hero-show .slide > img,.hero-show .slide > svg{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 6s ease-out}
+.hero-show .slide.is-on > img{transform:scale(1)}
+.hero-show .slide::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(14,26,24,.75),rgba(14,26,24,0) 45%)}
+.hero-show .hero-tag{position:absolute;left:16px;right:16px;bottom:44px;z-index:2;max-width:none;box-shadow:none;background:transparent;color:#fff;padding:0}
+.hero-show .hero-tag small{color:var(--gold-soft)}
+.hero-show .hero-tag strong{color:#fff;font-size:1.35rem}
+.hero-show .hero-tag span{color:#D5DDD7}
+.hero-show .slide:hover strong{text-decoration:underline}
+.hero-show .dots{position:absolute;left:16px;bottom:18px;z-index:3;display:flex;gap:8px}
+.hero-show .dots button{width:26px;height:4px;padding:0;border:0;border-radius:2px;background:rgba(255,255,255,.4)}
+.hero-show .dots button[aria-pressed="true"]{background:var(--gold-soft)}
+.hero-show .dots button::before{content:"";display:block;margin:-10px 0;height:24px}
+.rep-note{position:absolute;right:14px;bottom:12px;z-index:3;font-size:.7rem;color:rgba(255,255,255,.65)}
+/* Brand ticker */
+.marquee{background:var(--ink);border-top:1px solid rgba(201,174,120,.25);overflow:hidden;white-space:nowrap}
+.marquee .track{display:inline-flex;padding-block:14px;animation:ticker 38s linear infinite}
+.marquee span{font-size:.9rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);display:inline-flex;align-items:center}
+.marquee span::after{content:"";width:6px;height:6px;margin:0 28px;background:var(--gold);transform:rotate(45deg);opacity:.7}
+@keyframes ticker{to{transform:translateX(-50%)}}
+/* Spotlight */
+.spotlight{background:var(--ivory)}
+.spot-inner{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:stretch;gap:0;padding-block:0}
+.spot-media{display:block;min-height:440px;overflow:hidden;background:var(--stone)}
+.spot-media img,.spot-media svg{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.spot-media:hover img{transform:scale(1.04)}
+.spot-body{padding:clamp(28px,4.5vw,64px)}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep)}
+.kicker::before{content:"";width:28px;height:1px;background:var(--gold)}
+.spot-body h2{font-size:clamp(1.9rem,3.4vw,2.8rem);margin-top:12px}
+.spot-body .ref{color:var(--muted);margin-top:8px}
+.spot-body .desc{margin-top:16px;max-width:52ch}
+.spot-chips{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.spot-chips li{font-size:.84rem;padding:5px 12px;border:1px solid var(--line);border-radius:999px;background:var(--paper)}
+.spot-price{font-size:1.9rem;font-weight:600;color:var(--ink);margin-top:20px;letter-spacing:-.02em}
+.spot-price small{display:block;font-size:.88rem;font-weight:400;color:var(--muted);letter-spacing:0}
+/* Stats */
+.stats{border-bottom:1px solid var(--border)}
+.stats ul{list-style:none;margin:0;padding:clamp(28px,4vw,48px) 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.stats li{padding:0 20px;border-left:1px solid var(--border)}
+.stats li:first-child{border-left:0;padding-left:0}
+.stats b{display:block;font-size:clamp(2.2rem,4.4vw,3.4rem);font-weight:600;letter-spacing:-.03em;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+.stats li > span{display:block;margin-top:8px;color:var(--muted);font-size:.95rem;max-width:22ch}
+/* Reveal */
+.can-reveal [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.can-reveal [data-reveal].in{opacity:1;transform:none}
+/* About additions */
+.founder-video{border-radius:8px;overflow:hidden;background:#fff;border:1px solid var(--border);height:640px}
+.founder-video .ig-frame{height:100%;min-height:0}
+.houses{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.house{display:flex;flex-direction:column;text-decoration:none;color:inherit;border:1px solid var(--border);background:var(--paper);transition:border-color .2s,transform .3s}
+.house:hover{border-color:var(--ink);transform:translateY(-3px)}
+.house-img{display:grid;place-items:center;aspect-ratio:4/3;background:var(--ink);overflow:hidden}
+.house-img img{width:100%;height:100%;object-fit:cover}
+.house-img svg.mark{width:46%}
+.house-body{display:flex;flex-direction:column;gap:6px;padding:16px;flex:1}
+.house-body small{font-size:.76rem;font-weight:600;letter-spacing:.06em;color:var(--gold-deep);text-transform:uppercase}
+.house-body b{font-size:1.15rem;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+.house-body span{font-size:.9rem;color:var(--muted)}
+.house-body em{font-style:normal;font-weight:600;font-size:.88rem;color:var(--ink);margin-top:auto;padding-top:8px}
+.flow.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+
 /* Trust bar */
 .trust{border-bottom:1px solid var(--border);background:var(--paper)}
 .trust ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
@@ -584,6 +649,7 @@ dialog.zoom{width:min(980px,100% - 24px)}
   .lockup{justify-self:center}
   .mega{display:none!important}
 }
+@media (max-width:1240px){.houses{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:1060px){
   .header-search{display:none}
   .catalog-layout{grid-template-columns:220px minmax(0,1fr);gap:28px}
@@ -636,6 +702,14 @@ dialog.zoom{width:min(980px,100% - 24px)}
   .mobile-bar.is-hidden,.dialog-open .mobile-bar{transform:translateY(110%);visibility:hidden}
   .about-hero .dial{margin:0 auto;max-width:320px}
   .milestones{grid-template-columns:1fr}
+  .hero-show{margin:8px auto 0;max-width:400px;aspect-ratio:1/1;border-radius:200px 200px 6px 6px}
+  .spot-inner{grid-template-columns:1fr}
+  .spot-media{min-height:0;aspect-ratio:4/3}
+  .stats ul{grid-template-columns:1fr 1fr;row-gap:24px}
+  .stats li:nth-child(3){border-left:0;padding-left:0}
+  .houses{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flow.four{grid-template-columns:1fr}
+  .founder-video{height:560px;max-width:420px}
   .alert-band{grid-template-columns:1fr}
   body[data-route="watch"] .fab,body[data-route="watch"] .compare-tray{display:none}
   .fab span{display:none}
@@ -669,6 +743,9 @@ dialog.zoom{width:min(980px,100% - 24px)}
   .tile{min-height:170px;padding:14px}
   .tile b{font-size:1.2rem}
   .contact-cards{grid-template-columns:1fr}
+  .houses{grid-template-columns:1fr}
+  .stats ul{grid-template-columns:1fr}
+  .stats li{border-left:0;padding-left:0}
   .clocks{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ig-strip{grid-auto-columns:86%}
   .modal-head{padding:18px 18px 0}.modal-body{padding:14px 18px 20px}
@@ -691,6 +768,7 @@ dialog.zoom{width:min(980px,100% - 24px)}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
   .hand-sec{display:none}
+  .marquee .track{animation:none}
 }
 .hand{transform-box:view-box;transform-origin:200px 200px}
 .hand-sec{transition:transform .22s cubic-bezier(.4,2.1,.55,1)}
@@ -763,6 +841,8 @@ const siteConfig = {
   instagramFollowers: '18.3K',
   focusBrands: ['Rolex', 'Patek Philippe', 'Audemars Piguet', 'F. P. Journe'],
   heroWatchId: 'rolex-submariner-126610lv',
+  heroSlides: ['rolex-gmt-master-ii-126710blro', 'audemars-piguet-royal-oak-15510st', 'rolex-datejust-41-two-tone-black', 'rolex-daytona-126500ln'],
+  spotlightWatchId: 'rolex-datejust-41-two-tone-black',
   enableSourcing: true,
   enableSellTrade: true,
   enableBag: true,          // "Add to bag" + request-to-buy checkout (no online payment)
@@ -776,7 +856,8 @@ const founder = {
   name: 'Rushik Dave',
   role: 'Founder',
   pull: 'Less grey-market gamble, more curated relationship.',
-  photo: null // { src, alt } — supply an approved portrait
+  photo: null, // { src, alt } — supply an approved portrait
+  video: 'DZVG2z7TTI-' // Rushik's own 'Meet the man behind Meridian' Instagram reel
 };
 
 // How watches are checked. Shown on the home page; edit to match the exact process.
@@ -790,6 +871,15 @@ const qualityFlow = {
   ],
   promise: 'Genuine watches only, new and pre-owned. Never fakes, replicas or reproductions. If we can\u2019t verify it, we don\u2019t sell it.'
 };
+
+// Watch houses Meridian focuses on (About page).
+const houses = [
+  { brand: 'Rolex', since: 'Since 1905', home: 'Geneva', text: 'The benchmark for luxury sports and everyday watches: Submariner, GMT-Master II, Daytona, Datejust and Day-Date.' },
+  { brand: 'Patek Philippe', since: 'Since 1839', home: 'Geneva', text: 'Among the most respected names in fine watchmaking, from the Calatrava dress watch to the Nautilus and Aquanaut.' },
+  { brand: 'Audemars Piguet', since: 'Since 1875', home: 'Le Brassus', text: 'A family-owned manufacture from the Vall\u00e9e de Joux, best known for the Royal Oak and Royal Oak Offshore.' },
+  { brand: 'Vacheron Constantin', since: 'Since 1755', home: 'Geneva', text: 'One of the oldest watch manufactures in continuous operation. The Overseas is its modern sports icon.' },
+  { brand: 'F. P. Journe', since: 'Since 1999', home: 'Geneva', text: 'The independent house of watchmaker Fran\u00e7ois-Paul Journe, prized by collectors for the Chronom\u00e8tre Bleu and Octa.' }
+];
 
 // Footer world clocks. IANA time zone names.
 const worldClocks = [
@@ -1219,6 +1309,7 @@ function render() {
   document.title = view.title ? `${view.title} | ${siteConfig.name}` : `${siteConfig.name} | ${siteConfig.tagline}`;
   $('#main').innerHTML = view.html;
   view.init && view.init();
+  startReveal();
   document.body.dataset.route = parts[0] || 'home';
   renderTray();
   const section = parts[0] === 'watch' ? 'watches' : (parts[0] || '');
@@ -1410,8 +1501,60 @@ document.addEventListener('click', (e) => {
 /* =====================================================================
    VIEWS
    ===================================================================== */
+function heroShow(list) {
+  return `<div class="hero-show" id="hero-show" aria-roledescription="carousel" aria-label="Featured watches">
+${list.map((w, i) => `<a class="slide${i === 0 ? ' is-on' : ''}" href="#/watch/${esc(w.id)}"${i ? ' aria-hidden="true" tabindex="-1"' : ''}>${media(w, 'front', { decorative: true })}<span class="hero-tag"><small>FEATURED</small><strong>${esc(titleOf(w))}</strong><span>${esc([w.reference ? 'Ref. ' + w.reference : null, w.year, priceLabel(w)].filter(Boolean).join(' · '))}</span></span></a>`).join('')}
+<div class="dots">${list.map((w, i) => `<button type="button" data-slide="${i}" aria-label="Show ${esc(titleOf(w))}" aria-pressed="${i === 0}"></button>`).join('')}</div>
+<span class="rep-note">Representative photos</span></div>`;
+}
+function startHeroShow() {
+  const box = $('#hero-show'); if (!box) return;
+  const slides = $$('.slide', box), dots = $$('.dots button', box);
+  let i = 0, paused = false;
+  const go = (n) => { i = (n + slides.length) % slides.length; slides.forEach((s, j) => { s.classList.toggle('is-on', j === i); s.setAttribute('aria-hidden', j === i ? 'false' : 'true'); s.tabIndex = j === i ? 0 : -1; }); dots.forEach((d, j) => d.setAttribute('aria-pressed', String(j === i))); };
+  dots.forEach((d, j) => d.addEventListener('click', () => go(j)));
+  box.addEventListener('mouseenter', () => paused = true); box.addEventListener('mouseleave', () => paused = false);
+  box.addEventListener('focusin', () => paused = true); box.addEventListener('focusout', () => paused = false);
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const t = setInterval(() => { if (!paused && !document.hidden) go(i + 1); }, 5000);
+  onCleanup(() => clearInterval(t));
+}
+function startCounters() {
+  const els = $$('[data-count]'); if (!els.length || !('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const io = new IntersectionObserver((ents) => ents.forEach(en => {
+    if (!en.isIntersecting) return; io.unobserve(en.target);
+    const el = en.target, to = Number(el.dataset.count), dec = Number(el.dataset.dec || 0), t0 = performance.now();
+    const step = (t) => { const k = Math.min(1, (t - t0) / 1200), e = 1 - Math.pow(1 - k, 3); el.textContent = (to * e).toFixed(dec); if (k < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  }), { threshold: .6 });
+  els.forEach(el => io.observe(el)); onCleanup(() => io.disconnect());
+}
+function startReveal() {
+  const els = $$('[data-reveal]'); if (!els.length) return;
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) { els.forEach(e => e.classList.add('in')); return; }
+  document.documentElement.classList.add('can-reveal');
+  const io = new IntersectionObserver((ents) => ents.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: .05 });
+  els.forEach(e => io.observe(e)); onCleanup(() => io.disconnect());
+}
+function spotlightHTML(w) {
+  const sold = w.status === 'sold', buyable = siteConfig.enableBag && w.status === 'available' && w.priceUsd != null;
+  return `<section class="spotlight" aria-labelledby="spot-title" data-reveal><div class="container spot-inner">
+  <a class="spot-media" href="#/watch/${esc(w.id)}" tabindex="-1" aria-hidden="true">${media(w, 'front', { decorative: true })}</a>
+  <div class="spot-body">
+    <p class="kicker">Watch of the week</p>
+    <h2 id="spot-title">${esc(titleOf(w))}</h2>
+    <p class="ref">${esc([w.reference ? 'Reference ' + w.reference : null, w.year, w.condition].filter(Boolean).join(' · '))}</p>
+    <p class="desc">${esc(w.source === 'sample' ? 'Sample listing.' : w.description)}</p>
+    <ul class="spot-chips">${[w.material, w.dial ? w.dial + ' dial' : null, w.bracelet, w.caseSizeMm ? w.caseSizeMm + ' mm' : null].filter(Boolean).map(c => `<li>${esc(c)}</li>`).join('')}</ul>
+    <p class="spot-price">${priceLabel(w)}${w.localPriceUsd && !sold ? `<small>Local pickup in Arizona ${money(w.localPriceUsd)}</small>` : ''}</p>
+    <div class="actions" style="margin-top:20px">${buyable ? `<button type="button" class="btn btn-primary" data-add="${esc(w.id)}">${bag.has(w.id) ? 'In your bag' : 'Add to bag'}</button>` : `<button type="button" class="btn btn-primary" data-inquire="${esc(w.id)}" data-kind="price">Request price</button>`}<a class="btn" href="#/watch/${esc(w.id)}">View details</a></div>
+  </div>
+</div></section>`;
+}
 function viewHome() {
   const hero = byId(siteConfig.heroWatchId);
+  const slides = (siteConfig.heroSlides || []).map(byId).filter(w => w && visible().includes(w) && w.photos && w.photos.length);
+  const spot = byId(siteConfig.spotlightWatchId);
   const fresh = inStock().slice().sort((a, b) => b.added.localeCompare(a.added)).slice(0, 8);
   const sold = visible().filter(w => w.status === 'sold').slice(0, 4);
   const brands = brandCounts();
@@ -1423,7 +1566,8 @@ function viewHome() {
     siteConfig.enableSourcing && { i: I.find, t: 'Find a specific watch', p: 'Looking for a particular reference, dial or year? Tell us, and we will look through our network.', a: 'Request a watch', h: '#/source' }
   ].filter(Boolean);
   return {
-    title: '', html: `
+    title: '', init: () => { startHeroShow(); startCounters(); },
+    html: `
 <section class="hero on-dark" aria-labelledby="hero-title">
   <div class="container hero-inner">
     <div>
@@ -1432,10 +1576,11 @@ function viewHome() {
       <div class="actions"><a class="btn btn-primary" href="#/watches">Shop the collection</a>${siteConfig.enableSellTrade ? '<a class="btn" href="#/sell-trade">Sell or trade</a>' : ''}</div>
       <div class="hero-services" aria-label="Services"><span>Buy</span><span>Sell</span><span>Trade</span><span>Source</span></div>
     </div>
-    ${hero ? `<a class="hero-feature" href="#/watch/${esc(hero.id)}"><div class="art">${watchArt(hero, 'front', { decorative: true, bg: 'transparent' }).replace('preserveAspectRatio="xMidYMid slice"', 'preserveAspectRatio="xMidYMid meet"')}</div>
+    ${slides.length ? heroShow(slides) : hero ? `<a class="hero-feature" href="#/watch/${esc(hero.id)}"><div class="art">${watchArt(hero, 'front', { decorative: true, bg: 'transparent' }).replace('preserveAspectRatio="xMidYMid slice"', 'preserveAspectRatio="xMidYMid meet"')}</div>
       <div class="hero-tag"><small>JUST LANDED</small><strong>${esc(titleOf(hero))}${hero.nickname ? ` “${esc(hero.nickname)}”` : ''}</strong><span>${esc([hero.reference, hero.year, hero.condition, fullSet(hero) ? 'full set' : null].filter(Boolean).join(' · '))}</span></div></a>` : ''}
   </div>
 </section>
+<div class="marquee on-dark" aria-hidden="true"><div class="track">${[0, 1].map(() => houses.map(h => `<span>${esc(h.brand)}</span>`).join('') + '<span>Buy</span><span>Sell</span><span>Trade</span><span>Source</span>').join('')}</div></div>
 <section class="trust" aria-label="Why Meridian">
   <div class="container"><ul>
     <li>${I.shield}<div><b>Genuine only</b><span>Checked twice. No fakes or replicas, ever</span></div></li>
@@ -1444,19 +1589,26 @@ function viewHome() {
     <li>${I.swap}<div><b>Buy, sell, trade, source</b><span>Talk to a person, not a checkout</span></div></li>
   </ul></div>
 </section>
-<section class="section" aria-labelledby="new-title">
+<section class="section" aria-labelledby="new-title" data-reveal>
   <div class="container">
     <div class="section-head"><div><h2 id="new-title">New arrivals</h2><p>The latest additions to the collection.</p></div><a class="text-link" href="#/watches?sort=newest">Shop all new arrivals</a></div>
     <div class="grid">${fresh.map(w => cardHTML(w)).join('')}</div>
   </div>
 </section>
-<section class="section tint" aria-labelledby="brand-title" style="padding-block:clamp(40px,5vw,64px)">
+${spot && visible().includes(spot) ? spotlightHTML(spot) : ''}
+<section class="stats" aria-label="Meridian in numbers" data-reveal><div class="container"><ul>
+  <li><b>50–70</b><span>timepieces in stock at any time</span></li>
+  <li><b><span data-count="18.3" data-dec="1">18.3</span>K</b><span>collectors follow on Instagram</span></li>
+  <li><b><span data-count="2">2</span></b><span>independent checks on every watch</span></li>
+  <li><b><span data-count="${houses.length}">${houses.length}</span></b><span>great houses, from Rolex to F. P. Journe</span></li>
+</ul></div></section>
+<section class="section tint" data-reveal aria-labelledby="brand-title" style="padding-block:clamp(40px,5vw,64px)">
   <div class="container">
     <div class="section-head"><h2 id="brand-title">Shop by brand</h2><a class="text-link" href="#/watches">View all watches</a></div>
     <div class="brand-rail">${brands.slice(0, 5).map(([b, n]) => `<a href="#/watches?brand=${encodeURIComponent(b)}"><b>${esc(b)}</b><small>${n} ${n === 1 ? 'watch' : 'watches'}</small></a>`).join('')}</div>
   </div>
 </section>
-<section class="section" aria-labelledby="col-title">
+<section class="section" aria-labelledby="col-title" data-reveal>
   <div class="container">
     <div class="section-head"><h2 id="col-title">Shop by collection</h2></div>
     <div class="tiles">
@@ -1471,12 +1623,12 @@ ${svc.length ? `<section class="section tint" aria-labelledby="svc-title"><div c
   <div class="section-head"><div><h2 id="svc-title">More than a shop</h2><p>Meridian buys, sells, trades and sources watches, and every conversation is with a collector.</p></div></div>
   <div class="services">${svc.map(s => `<div class="service">${s.i}<h3>${s.t}</h3><p>${s.p}</p><div class="actions"><a class="btn" href="${s.h}">${s.a}</a></div></div>`).join('')}</div>
 </div></section>` : ''}
-<section class="section quality on-dark" aria-labelledby="quality-title"><div class="container">
+<section class="section quality on-dark" aria-labelledby="quality-title" data-reveal><div class="container">
   <div class="section-head"><div><h2 id="quality-title">${esc(qualityFlow.title)}</h2><p>${esc(qualityFlow.intro)}</p></div></div>
   <ol class="flow">${qualityFlow.steps.map((st, i) => `<li><span class="where"><span class="n">0${i + 1}</span>${esc(st.where)}</span><h3>${esc(st.title)}</h3><p>${esc(st.text)}</p></li>`).join('')}</ol>
   <div class="promise">${I.shield}<div><b>Real watches. No replicas, ever.</b><p>${esc(qualityFlow.promise)}</p></div><a class="btn" href="#/client-care">Questions? Read client care</a></div>
 </div></section>
-<section class="section" aria-labelledby="founder-title">
+<section class="section" aria-labelledby="founder-title" data-reveal>
   <div class="container founder">
     <figure class="portrait" style="margin:0">${founder.photo ? `<img src="${esc(founder.photo.src)}" alt="${esc(founder.photo.alt)}" style="width:100%;height:100%;object-fit:cover">` : `${logoMark({ ink: '#F7F3EA', gold: '#C9AE78' })}${siteConfig.demoMode ? '<figcaption>Founder portrait to come</figcaption>' : ''}`}</figure>
     <div>
@@ -1484,7 +1636,6 @@ ${svc.length ? `<section class="section tint" aria-labelledby="svc-title"><div c
       <blockquote>“${esc(founder.pull)}”</blockquote>
       <p class="by">${esc(founder.name)}, ${esc(founder.role)}</p>
       <p class="body">A passion that began in the late 2000s became a collection of ten luxury watches, and then a company. Today Meridian holds between 50 and 70 new and pre-owned timepieces at any given time.</p>
-      <ul class="milestones"><li><b>Late 2000s</b><span>The passion begins</span></li><li><b>10</b><span>Luxury watches collected</span></li><li><b>50–70</b><span>Timepieces in inventory</span></li></ul>
       <div class="actions"><a class="btn" href="#/about">Read our story</a></div>
     </div>
   </div>
@@ -2065,10 +2216,10 @@ function viewAbout() {
   </div>
   <div class="dial">${heroDial()}</div>
 </div></section>
-<section class="section" aria-labelledby="story-title"><div class="container story">
+<section class="section" aria-labelledby="story-title" data-reveal><div class="container story">
   <div>
-    <figure class="portrait" style="margin:0">${founder.photo ? `<img src="${esc(founder.photo.src)}" alt="${esc(founder.photo.alt)}" style="width:100%;height:100%;object-fit:cover">` : `${logoMark({ ink: '#F7F3EA', gold: '#C9AE78' })}${siteConfig.demoMode ? '<figcaption>Founder portrait to come</figcaption>' : ''}`}</figure>
-    <p style="margin-top:14px"><strong style="color:var(--ink);font-weight:500">${esc(founder.name)}</strong><br><span class="muted">Founder, Meridian Chrono Group</span></p>
+    ${founder.photo ? `<figure class="portrait" style="margin:0"><img src="${esc(founder.photo.src)}" alt="${esc(founder.photo.alt)}" style="width:100%;height:100%;object-fit:cover"></figure>` : founder.video ? `<div class="founder-video">${igFrame(founder.video, 'Meet the man behind Meridian Chrono Group, on Instagram')}</div>` : `<figure class="portrait" style="margin:0">${logoMark({ ink: '#F7F3EA', gold: '#C9AE78' })}</figure>`}
+    <p style="margin-top:14px"><strong style="color:var(--ink);font-weight:600">${esc(founder.name)}</strong><br><span class="muted">Founder, Meridian Chrono Group${founder.video && !founder.photo ? ' · <a href="' + esc(siteConfig.instagramUrl) + '" target="_blank" rel="noopener noreferrer">watch on Instagram</a>' : ''}</span></p>
   </div>
   <div class="prose">
     <h2 id="story-title" style="margin-bottom:24px">Meet the founder</h2>
@@ -2078,7 +2229,7 @@ function viewAbout() {
     <p>Today Meridian Chrono Group holds between 50 and 70 new and pre-owned timepieces at any given time, from Rolex sports models to Patek Philippe, Audemars Piguet and F. P. Journe. It started in Arizona, and it is built for collectors everywhere.</p>
   </div>
 </div></section>
-<section class="section tint" aria-labelledby="tl-title"><div class="container story">
+<section class="section tint" aria-labelledby="tl-title" data-reveal><div class="container story">
   <div><h2 id="tl-title">From collector to company</h2><p class="lede">How a personal passion became a collection, and then Meridian.</p></div>
   <ol class="timeline">
     <li><small>LATE 2000s</small><b>The fascination begins</b><span>Rushik falls for mechanical watchmaking and dreams of studying it in Switzerland.</span></li>
@@ -2087,7 +2238,21 @@ function viewAbout() {
     <li><small>TODAY</small><b>50 to 70 timepieces in stock</b><span>New and pre-owned watches available at any given time, with more sourced on request.</span></li>
   </ol>
 </div></section>
-<section class="section" aria-labelledby="val-title"><div class="container">
+<section class="section" aria-labelledby="houses-title" data-reveal><div class="container">
+  <div class="section-head"><div><h2 id="houses-title">The houses we know best</h2><p>Meridian focuses on a small number of makers, so every watch is one we understand inside and out.</p></div><a class="text-link" href="#/watches">Shop all watches</a></div>
+  <div class="houses">${houses.map(h => { const n = inStock().filter(w => w.brand === h.brand).length; const w = inStock().find(x => x.brand === h.brand && x.photos && x.photos.length); return `<a class="house" href="#/watches?brand=${encodeURIComponent(h.brand)}"><span class="house-img">${w ? media(w, 'front', { decorative: true }) : logoMark({ ink: '#F7F3EA', gold: '#C9AE78' })}</span><span class="house-body"><small>${esc(h.since)} · ${esc(h.home)}</small><b>${esc(h.brand)}</b><span>${esc(h.text)}</span><em>${n ? `Shop ${n} ${n === 1 ? 'watch' : 'watches'}` : 'Ask us to source one'}</em></span></a>`; }).join('')}</div>
+</div></section>
+<section class="section quality on-dark" aria-labelledby="how-title" data-reveal><div class="container">
+  <div class="section-head"><div><h2 id="how-title">How buying from Meridian works</h2><p>No checkout pressure and no surprises. You talk to a collector at every step.</p></div></div>
+  <ol class="flow four">
+    <li><span class="where"><span class="n">01</span>Find it</span><h3>Browse or ask</h3><p>Shop the collection, or tell us the reference you want and we\u2019ll look for it.</p></li>
+    <li><span class="where"><span class="n">02</span>Ask anything</span><h3>See it properly</h3><p>Ask for extra photos, a video, service history or anything else before you decide.</p></li>
+    <li><span class="where"><span class="n">03</span>Agree directly</span><h3>Clear terms first</h3><p>Price, payment and delivery are confirmed with you in writing before you pay.</p></li>
+    <li><span class="where"><span class="n">04</span>Delivered</span><h3>Insured or in person</h3><p>Shipped fully insured, or collect locally in Arizona.</p></li>
+  </ol>
+  <div class="promise">${I.shield}<div><b>Every watch is checked twice.</b><p>${esc(qualityFlow.promise)}</p></div><a class="btn" href="#/watches">Shop the collection</a></div>
+</div></section>
+<section class="section tint" aria-labelledby="val-title" data-reveal><div class="container">
   <div class="section-head"><h2 id="val-title">What we stand for</h2></div>
   <div class="values">
     <div><h3>Full transparency</h3><p>Condition, inclusions and history are described plainly on every watch, with prices shown wherever we can show them.</p></div>
@@ -2095,7 +2260,7 @@ function viewAbout() {
     <div><h3>Curated relationships</h3><p>Less grey-market gamble, more conversation. You deal with a person who answers the phone and remembers what you’re looking for.</p></div>
   </div>
 </div></section>
-<section class="section tint"><div class="container founder" style="grid-template-columns:1fr auto">
+<section class="section" data-reveal><div class="container founder" style="grid-template-columns:1fr auto">
   <div><p class="pull">“The story’s just getting started.”</p><p class="pull-by">${esc(founder.name)}, ${esc(founder.role)}</p></div>
   <div class="actions" style="margin:0"><a class="btn btn-primary" href="#/watches">Shop the collection</a><a class="btn" href="#/contact">Talk to Meridian</a></div>
 </div></section>`, init: startDial };
