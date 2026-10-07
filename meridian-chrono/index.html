@@ -171,10 +171,14 @@ h3{font-size:1.2rem;line-height:1.25}
 .hero-show .dots button::before{content:"";display:block;margin:-10px 0;height:24px}
 .rep-note{position:absolute;right:14px;bottom:12px;z-index:3;font-size:.7rem;color:rgba(255,255,255,.65)}
 /* Brand ticker */
-.marquee{background:var(--ink);border-top:1px solid rgba(201,174,120,.25);overflow:hidden;white-space:nowrap}
-.marquee .track{display:inline-flex;padding-block:14px;animation:ticker 38s linear infinite}
-.marquee span{font-size:.9rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);display:inline-flex;align-items:center}
-.marquee span::after{content:"";width:6px;height:6px;margin:0 28px;background:var(--gold);transform:rotate(45deg);opacity:.7}
+.marquee{background:var(--ink);border-block:1px solid rgba(201,174,120,.18)}
+.m-mask{overflow:hidden;white-space:nowrap;-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
+.marquee .track{display:inline-flex;align-items:center;height:76px;animation:ticker 70s linear infinite;will-change:transform}
+.m-item{display:inline-flex;align-items:center;justify-content:center;gap:10px;flex:none;width:220px;height:100%;position:relative}
+.m-item + .m-item::before{content:"";position:absolute;left:0;top:50%;width:1px;height:22px;transform:translateY(-50%);background:rgba(201,174,120,.3)}
+.m-item img{width:auto;max-width:150px;object-fit:contain;filter:brightness(0) invert(1);opacity:.8}
+.m-item b{font-weight:600;font-size:.8rem;letter-spacing:.3em;color:rgba(255,255,255,.8);margin-right:-.3em}
+.marquee:hover .track{animation-play-state:paused}
 @keyframes ticker{to{transform:translateX(-50%)}}
 /* Spotlight */
 .spotlight{background:var(--ivory)}
@@ -339,7 +343,9 @@ h3{font-size:1.2rem;line-height:1.25}
 .clock{display:flex;align-items:center;gap:10px;min-width:0}
 .clock svg{width:42px;height:42px;flex:none}
 .clock b{display:block;font-weight:500;color:#fff;font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.clock span{display:block;font-size:.82rem;color:#A9B5AD;font-variant-numeric:tabular-nums;white-space:nowrap}
+.clock > div{min-width:0}
+.clock span{display:block;font-size:.82rem;color:#A9B5AD;font-variant-numeric:tabular-nums}
+.clock span time{white-space:nowrap}
 .ig-strip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(300px,1fr);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:thin}
 .ig-card{container-type:inline-size;background:#fff;border-radius:6px;scroll-snap-align:start;overflow:hidden}
 .ig-card .clip{height:500px;height:calc(125cqw + 92px);overflow:hidden}
@@ -406,10 +412,6 @@ body[data-route="compare"] .compare-tray,body[data-route="checkout"] .compare-tr
 .house-logo.is-symbol{height:34px}
 .logo-word{font-size:.72rem;font-weight:700;letter-spacing:.32em;color:var(--ink);margin-right:-.32em}
 .brand-rail a{gap:10px}
-.marquee .m-logo{display:inline-flex;align-items:center}
-.marquee .m-logo img{height:26px;width:150px;object-fit:contain;flex:none;filter:brightness(0) invert(1);opacity:.88}
-.marquee .m-logo::after{content:"";display:inline-block;flex:none;width:6px;height:6px;margin:0 32px;background:var(--gold);transform:rotate(45deg);opacity:.7}
-.marquee .m-logo.sym img{height:30px;width:40px;filter:none;opacity:1}
 .footer-base span:first-child{max-width:80ch}
 
 /* Legal pages */
@@ -898,6 +900,8 @@ const brandLogos = {
   'Vacheron Constantin': 'logos/vacheron-constantin.svg',
   'F. P. Journe': 'logos/fp-journe.svg'
 };
+// Heights (px) that make each logo look the same size in the brand ticker.
+const tickerLogoHeight = { 'Rolex': 28, 'Patek Philippe': 36, 'Audemars Piguet': 24, 'Vacheron Constantin': 14, 'F. P. Journe': 30 };
 // Logos that are a symbol only (no name) get the brand name set beneath them.
 const symbolOnlyLogos = ['Rolex'];
 const brandMark = (b, cls = 'brand-logo') => brandLogos[b] ? `<span class="logo-wrap ${cls}-wrap"><img class="${cls}${symbolOnlyLogos.includes(b) ? ' is-symbol' : ''}" src="${esc(brandLogos[b])}" alt="${esc(b)}" loading="lazy">${symbolOnlyLogos.includes(b) ? `<span class="logo-word" aria-hidden="true">${esc(b.toUpperCase())}</span>` : ''}</span>` : '';
@@ -1609,7 +1613,7 @@ function viewHome() {
       <div class="hero-tag"><small>JUST LANDED</small><strong>${esc(titleOf(hero))}${hero.nickname ? ` “${esc(hero.nickname)}”` : ''}</strong><span>${esc([hero.reference, hero.year, hero.condition, fullSet(hero) ? 'full set' : null].filter(Boolean).join(' · '))}</span></div></a>` : ''}
   </div>
 </section>
-<div class="marquee on-dark" aria-hidden="true"><div class="track">${[0, 1].map(() => houses.map(h => brandLogos[h.brand] ? `<span class="m-logo${symbolOnlyLogos.includes(h.brand) ? ' sym' : ''}"><img src="${esc(brandLogos[h.brand])}" alt=""></span>` : `<span>${esc(h.brand)}</span>`).join('') + '<span>Buy</span><span>Sell</span><span>Trade</span><span>Source</span>').join('')}</div></div>
+<div class="marquee on-dark" aria-hidden="true"><div class="m-mask"><div class="track">${[0, 1, 2, 3].map(() => houses.map(h => `<span class="m-item">${brandLogos[h.brand] ? `<img src="${esc(brandLogos[h.brand])}" alt="" style="height:${tickerLogoHeight[h.brand] || 24}px">${symbolOnlyLogos.includes(h.brand) ? `<b>${esc(h.brand.toUpperCase())}</b>` : ''}` : `<b>${esc(h.brand.toUpperCase())}</b>`}</span>`).join('')).join('')}</div></div></div>
 <section class="trust" aria-label="Why Meridian">
   <div class="container"><ul>
     <li>${I.shield}<div><b>Genuine only</b><span>Checked twice. No fakes or replicas, ever</span></div></li>
