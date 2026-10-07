@@ -37,6 +37,10 @@ Everything editable sits at the top of the script: `siteConfig`, `founder`, `pol
 - Make an offer on any available watch; Recently viewed on watch pages; "Get first call on new arrivals" alert sign-up on the home page.
 - Floating "Text us" button; Photo credits page.
 
+## Added October 7 (round 3)
+- Home: hero photo slideshow (`heroSlides`), moving brand ticker, "Watch of the week" spotlight (`spotlightWatchId`), stats band, gentle scroll-in animations (off when the visitor prefers reduced motion).
+- About: Rushik's own founder reel embedded (`founder.video`) until a portrait is supplied, "The houses we know best" (Rolex, Patek Philippe, AP, Vacheron Constantin, F. P. Journe), and "How buying from Meridian works".
+
 ## Typography
 - Site text: Manrope (Google Fonts), falling back to Avenir Next / Segoe UI / system sans.
 - Logo wordmark only: Bodoni Moda.
