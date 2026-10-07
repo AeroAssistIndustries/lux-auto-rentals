@@ -20,7 +20,16 @@ Everything editable sits at the top of the script: `siteConfig`, `founder`, `pol
 - [ ] Confirm status and price of each Instagram-sourced watch (some may have sold).
 - [ ] Founder portrait (`founder.photo`) and Rushik's approval of the About copy.
 - [ ] Purchase terms: authentication, warranty, payment, returns (`policyContent`) — hidden until supplied.
+- [ ] **Quality check wording** (`qualityFlow`): confirm it matches the real process, including who does the independent check.
+- [ ] **Terms and Privacy** (`#/terms`, `#/privacy`): basic drafts written to match how the site works. Have them reviewed by Meridian's legal adviser, then set `legal.draft: false`.
+- [ ] **Instagram feed** (`instagramPosts`): four post shortcodes shown in the footer. Swap in newer posts any time.
 - [ ] A server endpoint for inquiries and purchase requests (`inquiryEndpoint`). No payment processing is built in; checkout is a request that Meridian follows up.
+
+## Added October 7
+- Home page "Every watch is checked twice" flow: in-house inspection, independent check, honest listing, genuine-only promise (no fakes or replicas). Also in the trust bar, product pages and Client care FAQ.
+- Footer: embedded Instagram posts and a world-time strip (Scottsdale, New York, London, Geneva, Dubai, Hong Kong, Tokyo) with day/night dials.
+- Terms of use and Privacy notice pages, linked from the footer and under every form.
+- Tighter spacing: product details now sit under the gallery, smaller founder block, shorter hero, Instagram band moved into the footer.
 
 ## Typography
 - Site text: Manrope (Google Fonts), falling back to Avenir Next / Segoe UI / system sans.
