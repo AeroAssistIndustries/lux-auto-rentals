@@ -1,0 +1,1899 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Meridian Chrono Group</title>
+<meta name="description" content="New and pre-owned Rolex, Patek Philippe, Audemars Piguet and F. P. Journe watches. Buy, sell, trade and source with Meridian Chrono Group in Scottsdale, Arizona.">
+<meta name="theme-color" content="#152724">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" id="favicon" href="">
+<style>
+:root{
+  --ink:#152724; --ink-2:#203832; --ink-3:#2C4740;
+  --paper:#FFFFFF; --ivory:#F7F3EA; --stone:#F2EFE8; --stone-2:#E9E5DB;
+  --gold:#A88A55; --gold-deep:#8A6E3D; --gold-soft:#CDB27D;
+  --body:#27332F; --muted:#626B66; --faint:#8B928D;
+  --border:#E4E1D9; --line:#D3D8D1; --field:#BFC7BC;
+  --error:#9B2C1F; --error-bg:#F8E8E4; --success:#24563F; --success-bg:#E6F0E8;
+  --logo:"Bodoni Moda", Didot, "Bodoni 72", "Bodoni MT", Georgia, serif;
+  --sans:"Manrope", "Avenir Next", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --display:var(--sans);
+  --max:1360px; --gutter:clamp(16px,3.4vw,40px); --header-h:76px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--header-h) + 24px)}
+body{margin:0;background:var(--paper);color:var(--body);font:400 16px/1.65 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.22em}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+[hidden]{display:none!important}
+p{margin:0}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.1;letter-spacing:-.02em;margin:0;color:var(--ink)}
+h1{letter-spacing:-.03em}
+h1{font-size:clamp(2.1rem,4.4vw,3.5rem)}
+h2{font-size:clamp(1.6rem,2.7vw,2.3rem)}
+h3{font-size:1.2rem;line-height:1.25}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.on-dark :focus-visible{outline-color:var(--gold-soft)}
+[tabindex="-1"]:focus{outline:none}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.container{width:min(var(--max), 100% - 2*var(--gutter));margin-inline:auto}
+.muted{color:var(--muted)}
+.lede{font-size:1.12rem;color:var(--muted);max-width:56ch;margin-top:16px}
+.skip-link{position:absolute;left:16px;top:-80px;z-index:200;background:var(--paper);color:var(--ink);padding:10px 16px;border:1px solid var(--ink)}
+.skip-link:focus{top:12px}
+.preview-banner{background:#E6E9E2;color:var(--ink);font-size:.8rem;text-align:center;padding:6px 16px;border-bottom:1px solid var(--line)}
+
+/* Utility bar */
+.utility{background:var(--ink);color:#DCE2DC;font-size:.82rem}
+.utility .container{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:38px}
+.utility a{text-decoration:none}
+.utility a:hover{color:#fff;text-decoration:underline}
+.utility .services{color:var(--gold-soft);letter-spacing:.06em}
+.utility .contacts{display:flex;gap:22px}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:1px solid var(--border)}
+.header-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:28px;min-height:var(--header-h)}
+.lockup{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);flex:none}
+.lockup .mark{width:46px;height:46px;flex:none}
+.lockup-text{display:flex;flex-direction:column;line-height:1}
+.lockup-text b{font-family:var(--logo);font-weight:500;font-size:1.28rem;letter-spacing:.26em;margin-right:-.26em}
+.lockup-text small{font-size:.56rem;letter-spacing:.47em;margin-top:7px;color:var(--gold-deep);font-weight:500}
+.on-dark .lockup{color:var(--ivory)}
+.on-dark .lockup-text small{color:var(--gold-soft)}
+.primary-nav{display:flex;align-items:center;gap:4px;justify-self:center}
+.primary-nav > a,.primary-nav > button{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:8px 14px;background:none;border:0;text-decoration:none;font-size:.97rem;color:var(--ink);border-bottom:2px solid transparent}
+.primary-nav > a:hover,.primary-nav > button:hover,.primary-nav > a[aria-current="page"],.primary-nav > button[aria-expanded="true"]{border-bottom-color:var(--gold)}
+.primary-nav .caret{width:10px;height:10px;transition:transform .2s}
+.primary-nav button[aria-expanded="true"] .caret{transform:rotate(180deg)}
+.header-tools{display:flex;align-items:center;gap:6px}
+.header-search{position:relative;width:240px}
+.header-search input{min-height:42px;padding:8px 12px 8px 38px;border:1px solid var(--line);background:var(--stone);border-radius:999px;font-size:15px;width:100%}
+.header-search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--muted);pointer-events:none}
+.tool{position:relative;display:inline-grid;place-items:center;width:44px;height:44px;border:0;background:none;color:var(--ink);text-decoration:none;border-radius:50%}
+.tool:hover{background:var(--stone)}
+.tool svg{width:21px;height:21px}
+.tool .badge{position:absolute;top:3px;right:1px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--ink);color:#fff;font-size:.68rem;font-weight:600;display:grid;place-items:center;line-height:1}
+.tool .badge:empty,.tool .badge[data-n="0"]{display:none}
+.menu-button{display:none}
+
+/* Mega menu */
+.mega{position:absolute;left:0;right:0;top:100%;background:var(--paper);border-top:1px solid var(--border);border-bottom:1px solid var(--border);box-shadow:0 18px 30px -24px rgba(21,39,36,.35)}
+.mega-inner{display:grid;grid-template-columns:1fr 1fr 1fr 1.25fr;gap:40px;padding-block:32px 36px}
+.mega h2{font-family:var(--sans);font-size:.82rem;font-weight:600;color:var(--muted);letter-spacing:.05em;margin-bottom:12px}
+.mega ul{list-style:none;padding:0;margin:0;display:grid;gap:4px}
+.mega a{text-decoration:none;display:flex;justify-content:space-between;gap:12px;padding:4px 0;color:var(--ink)}
+.mega a:hover{text-decoration:underline}
+.mega a small{color:var(--faint)}
+.mega .brand-link{font-family:var(--display);font-weight:600;letter-spacing:-.015em;font-size:1.25rem}
+.mega-feature{background:var(--stone);display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center;padding:16px;text-decoration:none!important}
+.mega-feature .art{aspect-ratio:4/5;background:var(--stone-2);overflow:hidden}
+.mega-feature p{font-size:.9rem;color:var(--muted)}
+.mega-feature strong{display:block;font-family:var(--display);font-weight:600;letter-spacing:-.015em;font-size:1.2rem;color:var(--ink);margin:2px 0 6px}
+
+/* Mobile drawer */
+.drawer{position:fixed;inset:0 auto 0 0;height:100%;max-height:100%;width:min(400px,100%);margin:0;padding:0;border:0;background:var(--paper);color:var(--body)}
+.drawer.right{inset:0 0 0 auto}
+.drawer[open]{display:flex;flex-direction:column}
+.drawer::backdrop{background:rgba(21,39,36,.5)}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--border)}
+.drawer-head h2{font-size:1.5rem}
+.drawer-body{flex:1;overflow:auto;padding:16px 20px 24px}
+.drawer-foot{padding:14px 20px calc(14px + env(safe-area-inset-bottom));border-top:1px solid var(--border);background:var(--paper)}
+.drawer-nav{list-style:none;padding:0;margin:8px 0 0}
+.drawer-nav a{display:flex;justify-content:space-between;align-items:center;min-height:52px;border-bottom:1px solid var(--border);text-decoration:none;font-size:1.08rem;color:var(--ink)}
+.drawer-nav a[aria-current="page"]{color:var(--gold-deep)}
+.drawer-sub{margin-top:22px}
+.drawer-sub h3{font-family:var(--sans);font-size:.82rem;font-weight:600;color:var(--muted);margin-bottom:6px}
+.drawer-sub a{display:block;padding:7px 0;text-decoration:none;color:var(--ink)}
+.drawer-contact{margin-top:24px;padding-top:16px;border-top:1px solid var(--border);display:grid;gap:6px;font-size:.95rem}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px 26px;border:1px solid var(--ink);background:transparent;color:var(--ink);text-decoration:none;font-size:.95rem;font-weight:500;letter-spacing:.02em;border-radius:2px;transition:background-color .18s,color .18s,border-color .18s;text-align:center;line-height:1.25}
+.btn:hover{background:var(--ink);color:#fff}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-primary:hover{background:var(--ink-3);border-color:var(--ink-3)}
+.btn-gold{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn-gold:hover{background:var(--gold-deep);border-color:var(--gold-deep)}
+.btn[disabled]{opacity:.6;cursor:progress}
+.btn-block{width:100%}
+.btn-small{min-height:40px;padding:8px 16px;font-size:.88rem}
+.btn svg{width:18px;height:18px}
+.on-dark .btn{border-color:rgba(247,243,234,.6);color:var(--ivory)}
+.on-dark .btn:hover{background:var(--ivory);color:var(--ink)}
+.on-dark .btn-primary{background:var(--ivory);color:var(--ink);border-color:var(--ivory)}
+.on-dark .btn-primary:hover{background:#fff}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.text-link{color:var(--ink);font-weight:500}
+.link-button{background:none;border:0;padding:4px 0;text-decoration:underline;text-underline-offset:.22em;font-size:.92rem;color:var(--ink)}
+.icon-btn{width:44px;height:44px;display:inline-grid;place-items:center;border:1px solid var(--border);background:var(--paper);border-radius:50%;color:var(--ink);flex:none}
+.icon-btn:hover{border-color:var(--ink)}
+.icon-btn svg{width:14px;height:14px}
+
+/* Hero */
+.hero{background:var(--ink);color:var(--ivory);overflow:hidden;position:relative}
+.hero::before{content:"";position:absolute;left:58%;top:0;bottom:0;width:1px;background:linear-gradient(transparent,rgba(168,138,85,.5) 20%,rgba(168,138,85,.5) 80%,transparent)}
+.hero-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:clamp(24px,5vw,72px);align-items:center;min-height:min(640px,78vh);padding-block:clamp(40px,6vw,72px)}
+.hero h1{color:var(--ivory);font-size:clamp(2.6rem,5.6vw,4.9rem);line-height:1.02;max-width:10ch;font-weight:600}
+.hero .lede{color:#C7D0C9;font-size:1.18rem;max-width:40ch;margin-top:24px}
+.hero-services{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:30px;font-size:.92rem;color:var(--gold-soft)}
+.hero-services span{display:inline-flex;align-items:center;gap:8px}
+.hero-services span::before{content:"";width:5px;height:5px;background:var(--gold);transform:rotate(45deg)}
+.hero-feature{position:relative;display:block;text-decoration:none;color:inherit}
+.hero-feature .art{aspect-ratio:1/1;max-width:560px;margin-left:auto;border-radius:50%;overflow:hidden;background:radial-gradient(circle at 50% 45%,#2B453E 0,#1A2F2A 58%,#152724 72%)}
+.hero-feature .art svg{width:100%;height:100%}
+.hero-tag{position:absolute;left:0;bottom:8%;background:var(--paper);color:var(--body);padding:16px 18px;max-width:300px;box-shadow:0 18px 40px -20px rgba(0,0,0,.6)}
+.hero-tag small{display:block;color:var(--gold-deep);font-weight:600;font-size:.78rem;letter-spacing:.04em}
+.hero-tag strong{display:block;font-family:var(--display);font-weight:600;letter-spacing:-.015em;font-size:1.3rem;color:var(--ink);margin:4px 0 2px;line-height:1.15}
+.hero-tag span{font-size:.88rem;color:var(--muted)}
+.hero-feature:hover .hero-tag strong{text-decoration:underline}
+
+/* Trust bar */
+.trust{border-bottom:1px solid var(--border);background:var(--paper)}
+.trust ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.trust li{display:flex;gap:14px;align-items:center;padding:22px 20px 22px 0}
+.trust li + li{padding-left:20px;border-left:1px solid var(--border)}
+.trust svg{width:30px;height:30px;flex:none;color:var(--gold)}
+.trust b{display:block;font-weight:500;color:var(--ink);font-size:.98rem}
+.trust span{font-size:.86rem;color:var(--muted)}
+
+/* Sections */
+.section{padding-block:clamp(48px,6.5vw,88px)}
+.section.tint{background:var(--ivory)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px 32px;margin-bottom:28px;flex-wrap:wrap}
+.section-head p{color:var(--muted);margin-top:8px;max-width:56ch}
+
+/* Brand rail */
+.brand-rail{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1px solid var(--border)}
+.brand-rail a{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;min-height:132px;padding:18px;text-decoration:none;text-align:center;color:var(--ink);transition:background .18s}
+.brand-rail a + a{border-left:1px solid var(--border)}
+.brand-rail a:hover{background:var(--ivory)}
+.brand-rail b{font-family:var(--display);font-weight:600;letter-spacing:-.015em;font-size:clamp(1.02rem,1.5vw,1.3rem);line-height:1.1}
+.brand-rail small{font-size:.84rem;color:var(--muted)}
+
+/* Product grid & cards */
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2vw,26px)}
+.grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{position:relative;display:flex;flex-direction:column;min-width:0;background:var(--paper)}
+.card-media{position:relative;aspect-ratio:4/5;background:var(--stone);overflow:hidden}
+.card-media > svg,.card-media > img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.card:hover .card-media > svg,.card:hover .card-media > img{transform:scale(1.035)}
+.card-badges{position:absolute;left:10px;top:10px;display:flex;flex-direction:column;align-items:flex-start;gap:6px;z-index:2;pointer-events:none}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.03em;padding:3px 8px;background:var(--paper);color:var(--ink);border-radius:2px}
+.tag-new{background:var(--ink);color:#fff}
+.tag-unworn{background:var(--gold);color:#fff}
+.tag-sold{background:#6B716D;color:#fff}
+.tag-reserved{background:#fff;color:var(--ink);border:1px solid var(--ink)}
+.card .heart{position:absolute;right:8px;top:8px;z-index:3}
+.heart{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:var(--ink)}
+.heart svg{width:19px;height:19px}
+.heart:hover{background:#fff}
+.heart[aria-pressed="true"] svg path{fill:var(--ink)}
+.card-body{padding:14px 2px 6px;display:flex;flex-direction:column;flex:1}
+.card-brand{font-size:.8rem;font-weight:600;letter-spacing:.07em;color:var(--muted)}
+.card-title{font-family:var(--display);font-size:1.12rem;line-height:1.25;margin-top:3px;font-weight:600;letter-spacing:-.01em;overflow-wrap:anywhere}
+.card-title a{text-decoration:none;color:var(--ink)}
+.card-title a::after{content:"";position:absolute;inset:0;z-index:1}
+.card-title a:focus-visible{outline:none}
+.card:has(.card-title a:focus-visible){outline:2px solid var(--ink);outline-offset:4px}
+.card-sub{font-size:.88rem;color:var(--muted);margin-top:4px}
+.card-price{margin-top:auto;padding-top:10px;font-weight:500;color:var(--ink);font-size:1.02rem}
+.card-price small{display:block;font-weight:400;font-size:.82rem;color:var(--muted)}
+.card.is-sold .card-price{color:var(--muted)}
+.card.is-sold .card-media > svg{filter:grayscale(.35);opacity:.86}
+
+/* Category tiles */
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.8vw,22px)}
+.tile{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:220px;padding:20px;text-decoration:none;color:var(--ivory);background:var(--ink);overflow:hidden}
+.tile .art{position:absolute;top:-10%;bottom:-10%;left:52%;right:-30%;opacity:.9}
+.tile .art svg{width:100%;height:100%}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(21,39,36,.97) 45%,rgba(21,39,36,.2) 85%)}
+.tile b,.tile span{position:relative;z-index:1}
+.tile b{font-family:var(--display);font-weight:600;letter-spacing:-.015em;font-size:1.35rem;line-height:1.1}
+.tile span{font-size:.88rem;color:#CBD3CD;margin-top:4px}
+.tile:hover b{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}
+
+/* Services */
+.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.8vw,22px)}
+.service{border:1px solid var(--border);background:var(--paper);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column}
+.service svg{width:34px;height:34px;color:var(--gold);margin-bottom:18px}
+.service h3{font-size:1.65rem}
+.service p{color:var(--muted);margin-top:10px}
+.service .actions{margin-top:auto;padding-top:24px}
+
+/* Founder teaser */
+.founder{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,6vw,88px);align-items:center}
+.portrait{aspect-ratio:4/5;background:var(--ink);display:grid;place-items:center;position:relative;overflow:hidden}
+.portrait svg.mark{width:62%;opacity:.95}
+.portrait figcaption,.portrait .cap{position:absolute;left:16px;bottom:14px;right:16px;font-size:.82rem;color:#AEB9B2}
+.founder blockquote{margin:0;font-family:var(--display);font-weight:500;letter-spacing:-.015em;font-size:clamp(1.5rem,2.6vw,2.15rem);line-height:1.25;color:var(--ink)}
+.founder .by{margin-top:16px;color:var(--muted)}
+.founder p.body{color:var(--body);margin-top:20px;max-width:58ch}
+.milestones{list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line)}
+.milestones li{padding:16px 16px 0 0}
+.milestones li + li{padding-left:16px;border-left:1px solid var(--line)}
+.milestones b{display:block;font-family:var(--display);font-weight:600;letter-spacing:-.02em;font-size:1.55rem;color:var(--ink);line-height:1.1}
+.milestones span{font-size:.88rem;color:var(--muted)}
+
+/* Instagram band */
+.ig-band{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px 40px;align-items:center;border:1px solid var(--border);padding:clamp(24px,3.5vw,44px)}
+.ig-band h2{font-size:clamp(1.6rem,2.6vw,2.2rem)}
+.ig-band p{color:var(--muted);margin-top:8px}
+
+/* Footer */
+.site-footer{background:var(--ink);color:#DCE2DC;margin-top:0}
+.footer-grid{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:32px 48px;padding-block:56px 36px}
+.footer-grid p{color:#B9C3BC;font-size:.92rem;margin-top:16px;max-width:36ch}
+.footer-grid h2{font-family:var(--sans);font-size:.84rem;font-weight:600;color:var(--gold-soft);letter-spacing:.05em;margin-bottom:12px}
+.footer-grid ul{list-style:none;padding:0;margin:0;display:grid;gap:7px;font-size:.95rem}
+.footer-grid a{text-decoration:none}
+.footer-grid a:hover{text-decoration:underline;color:#fff}
+.footer-base{border-top:1px solid rgba(247,243,234,.12);padding-block:18px 28px;font-size:.82rem;color:#A3AFA7;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 24px}
+
+/* Page head */
+.page-head{padding-block:clamp(28px,4vw,48px) clamp(16px,2.5vw,28px)}
+.breadcrumb ol{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0 0 14px;font-size:.86rem;color:var(--muted)}
+.breadcrumb li + li::before{content:"/";margin-right:6px;color:#AAB0AA}
+.breadcrumb a{text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+
+/* Forms */
+.field label,.field .label{display:block;font-size:.88rem;font-weight:500;color:var(--ink);margin-bottom:6px}
+.req{font-weight:400;color:var(--muted);font-size:.8rem;margin-left:6px}
+input,select,textarea{width:100%;min-width:0;min-height:48px;padding:10px 12px;background:var(--paper);border:1px solid var(--field);border-radius:2px;font-size:16px;line-height:1.4}
+textarea{min-height:120px;resize:vertical}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23152724' stroke-width='1.4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:11px;padding-right:38px}
+input:hover,select:hover,textarea:hover{border-color:#94A091}
+input[aria-invalid="true"],select[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:var(--error);box-shadow:inset 0 0 0 1px var(--error)}
+.field-hint{font-size:.82rem;color:var(--muted);margin-top:6px}
+.field-error{font-size:.86rem;color:var(--error);margin-top:6px}
+
+/* Catalog */
+.catalog-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap}
+.catalog-head h1{font-size:clamp(2rem,4vw,3rem)}
+.catalog-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-block:1px solid var(--border);padding-block:10px;margin-top:20px}
+.catalog-bar .left{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.catalog-bar .count{font-size:.95rem;color:var(--ink)}
+.sort-wrap{display:flex;align-items:center;gap:10px}
+.sort-wrap label{font-size:.88rem;color:var(--muted);white-space:nowrap}
+.sort-wrap select{min-height:42px;width:auto;min-width:200px;border-color:var(--line)}
+.filter-toggle{display:none}
+.catalog-layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;padding-block:24px 64px}
+.filter-form{display:flex;flex-direction:column}
+.facet{border-bottom:1px solid var(--border)}
+.facet summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:52px;cursor:pointer;font-weight:500;color:var(--ink)}
+.facet summary::-webkit-details-marker{display:none}
+.facet summary::after{content:"";width:10px;height:10px;flex:none;background:linear-gradient(currentColor,currentColor) center/10px 1.4px no-repeat,linear-gradient(currentColor,currentColor) center/1.4px 10px no-repeat}
+.facet[open] summary::after{background:linear-gradient(currentColor,currentColor) center/10px 1.4px no-repeat}
+.facet summary .n{margin-left:auto;font-size:.78rem;font-weight:600;background:var(--ink);color:#fff;border-radius:9px;min-width:18px;height:18px;display:grid;place-items:center;padding:0 5px}
+.facet fieldset{border:0;margin:0;padding:0 0 14px;min-width:0;display:grid;gap:2px}
+.facet legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.opt{display:flex;align-items:center;gap:10px;min-height:36px;font-size:.94rem;cursor:pointer}
+.opt input{width:18px;height:18px;min-height:18px;margin:0;flex:none;accent-color:var(--ink)}
+.opt .c{margin-left:auto;font-size:.8rem;color:var(--faint)}
+.opt.is-empty{color:#A6ACA7}
+.swatch{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.15);flex:none}
+.toggle-row{display:flex;align-items:center;gap:10px;min-height:52px;font-size:.94rem;border-bottom:1px solid var(--border)}
+.toggle-row input{width:18px;height:18px;min-height:18px;margin:0;accent-color:var(--ink)}
+.pill{min-width:20px;height:20px;padding:0 6px;border-radius:10px;background:var(--ink);color:#fff;font-size:.72rem;display:inline-grid;place-items:center}
+.btn:hover .pill{background:#fff;color:var(--ink)}
+.pill[data-n="0"]{display:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:20px}
+.chips:empty{display:none}
+.chip{display:inline-flex;align-items:center;gap:8px;min-height:34px;padding:3px 12px 3px 14px;border:1px solid var(--line);background:var(--paper);font-size:.85rem;border-radius:999px;color:var(--ink)}
+.chip svg{width:9px;height:9px}
+.chip:hover{border-color:var(--ink)}
+.empty{border:1px solid var(--border);background:var(--ivory);padding:clamp(24px,4vw,44px)}
+.empty p{color:var(--muted);margin-top:10px;max-width:58ch}
+
+/* Product page */
+.product{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,4.5vw,64px);padding-bottom:40px}
+.gallery{display:grid;grid-template-columns:76px minmax(0,1fr);gap:14px;align-items:start;position:sticky;top:calc(var(--header-h) + 20px)}
+.thumbs{display:grid;gap:10px}
+.thumb{aspect-ratio:1/1;padding:0;border:1px solid var(--border);background:var(--stone);overflow:hidden}
+.thumb svg,.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb[aria-current="true"]{outline:2px solid var(--ink);outline-offset:2px}
+.stage{position:relative;aspect-ratio:1/1;background:var(--stone);overflow:hidden}
+.zoom-trigger{display:block;width:100%;height:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.zoom-trigger svg,.zoom-trigger img{width:100%;height:100%;object-fit:cover}
+.stage-nav{position:absolute;right:12px;bottom:12px;display:flex;gap:8px}
+.stage-note{position:absolute;left:12px;bottom:12px;font-size:.78rem;background:rgba(255,255,255,.92);padding:5px 9px;pointer-events:none;color:var(--muted)}
+.gallery-caption{grid-column:2;font-size:.84rem;color:var(--muted);margin-top:-4px}
+.buybox .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.buybox .tags .tag{border:1px solid var(--border)}
+.buybox .tags .tag-new,.buybox .tags .tag-unworn,.buybox .tags .tag-sold{border-color:transparent}
+.buybox .brand{font-weight:600;letter-spacing:.07em;font-size:.86rem;color:var(--muted)}
+.buybox h1{font-size:clamp(2.1rem,3.6vw,3.1rem);margin-top:6px}
+.buybox .ref{color:var(--muted);margin-top:8px}
+.price-block{margin-top:22px;padding-block:18px;border-block:1px solid var(--border)}
+.price-block .price{font-size:1.9rem;font-family:var(--display);font-weight:600;letter-spacing:-.015em;color:var(--ink);line-height:1.1}
+.price-block .price-note{font-size:.9rem;color:var(--muted);margin-top:6px}
+.price-block .local{display:flex;justify-content:space-between;gap:12px;margin-top:10px;font-size:.95rem;background:var(--ivory);padding:10px 12px}
+.buy-actions{display:grid;gap:10px;margin-top:20px}
+.buy-actions .row{display:grid;grid-template-columns:1fr auto;gap:10px}
+.buy-actions .heart{width:50px;height:50px;border:1px solid var(--ink);border-radius:2px;background:var(--paper)}
+.assure{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:12px}
+.assure li{display:flex;gap:12px;align-items:flex-start;font-size:.94rem}
+.assure svg{width:20px;height:20px;flex:none;color:var(--gold);margin-top:2px}
+.assure b{font-weight:500;color:var(--ink)}
+.key-specs{display:grid;grid-template-columns:1fr 1fr;margin:24px 0 0;border-top:1px solid var(--border)}
+.key-specs div{padding:11px 12px 11px 0;border-bottom:1px solid var(--border)}
+.key-specs dt{font-size:.78rem;color:var(--muted)}
+.key-specs dd{margin:1px 0 0;font-size:.97rem;color:var(--ink)}
+.accordion{border-top:1px solid var(--border)}
+.accordion details{border-bottom:1px solid var(--border)}
+.accordion summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;cursor:pointer;font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:1.12rem;color:var(--ink)}
+.accordion summary::-webkit-details-marker{display:none}
+.accordion summary::after{content:"";width:12px;height:12px;flex:none;background:linear-gradient(currentColor,currentColor) center/12px 1.4px no-repeat,linear-gradient(currentColor,currentColor) center/1.4px 12px no-repeat}
+.accordion details[open] summary::after{background:linear-gradient(currentColor,currentColor) center/12px 1.4px no-repeat}
+.accordion .acc-body{padding:0 0 22px;max-width:72ch}
+.accordion .acc-body > * + *{margin-top:10px}
+.accordion .acc-body ul{margin:0;padding-left:20px}
+.spec-table{width:100%;border-collapse:collapse;font-size:.95rem}
+.spec-table th,.spec-table td{text-align:left;padding:9px 0;border-bottom:1px solid var(--border);vertical-align:top}
+.spec-table th{font-weight:400;color:var(--muted);width:40%}
+.mobile-bar{display:none}
+
+/* Bag */
+.bag-items{list-style:none;padding:0;margin:0;display:grid}
+.bag-item{display:grid;grid-template-columns:84px minmax(0,1fr) auto;gap:14px;align-items:start;padding:14px 0;border-bottom:1px solid var(--border)}
+.bag-item .art{aspect-ratio:4/5;background:var(--stone);overflow:hidden}
+.bag-item .art svg{width:100%;height:100%}
+.bag-item .meta small{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--muted)}
+.bag-item .meta a{font-family:var(--display);font-weight:600;letter-spacing:-.015em;font-size:1.12rem;color:var(--ink);text-decoration:none;line-height:1.2}
+.bag-item .meta a:hover{text-decoration:underline}
+.bag-item .meta span{display:block;font-size:.86rem;color:var(--muted);margin-top:2px}
+.bag-item .right{text-align:right;display:grid;gap:4px;justify-items:end}
+.bag-item .right b{font-weight:500;color:var(--ink)}
+.summary-rows{display:grid;gap:8px;font-size:.95rem}
+.summary-rows div{display:flex;justify-content:space-between;gap:12px}
+.summary-rows .total{font-size:1.15rem;color:var(--ink);font-weight:500;padding-top:10px;border-top:1px solid var(--border)}
+.checkout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,5vw,72px);align-items:start;padding-bottom:40px}
+.order-summary{background:var(--ivory);border:1px solid var(--border);padding:clamp(18px,2.6vw,28px);position:sticky;top:calc(var(--header-h) + 20px)}
+.order-summary h2{font-size:1.6rem;margin-bottom:6px}
+.note-box{font-size:.9rem;color:var(--muted);background:var(--paper);border:1px solid var(--border);padding:12px 14px;margin-top:16px}
+
+/* Generic forms layout */
+.form-layout{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(28px,6vw,88px);padding-block:clamp(28px,5vw,64px) 40px;align-items:start}
+.form-layout .intro{position:sticky;top:calc(var(--header-h) + 32px)}
+.steps{list-style:none;padding:0;margin:28px 0 0;counter-reset:step}
+.steps li{display:grid;grid-template-columns:40px 1fr;gap:8px;padding:16px 0;border-top:1px solid var(--border)}
+.steps li::before{counter-increment:step;content:counter(step);font-family:var(--display);font-weight:600;letter-spacing:-.015em;font-size:1.5rem;line-height:1.1;color:var(--gold)}
+.steps b{display:block;font-family:var(--display);font-weight:600;letter-spacing:-.015em;font-size:1.22rem;color:var(--ink)}
+.steps span{font-size:.94rem;color:var(--muted)}
+.fine{font-size:.88rem;color:var(--muted);margin-top:18px;max-width:48ch}
+.form-card{background:var(--paper);border:1px solid var(--border);padding:clamp(20px,3.2vw,40px)}
+.form-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px 20px}
+.span-2{grid-column:1/-1}
+.form-section-title{grid-column:1/-1;font-family:var(--display);font-weight:600;letter-spacing:-.015em;font-size:1.3rem;padding-top:10px;border-top:1px solid var(--border);margin-top:4px}
+.form-section-title:first-child{border-top:0;padding-top:0;margin-top:0}
+.segmented{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;border:1px solid var(--field);border-radius:2px}
+.segmented label{position:relative;margin:0}
+.segmented input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer;min-height:0}
+.segmented span{display:flex;align-items:center;justify-content:center;min-height:46px;font-size:.95rem;color:var(--ink);text-align:center;padding:4px 8px}
+.segmented label + label span{border-left:1px solid var(--field)}
+.segmented input:checked + span{background:var(--ink);color:#fff}
+.segmented input:focus-visible + span{outline:2px solid var(--ink);outline-offset:2px}
+fieldset.field{border:0;padding:0;margin:0;min-width:0}
+fieldset.field legend{padding:0;font-size:.88rem;font-weight:500;color:var(--ink);margin-bottom:6px}
+.consent{display:flex;gap:12px;align-items:flex-start}
+.consent input{width:20px;height:20px;min-height:20px;margin:3px 0 0;flex:none;accent-color:var(--ink)}
+.consent label{font-size:.94rem;font-weight:400;color:var(--body);margin:0}
+.form-actions{margin-top:24px}
+.form-status{margin-top:16px;padding:14px 16px;font-size:.95rem;border-left:3px solid transparent}
+.form-status:empty{display:none}
+.form-status.is-success{background:var(--success-bg);border-left-color:var(--success);color:#173C2B}
+.form-status.is-error{background:var(--error-bg);border-left-color:var(--error);color:#6E1E15}
+.photo-previews{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.photo-previews:empty{display:none}
+.photo-previews img{width:72px;height:72px;object-fit:cover;border:1px solid var(--border)}
+.context-chip{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--ivory);border:1px solid var(--border);padding:12px 14px;font-size:.92rem;margin-bottom:20px}
+.context-chip strong{font-weight:500;color:var(--ink)}
+.we-buy{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.we-buy span{font-weight:500;font-size:.95rem;border:1px solid var(--border);padding:4px 12px;color:var(--ink)}
+
+/* Dialogs */
+dialog.modal{width:min(580px,100% - 32px);max-height:min(92vh,920px);border:0;padding:0;background:var(--paper);color:var(--body);box-shadow:0 30px 60px -30px rgba(0,0,0,.5)}
+dialog.modal::backdrop{background:rgba(21,39,36,.55)}
+.modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:24px 28px 0}
+.modal-head h2{font-size:clamp(1.6rem,3vw,2rem)}
+.modal-body{padding:16px 28px 28px}
+.modal-watch{display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:center;font-size:.92rem;color:var(--muted);margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.modal-watch .art{aspect-ratio:4/5;background:var(--stone);overflow:hidden}
+.modal-watch .art svg{width:100%;height:100%}
+.modal-watch strong{display:block;color:var(--ink);font-weight:500}
+dialog.zoom{width:min(980px,100% - 24px)}
+.zoom-stage{background:var(--stone);aspect-ratio:1/1;max-height:72vh;margin-inline:auto;overflow:hidden}
+.zoom-stage svg,.zoom-stage img{width:100%;height:100%;object-fit:contain}
+.zoom-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;font-size:.9rem;color:var(--muted)}
+.zoom-foot .btns{display:flex;gap:8px}
+
+/* About */
+.about-hero{background:var(--ink);color:var(--ivory)}
+.about-hero .container{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,6vw,88px);align-items:center;padding-block:clamp(44px,7vw,96px)}
+.about-hero h1{color:var(--ivory)}
+.about-hero .lede{color:#C7D0C9}
+.about-hero .dial{max-width:440px;margin-left:auto;width:100%}
+.story{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,6vw,88px);align-items:start}
+.story .prose p{font-size:1.08rem;line-height:1.75;max-width:62ch}
+.story .prose p + p{margin-top:18px}
+.story .prose .drop-off::first-letter{font-family:var(--display);font-weight:600;letter-spacing:-.015em;float:left;font-size:4.1rem;line-height:.85;padding:6px 10px 0 0;color:var(--ink)}
+.timeline{list-style:none;padding:0;margin:0;position:relative}
+.timeline::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:var(--line)}
+.timeline li{position:relative;padding:0 0 30px 36px}
+.timeline li::before{content:"";position:absolute;left:2px;top:7px;width:11px;height:11px;background:var(--paper);border:1.5px solid var(--gold);transform:rotate(45deg)}
+.timeline li:last-child{padding-bottom:0}
+.timeline li:last-child::before{background:var(--gold)}
+.timeline small{display:block;font-weight:600;font-size:.8rem;letter-spacing:.06em;color:var(--gold-deep)}
+.timeline b{display:block;font-family:var(--display);font-weight:600;letter-spacing:-.015em;font-size:1.25rem;color:var(--ink);margin-top:2px;line-height:1.15}
+.timeline span{display:block;color:var(--muted);margin-top:4px;font-size:.96rem}
+.values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,3vw,40px)}
+.values div{border-top:1px solid var(--ink);padding-top:18px}
+.values p{color:var(--muted);margin-top:10px}
+.pull{font-family:var(--display);font-weight:500;letter-spacing:-.015em;font-size:clamp(1.6rem,3.2vw,2.6rem);line-height:1.2;color:var(--ink);max-width:24ch}
+.pull-by{margin-top:14px;color:var(--muted)}
+
+/* Contact */
+.contact-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:28px}
+.contact-card{border:1px solid var(--border);padding:18px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:4px}
+.contact-card:hover{border-color:var(--ink)}
+.contact-card svg{width:22px;height:22px;color:var(--gold);margin-bottom:8px}
+.contact-card small{color:var(--muted);font-size:.82rem}
+.contact-card b{font-weight:500;overflow-wrap:anywhere}
+
+/* Client care */
+.care-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:clamp(32px,5vw,72px);align-items:start;padding-bottom:40px}
+.aside-card{background:var(--ivory);border:1px solid var(--border);padding:26px;position:sticky;top:calc(var(--header-h) + 24px)}
+.aside-card p{color:var(--muted);margin-top:10px;font-size:.96rem}
+.notice{padding:clamp(48px,8vw,104px) 0}
+.notice h1{max-width:18ch}
+
+/* Responsive */
+@media (max-width:1240px){
+  .header-search{width:190px}
+  .primary-nav > a,.primary-nav > button{padding:8px 10px}
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .catalog-layout .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:1060px){
+  .header-search{display:none}
+  .catalog-layout{grid-template-columns:220px minmax(0,1fr);gap:28px}
+  .catalog-layout .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .trust ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .trust li:nth-child(3){padding-left:0;border-left:0}
+  .trust li:nth-child(n+3){border-top:1px solid var(--border)}
+  .contact-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:920px){
+  :root{--header-h:64px}
+  .utility .services{display:none}
+  .utility .container{justify-content:center}
+  .header-row{grid-template-columns:auto 1fr auto;gap:8px}
+  .menu-button{display:inline-grid;order:-1}
+  .primary-nav{display:none}
+  .lockup{justify-self:center}
+  .lockup .mark{width:38px;height:38px}
+  .lockup-text b{font-size:1.06rem}
+  .lockup-text small{font-size:.5rem}
+  .mega{display:none!important}
+  .hero::before{display:none}
+  .hero-inner{grid-template-columns:1fr;min-height:0;gap:8px}
+  .hero-feature .art{max-width:420px;margin:0 auto}
+  .hero-tag{position:relative;left:auto;bottom:auto;margin:-40px auto 0;max-width:340px}
+  .brand-rail{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .brand-rail a:nth-child(4){border-left:0}
+  .brand-rail a:nth-child(n+4){border-top:1px solid var(--border)}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .services,.founder,.form-layout,.care-grid,.product,.checkout,.story,.about-hero .container{grid-template-columns:1fr}
+  .form-layout .intro,.aside-card,.order-summary,.gallery{position:static}
+  .values{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-grid > :first-child{grid-column:1/-1}
+  .ig-band{grid-template-columns:1fr}
+  .filter-toggle{display:inline-flex}
+  .catalog-layout{grid-template-columns:1fr}
+  #filter-home{display:none}
+  .grid,.grid.cols-3,.catalog-layout .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px}
+  .card-title{font-size:1.1rem}
+  .gallery{grid-template-columns:1fr}
+  .thumbs{grid-template-columns:repeat(4,minmax(0,1fr));order:2}
+  .gallery-caption{grid-column:auto;order:3}
+  .mobile-bar{display:block;position:sticky;bottom:0;z-index:40;background:var(--paper);border-top:1px solid var(--border);padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom));transition:transform .2s,visibility .2s}
+  .mobile-bar .inner{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center}
+  .mobile-bar .p{font-family:var(--display);font-weight:600;letter-spacing:-.015em;font-size:1.15rem;color:var(--ink);line-height:1.1}
+  .mobile-bar .p small{display:block;font-family:var(--sans);font-size:.75rem;color:var(--muted)}
+  .mobile-bar.is-hidden,.dialog-open .mobile-bar{transform:translateY(110%);visibility:hidden}
+  .about-hero .dial{margin:0 auto;max-width:320px}
+  .milestones{grid-template-columns:1fr}
+  .milestones li + li{padding-left:0;border-left:0;border-top:1px solid var(--line);margin-top:14px}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  .utility .contacts{gap:14px;font-size:.78rem}
+  .utility .hide-sm{display:none}
+  .form-grid{grid-template-columns:1fr}
+  .span-2{grid-column:auto}
+  .footer-grid{grid-template-columns:1fr}
+  .trust ul{grid-template-columns:1fr}
+  .trust li,.trust li + li{padding:14px 0;border-left:0}
+  .trust li + li{border-top:1px solid var(--border)}
+  .brand-rail{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .brand-rail a{min-height:96px}
+  .brand-rail a:nth-child(odd){border-left:0}
+  .brand-rail a:nth-child(4){border-left:1px solid var(--border)}
+  .brand-rail a:nth-child(n+3){border-top:1px solid var(--border)}
+  .brand-rail a:last-child{grid-column:1/-1}
+  .tiles{grid-template-columns:1fr 1fr}
+  .tile{min-height:170px;padding:14px}
+  .tile b{font-size:1.2rem}
+  .contact-cards{grid-template-columns:1fr}
+  .modal-head{padding:18px 18px 0}.modal-body{padding:14px 18px 20px}
+  dialog.modal{width:calc(100% - 20px)}
+  .sort-wrap select{min-width:0}
+  .bag-item{grid-template-columns:68px minmax(0,1fr)}
+  .bag-item .right{grid-column:2;justify-items:start;text-align:left;grid-auto-flow:column;justify-content:space-between;align-items:center}
+}
+@media (max-width:359px){
+  .grid,.grid.cols-3,.catalog-layout .grid{grid-template-columns:1fr}
+  .lockup-text small{letter-spacing:.32em}
+  .lockup .mark{width:32px;height:32px}
+  .lockup{gap:8px}
+  .lockup-text b{font-size:.94rem;letter-spacing:.18em}
+  .tool{width:40px;height:40px}
+  .key-specs{grid-template-columns:1fr}
+  .tiles{grid-template-columns:1fr}
+  .catalog-bar .sort-wrap label{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+  .hand-sec{display:none}
+}
+.hand{transform-box:view-box;transform-origin:200px 200px}
+.hand-sec{transition:transform .22s cubic-bezier(.4,2.1,.55,1)}
+.settle .hand{transition:transform 1.6s cubic-bezier(.2,.75,.15,1)}
+@media print{.preview-banner,.utility,.site-header,.mobile-bar,dialog{display:none!important}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="preview-banner" class="preview-banner" role="note" hidden></div>
+<div class="utility" id="utility"></div>
+<header class="site-header" id="site-header"></header>
+<main id="main" tabindex="-1"></main>
+<footer class="site-footer on-dark" id="site-footer"></footer>
+
+<dialog class="drawer" id="menu-drawer" aria-labelledby="menu-title"></dialog>
+<dialog class="drawer right" id="bag-drawer" aria-labelledby="bag-title"></dialog>
+
+<dialog class="modal" id="inquiry-dialog" aria-labelledby="inquiry-title">
+  <div class="modal-head">
+    <h2 id="inquiry-title">Inquire about this watch</h2>
+    <button type="button" class="icon-btn" data-close aria-label="Close"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5"/></svg></button>
+  </div>
+  <div class="modal-body">
+    <div class="modal-watch" id="inquiry-watch"></div>
+    <form id="inquiry-form" data-form="watch-inquiry" novalidate>
+      <input type="hidden" name="watchId">
+      <div class="form-grid" id="inquiry-fields"></div>
+      <div class="form-actions"><button type="submit" class="btn btn-primary btn-block" id="inquiry-submit">Send inquiry</button></div>
+      <p class="form-status" tabindex="-1" aria-live="polite"></p>
+    </form>
+  </div>
+</dialog>
+
+<dialog class="modal zoom" id="zoom-dialog" aria-labelledby="zoom-title">
+  <div class="modal-head">
+    <h2 id="zoom-title">Gallery</h2>
+    <button type="button" class="icon-btn" data-close aria-label="Close gallery"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5"/></svg></button>
+  </div>
+  <div class="modal-body">
+    <div class="zoom-stage" id="zoom-stage"></div>
+    <div class="zoom-foot">
+      <span id="zoom-caption" aria-live="polite"></span>
+      <span class="btns">
+        <button type="button" class="icon-btn" id="zoom-prev" aria-label="Previous image"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M9 1L3 7l6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+        <button type="button" class="icon-btn" id="zoom-next" aria-label="Next image"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M5 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+      </span>
+    </div>
+  </div>
+</dialog>
+
+<script>
+'use strict';
+/* =====================================================================
+   EDITABLE CONFIGURATION
+   Contact details below come from the @meridianchronogroup Instagram bio.
+   Leave any value null to hide it. Never put secrets in this file.
+   ===================================================================== */
+const siteConfig = {
+  name: 'Meridian Chrono Group',
+  tagline: 'Timeless Elegance Redefined',
+  heroSubcopy: 'New and pre-owned Rolex, Patek Philippe, Audemars Piguet and F. P. Journe, chosen by a collector and offered with full transparency.',
+  descriptor: 'New and pre-owned luxury watches. Buy, sell, trade and source from Scottsdale, Arizona.',
+  phone: '+1 (602) 492-5326',
+  email: 'info@meridianchrono.com',
+  location: 'Scottsdale, Arizona',
+  instagramUrl: 'https://www.instagram.com/meridianchronogroup/',
+  instagramHandle: '@meridianchronogroup',
+  instagramFollowers: '18.3K',
+  focusBrands: ['Rolex', 'Patek Philippe', 'Audemars Piguet', 'F. P. Journe'],
+  heroWatchId: 'rolex-submariner-126610lv',
+  enableSourcing: true,
+  enableSellTrade: true,
+  enableBag: true,          // "Add to bag" + request-to-buy checkout (no online payment)
+  demoMode: true,           // sample inventory + preview banner; forms never send
+  inquiryEndpoint: null     // production: server URL that accepts JSON leads
+};
+
+// Founder story. Facts from Sarvesh (late 2000s, ten watches, 50–70 pieces)
+// and from Rushik's own pinned Instagram post (June 8, 2026).
+const founder = {
+  name: 'Rushik Dave',
+  role: 'Founder',
+  pull: 'Less grey-market gamble, more curated relationship.',
+  photo: null // { src, alt } — supply an approved portrait
+};
+
+// Approved purchase terms. Each one appears only once text is supplied.
+const policyContent = { authentication: null, warranty: null, payment: null, returns: null };
+
+/* Inventory.
+   source 'instagram' = details taken from Meridian's own posts.
+   source 'sample'    = placeholder listing to show the store layout; replace with live stock.
+   art = settings for the drawn stand-in image until real photographs are added to photos[]. */
+const watches = [
+  { id:'rolex-submariner-126610lv', brand:'Rolex', family:'Submariner', model:'Submariner Date', nickname:'Starbucks', reference:'126610LV', year:2026, caseSizeMm:41, material:'Oystersteel', dial:'Black', bezel:'Green ceramic', bracelet:'Oyster', movement:'Automatic, calibre 3235', condition:'Unworn', box:true, papers:true, extras:['Booklets','Green hang tag','White tag'], priceUsd:null, localPriceUsd:null, status:'available', added:'2026-09-28', source:'instagram',
+    description:'Freshly dated and unworn: a 2026 Submariner Date with the green ceramic bezel, delivered as a complete set including the white tag. The warranty card is dated June 11, 2026.',
+    art:{bezel:'dive', bezelColor:'#1F5A3A', dial:'#141716', metal:'steel', bracelet:'oyster', date:true} },
+  { id:'rolex-datejust-41-two-tone-black', brand:'Rolex', family:'Datejust', model:'Datejust 41', reference:null, year:2025, caseSizeMm:41, material:'Oystersteel and yellow gold', dial:'Black', bezel:null, bracelet:'Jubilee', movement:'Automatic', condition:'Pre-owned', box:null, papers:null, extras:[], priceUsd:20000, localPriceUsd:19750, status:'available', added:'2026-09-20', source:'instagram',
+    description:'A 2025 Datejust 41 in two-tone with the Jubilee bracelet and black dial — dressy enough for the evening, easy enough for every day. Price includes fully insured shipping; local pickup in Arizona is $19,750.',
+    art:{bezel:'fluted', dial:'#141716', metal:'twotone', bracelet:'jubilee', date:true} },
+  { id:'vacheron-constantin-overseas-5520v', brand:'Vacheron Constantin', family:'Overseas', model:'Overseas', reference:'5520V/210A-B148', year:2026, caseSizeMm:null, material:'Stainless steel', dial:'Blue', bezel:null, bracelet:'Steel bracelet', movement:'Automatic', condition:'Unworn', box:true, papers:true, extras:[], priceUsd:null, localPriceUsd:null, status:'available', added:'2026-09-12', source:'instagram',
+    description:'Vacheron Constantin’s Overseas with the blue dial many collectors consider one of the finest in the watch world. Offered new with its full set.',
+    art:{bezel:'smooth', dial:'#1D3A63', metal:'steel', bracelet:'integrated', date:true} },
+  { id:'rolex-oyster-perpetual-41-2026', brand:'Rolex', family:'Oyster Perpetual', model:'Oyster Perpetual 41', reference:null, year:2026, caseSizeMm:41, material:'Oystersteel', dial:null, bezel:'Smooth', bracelet:'Oyster', movement:'Automatic', condition:'Unworn', box:true, papers:true, extras:[], priceUsd:null, localPriceUsd:null, status:'available', added:'2026-09-08', source:'instagram',
+    description:'The 2026 Oyster Perpetual 41 from Rolex’s anniversary year. Ask for the dial configuration and current availability.',
+    art:{bezel:'smooth', dial:'#C9A86A', metal:'steel', bracelet:'oyster'} },
+  { id:'rolex-day-date-blue-gold', brand:'Rolex', family:'Day-Date', model:'Day-Date', reference:null, year:null, caseSizeMm:null, material:'Yellow gold', dial:'Blue', bezel:'Fluted', bracelet:null, movement:'Automatic', condition:'Pre-owned', box:null, papers:null, extras:[], priceUsd:null, localPriceUsd:null, status:'available', added:'2026-08-30', source:'instagram',
+    description:'Midnight blue and gold: the Day-Date in its most quietly confident combination. Ask for the reference, year and scope of delivery.',
+    art:{bezel:'fluted', dial:'#16284A', metal:'yellow', bracelet:'president', date:true} },
+  { id:'rolex-datejust-diamond-dial', brand:'Rolex', family:'Datejust', model:'Datejust', reference:null, year:null, caseSizeMm:null, material:null, dial:'Diamond-set', bezel:null, bracelet:null, movement:'Automatic', condition:'Pre-owned', box:null, papers:null, extras:[], priceUsd:null, localPriceUsd:null, status:'available', added:'2026-08-24', source:'instagram',
+    description:'A Datejust with a diamond-set dial. Ask Meridian for the full specification and photographs.',
+    art:{bezel:'fluted', dial:'#E9E6DF', metal:'steel', bracelet:'jubilee', diamonds:true, date:true, index:'#2A2F33'} },
+  { id:'rolex-daytona-126500ln', brand:'Rolex', family:'Daytona', model:'Cosmograph Daytona', reference:'126500LN', year:2024, caseSizeMm:40, material:'Oystersteel', dial:'White', bezel:'Black ceramic', bracelet:'Oyster', movement:'Automatic, calibre 4131', condition:'Excellent', box:true, papers:true, extras:[], priceUsd:31950, localPriceUsd:null, status:'available', added:'2026-10-02', source:'sample',
+    description:'Sample listing.', art:{bezel:'tachy', bezelColor:'#141716', dial:'#F1EFEA', metal:'steel', bracelet:'oyster', chrono:true, sub:'#141716', index:'#141716'} },
+  { id:'rolex-gmt-master-ii-126710blro', brand:'Rolex', family:'GMT-Master II', model:'GMT-Master II', reference:'126710BLRO', year:2023, caseSizeMm:40, material:'Oystersteel', dial:'Black', bezel:'Red and blue ceramic', bracelet:'Jubilee', movement:'Automatic, calibre 3285', condition:'Excellent', box:true, papers:true, extras:[], priceUsd:22750, localPriceUsd:null, status:'available', added:'2026-09-30', source:'sample',
+    description:'Sample listing.', art:{bezel:'gmt', bezelColor:'#8E1E26', bezelColor2:'#1D3A73', dial:'#141716', metal:'steel', bracelet:'jubilee', date:true, gmt:true} },
+  { id:'audemars-piguet-royal-oak-15510st', brand:'Audemars Piguet', family:'Royal Oak', model:'Royal Oak Selfwinding', reference:'15510ST', year:2023, caseSizeMm:41, material:'Stainless steel', dial:'Blue', bezel:null, bracelet:'Integrated steel bracelet', movement:'Automatic, calibre 4302', condition:'Excellent', box:true, papers:true, extras:[], priceUsd:58500, localPriceUsd:null, status:'available', added:'2026-09-26', source:'sample',
+    description:'Sample listing.', art:{bezel:'smooth', dial:'#1C3557', metal:'steel', bracelet:'integrated', date:true} },
+  { id:'patek-philippe-aquanaut-5167a', brand:'Patek Philippe', family:'Aquanaut', model:'Aquanaut', reference:'5167A-001', year:2021, caseSizeMm:40, material:'Stainless steel', dial:'Black', bezel:null, bracelet:'Composite strap', movement:'Automatic, calibre 26-330 S C', condition:'Excellent', box:true, papers:true, extras:[], priceUsd:null, localPriceUsd:null, status:'available', added:'2026-09-22', source:'sample',
+    description:'Sample listing.', art:{bezel:'smooth', dial:'#25292B', metal:'steel', bracelet:'strap', strap:'#1B1D1E', date:true} },
+  { id:'fp-journe-chronometre-bleu', brand:'F. P. Journe', family:'Chronomètre Bleu', model:'Chronomètre Bleu', reference:null, year:2020, caseSizeMm:39, material:'Tantalum', dial:'Blue', bezel:null, bracelet:'Leather strap', movement:'Manual winding', condition:'Very good', box:true, papers:true, extras:[], priceUsd:null, localPriceUsd:null, status:'available', added:'2026-09-18', source:'sample',
+    description:'Sample listing.', art:{bezel:'thin', dial:'#1E3D7A', metal:'tantalum', bracelet:'strap', strap:'#2A1E17', small:true} },
+  { id:'rolex-submariner-124060', brand:'Rolex', family:'Submariner', model:'Submariner', reference:'124060', year:2024, caseSizeMm:41, material:'Oystersteel', dial:'Black', bezel:'Black ceramic', bracelet:'Oyster', movement:'Automatic, calibre 3230', condition:'Excellent', box:true, papers:true, extras:[], priceUsd:12450, localPriceUsd:null, status:'available', added:'2026-09-15', source:'sample',
+    description:'Sample listing.', art:{bezel:'dive', bezelColor:'#141716', dial:'#141716', metal:'steel', bracelet:'oyster'} },
+  { id:'rolex-sky-dweller-336934', brand:'Rolex', family:'Sky-Dweller', model:'Sky-Dweller', reference:'336934', year:2024, caseSizeMm:42, material:'Oystersteel and white gold', dial:'Blue', bezel:'Fluted', bracelet:'Jubilee', movement:'Automatic, calibre 9002', condition:'Excellent', box:true, papers:true, extras:[], priceUsd:21500, localPriceUsd:null, status:'reserved', added:'2026-09-05', source:'sample',
+    description:'Sample listing.', art:{bezel:'fluted', dial:'#1C3A6B', metal:'steel', bracelet:'jubilee', date:true} },
+  { id:'patek-philippe-calatrava-5227g', brand:'Patek Philippe', family:'Calatrava', model:'Calatrava', reference:'5227G-010', year:2019, caseSizeMm:39, material:'White gold', dial:'Ivory lacquer', bezel:null, bracelet:'Alligator strap', movement:'Automatic, calibre 324 S C', condition:'Very good', box:true, papers:true, extras:[], priceUsd:29500, localPriceUsd:null, status:'available', added:'2026-08-28', source:'sample',
+    description:'Sample listing.', art:{bezel:'thin', dial:'#F1E9D6', metal:'white', bracelet:'strap', strap:'#1E1A18', index:'#9A7B3F', date:true} },
+  { id:'rolex-explorer-224270', brand:'Rolex', family:'Explorer', model:'Explorer 40', reference:'224270', year:2023, caseSizeMm:40, material:'Oystersteel', dial:'Black', bezel:'Smooth', bracelet:'Oyster', movement:'Automatic, calibre 3230', condition:'Excellent', box:true, papers:true, extras:[], priceUsd:8950, localPriceUsd:null, status:'available', added:'2026-08-20', source:'sample',
+    description:'Sample listing.', art:{bezel:'smooth', dial:'#141716', metal:'steel', bracelet:'oyster'} },
+  { id:'rolex-datejust-36-126234', brand:'Rolex', family:'Datejust', model:'Datejust 36', reference:'126234', year:2022, caseSizeMm:36, material:'Oystersteel and white gold', dial:'Mint green', bezel:'Fluted', bracelet:'Jubilee', movement:'Automatic, calibre 3235', condition:'Very good', box:false, papers:true, extras:[], priceUsd:11450, localPriceUsd:null, status:'available', added:'2026-08-14', source:'sample',
+    description:'Sample listing.', art:{bezel:'fluted', dial:'#9CC3AE', metal:'steel', bracelet:'jubilee', date:true} },
+  { id:'fp-journe-octa-automatique-lune', brand:'F. P. Journe', family:'Octa', model:'Octa Automatique Lune', reference:null, year:2018, caseSizeMm:40, material:'Platinum', dial:'Silver', bezel:null, bracelet:'Leather strap', movement:'Automatic', condition:'Very good', box:true, papers:true, extras:[], priceUsd:null, localPriceUsd:null, status:'available', added:'2026-08-08', source:'sample',
+    description:'Sample listing.', art:{bezel:'thin', dial:'#D9DADB', metal:'white', bracelet:'strap', strap:'#2B2522', small:true, index:'#2A2F33'} },
+  { id:'audemars-piguet-royal-oak-offshore-26420so', brand:'Audemars Piguet', family:'Royal Oak Offshore', model:'Royal Oak Offshore Chronograph', reference:'26420SO', year:2022, caseSizeMm:43, material:'Stainless steel and ceramic', dial:'Blue', bezel:'Black ceramic', bracelet:'Rubber strap', movement:'Automatic, calibre 4401', condition:'Excellent', box:true, papers:true, extras:[], priceUsd:null, localPriceUsd:null, status:'available', added:'2026-07-30', source:'sample',
+    description:'Sample listing.', art:{bezel:'tachy', bezelColor:'#1A1C1D', dial:'#1F3B66', metal:'steel', bracelet:'strap', strap:'#141617', chrono:true, sub:'#16233B'} },
+  /* Recently sold */
+  { id:'rolex-submariner-date-16613-1993', brand:'Rolex', family:'Submariner', model:'Submariner Date', reference:'16613', year:1993, caseSizeMm:40, material:'Stainless steel and 18k yellow gold', dial:'Black', bezel:'Black aluminium', bracelet:'Oyster', movement:'Automatic', condition:'Vintage', box:null, papers:null, extras:[], priceUsd:null, localPriceUsd:null, status:'sold', added:'2026-06-02', source:'instagram',
+    description:'Heavy ’90s nostalgia with a side of 18k gold. The black-dial 16613 bridges vintage charm and modern reliability, and the tritium is beginning to patina beautifully.',
+    art:{bezel:'dive', bezelColor:'#151719', dial:'#141716', metal:'twotone', bracelet:'oyster', date:true, index:'#E9D9B4', bezelGold:true} },
+  { id:'rolex-gmt-master-ii-126710blnr', brand:'Rolex', family:'GMT-Master II', model:'GMT-Master II', reference:'126710BLNR', year:2024, caseSizeMm:40, material:'Oystersteel', dial:'Black', bezel:'Blue and black ceramic', bracelet:null, movement:'Automatic, calibre 3285', condition:'Excellent', box:true, papers:true, extras:[], priceUsd:null, localPriceUsd:null, status:'sold', added:'2026-05-20', source:'instagram',
+    description:'A 2024 GMT-Master II with the blue and black bezel, offered in excellent condition with box and papers.',
+    art:{bezel:'gmt', bezelColor:'#1D3A73', bezelColor2:'#141716', dial:'#141716', metal:'steel', bracelet:'jubilee', date:true, gmt:true} },
+  { id:'patek-philippe-nautilus-5711-1a', brand:'Patek Philippe', family:'Nautilus', model:'Nautilus', reference:'5711/1A-010', year:2019, caseSizeMm:40, material:'Stainless steel', dial:'Blue', bezel:null, bracelet:'Integrated steel bracelet', movement:'Automatic, calibre 26-330 S C', condition:'Excellent', box:true, papers:true, extras:[], priceUsd:null, localPriceUsd:null, status:'sold', added:'2026-04-30', source:'sample',
+    description:'Sample listing.', art:{bezel:'smooth', dial:'#25406B', metal:'steel', bracelet:'integrated', date:true} }
+];
+
+/* =====================================================================
+   APPLICATION
+   ===================================================================== */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const esc = (v) => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const wait = (ms) => new Promise(r => setTimeout(r, ms));
+const TODAY = new Date('2026-10-07T12:00:00');
+const I = {
+  close: '<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5"/></svg>',
+  prev: '<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M9 1L3 7l6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>',
+  next: '<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M5 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>',
+  caret: '<svg class="caret" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>',
+  search: '<svg viewBox="0 0 18 18" aria-hidden="true"><circle cx="7.5" cy="7.5" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 12l5 5" stroke="currentColor" stroke-width="1.5"/></svg>',
+  heart: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
+  bag: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12.5H6z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>',
+  menu: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="1.5"/></svg>',
+  chipX: '<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 1l8 8M9 1L1 9" stroke="currentColor" stroke-width="1.4"/></svg>',
+  shield: '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3l10 4v8c0 7-4.6 11.6-10 14-5.4-2.4-10-7-10-14V7z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M11 16l3.5 3.5L21 13" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>',
+  box: '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 10l12-5 12 5v13l-12 5-12-5z M4 10l12 5 12-5 M16 15v13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>',
+  swap: '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 11h19l-5-5M26 21H7l5 5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>',
+  pin: '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29s9-8.5 9-15.5a9 9 0 0 0-18 0C7 20.5 16 29 16 29z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="16" cy="13.5" r="3.2" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>',
+  tag: '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 16V5h11l13 13-11 11z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="10" cy="11" r="2" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>',
+  find: '<svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="14" cy="14" r="9" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M21 21l7 7" stroke="currentColor" stroke-width="1.4"/><path d="M14 9v5l3 2" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>',
+  phone: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h3l1.5 5-2 1.5a12 12 0 0 0 5 5l1.5-2 5 1.5v3a2 2 0 0 1-2 2A17 17 0 0 1 5 5a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>',
+  mail: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M3.5 6l8.5 7 8.5-7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>',
+  ig: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>',
+  chat: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>'
+};
+
+/* ---------- Logo ---------- */
+function logoMark({ ink = 'currentColor', gold = '#A88A55', label = '' } = {}) {
+  let t = '';
+  for (let i = 1; i < 60; i++) {
+    const major = i % 5 === 0, a = i * 6 * Math.PI / 180, r1 = 49, r2 = major ? 44.5 : 47;
+    t += `<line x1="${(60 + r1 * Math.sin(a)).toFixed(2)}" y1="${(60 - r1 * Math.cos(a)).toFixed(2)}" x2="${(60 + r2 * Math.sin(a)).toFixed(2)}" y2="${(60 - r2 * Math.cos(a)).toFixed(2)}" stroke-width="${major ? 1.1 : .5}"/>`;
+  }
+  const a11y = label ? `role="img" aria-label="${esc(label)}"` : 'aria-hidden="true" focusable="false"';
+  return `<svg class="mark" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" ${a11y}><circle cx="60" cy="60" r="56.5" fill="none" stroke="${gold}" stroke-width="1"/><circle cx="60" cy="60" r="51" fill="none" stroke="${ink}" stroke-width=".6" opacity=".55"/><g stroke="${ink}" opacity=".85">${t}</g><line x1="60" y1="3.5" x2="60" y2="116.5" stroke="${gold}" stroke-width=".9"/><path d="M56.9 6.6h6.2L60 12z" fill="${gold}"/><g fill="${ink}"><rect x="42" y="42" width="1.8" height="36"/><polygon points="42,42 48.2,42 62,73.5 59.6,78"/><polygon points="58.9,77.2 72.6,42 74.2,42 60.6,78"/><rect x="72.6" y="42" width="5.6" height="36"/><rect x="38.6" y="41.4" width="9.8" height="1.1"/><rect x="72" y="41.4" width="9.4" height="1.1"/><rect x="38.6" y="77.5" width="8.6" height="1.1"/><rect x="69.4" y="77.5" width="12" height="1.1"/></g></svg>`;
+}
+function lockup(dark = false) {
+  const ink = dark ? '#F7F3EA' : '#152724', gold = dark ? '#C9AE78' : '#A88A55';
+  return `<a class="lockup" href="#/" aria-label="${esc(siteConfig.name)} home">${logoMark({ ink, gold })}<span class="lockup-text" aria-hidden="true"><b>MERIDIAN</b><small>CHRONO GROUP</small></span></a>`;
+}
+
+/* ---------- Watch illustration (generic stand-in; not a photograph) ---------- */
+let artSeq = 0;
+const METALS = {
+  steel: ['#F6F7F8', '#C7CBCF', '#7E848A'], white: ['#FAFAFB', '#D3D6D9', '#8D9297'],
+  yellow: ['#FFF4CC', '#D6B160', '#8A6625'], rose: ['#FCE6D9', '#D29C7F', '#8B5A43'],
+  tantalum: ['#C9CDD3', '#7D848C', '#3F444A'], twotone: ['#F6F7F8', '#C7CBCF', '#7E848A']
+};
+function watchArt(w, view = 'front', { decorative = false, bg = '#F2EFE8' } = {}) {
+  const a = Object.assign({ bezel: 'smooth', dial: '#1B2226', metal: 'steel', bracelet: 'oyster', index: null }, w.art || {});
+  const id = 'wa' + (++artSeq);
+  const m = METALS[a.metal] || METALS.steel;
+  const gold = METALS.yellow;
+  const isTT = a.metal === 'twotone';
+  const lightDial = isLight(a.dial);
+  const idxC = a.index || (lightDial ? '#2A2F33' : '#ECE6D6');
+  const handC = idxC;
+  const vb = view === 'detail' ? '106 156 188 188' : view === 'angle' ? '-10 30 420 440' : '0 0 400 500';
+  const caseFill = `url(#${id}m)`;
+  const bezelMetal = (isTT || a.bezelGold) && (a.bezel === 'fluted' || a.bezelGold) ? `url(#${id}g)` : caseFill;
+  // Bracelet / strap
+  let band = '';
+  const top = (x, w2) => `M${200 - w2} 0h${w2 * 2}l-4 152h${-(w2 * 2 - 8)}z`;
+  const bot = (x, w2) => `M${200 - w2 + 4} 348h${w2 * 2 - 8}l4 152h${-w2 * 2}z`;
+  if (a.bracelet === 'strap') {
+    band = `<path d="${top(0, 44)}" fill="${a.strap || '#1E1A18'}"/><path d="${bot(0, 44)}" fill="${a.strap || '#1E1A18'}"/>
+<path d="M163 0v150M237 0v150M167 350v150M233 350v150" stroke="#fff" stroke-opacity=".18" stroke-dasharray="3 4"/>`;
+  } else {
+    const outer = `url(#${id}b)`, center = isTT ? `url(#${id}gb)` : outer;
+    const W = a.bracelet === 'integrated' ? 54 : 48;
+    band = `<path d="${top(0, W)}" fill="${outer}"/><path d="${bot(0, W)}" fill="${outer}"/>`;
+    if (a.bracelet === 'jubilee') {
+      band += `<rect x="178" y="0" width="44" height="152" fill="${center}"/><rect x="182" y="348" width="36" height="152" fill="${center}"/>`;
+      for (let y = 6; y < 150; y += 11) band += `<path d="M152 ${y}h96M152 ${y + 344}h96" stroke="#000" stroke-opacity=".13"/><path d="M178 ${y + 5}h44M182 ${y + 349}h36" stroke="#000" stroke-opacity=".09"/>`;
+      band += `<path d="M167 0v150M178 0v150M222 0v150M233 0v150M170 350v150M182 350v150M218 350v150M230 350v150" stroke="#000" stroke-opacity=".12"/>`;
+    } else if (a.bracelet === 'president') {
+      for (let y = 0; y < 150; y += 18) band += `<path d="M152 ${y + 16}q48 8 96 0M154 ${y + 362}q46 8 92 0" fill="none" stroke="#000" stroke-opacity=".16"/>`;
+      band += `<path d="M183 0v150M217 0v150M184 350v150M216 350v150" stroke="#000" stroke-opacity=".12"/>`;
+    } else if (a.bracelet === 'integrated') {
+      band += `<rect x="176" y="0" width="48" height="152" fill="${center}"/><rect x="178" y="348" width="44" height="152" fill="${center}"/>`;
+      for (let y = 8; y < 150; y += 20) band += `<path d="M146 ${y}h108M150 ${y + 344}h100" stroke="#000" stroke-opacity=".15"/>`;
+      band += `<path d="M176 0v150M224 0v150M178 350v150M222 350v150" stroke="#000" stroke-opacity=".14"/>`;
+    } else {
+      band += `<rect x="183" y="0" width="34" height="152" fill="${center}"/><rect x="184" y="348" width="32" height="152" fill="${center}"/>`;
+      for (let y = 10; y < 150; y += 24) band += `<path d="M152 ${y}h96M152 ${y + 344}h96" stroke="#000" stroke-opacity=".14"/>`;
+      band += `<path d="M183 0v150M217 0v150M184 350v150M216 350v150" stroke="#000" stroke-opacity=".12"/>`;
+    }
+  }
+  // Bezel
+  let bezel = '';
+  const R = a.bezel === 'thin' ? 122 : 130, inner = a.bezel === 'thin' ? 114 : 98;
+  if (a.bezel === 'dive' || a.bezel === 'gmt' || a.bezel === 'tachy') {
+    if (a.bezel === 'gmt') {
+      bezel = `<path d="M82 250a118 118 0 0 1 236 0z" fill="${a.bezelColor}"/><path d="M82 250a118 118 0 0 0 236 0z" fill="${a.bezelColor2}"/>`;
+    } else bezel = `<circle cx="200" cy="250" r="118" fill="${a.bezelColor || '#151719'}"/>`;
+    const mk = a.bezelGold ? '#E3C77E' : '#E9E5D8';
+    for (let i = 0; i < 60; i++) {
+      if (i === 0) { bezel += `<path d="M193 138h14l-7 11z" fill="${mk}"/>`; continue; }
+      const major = i % 5 === 0;
+      if (a.bezel === 'dive' && i > 15 && !major) continue;
+      bezel += `<rect x="${major ? 198.4 : 199.4}" y="137" width="${major ? 3.2 : 1.2}" height="${major ? 11 : 6}" fill="${mk}" opacity="${major ? .92 : .6}" transform="rotate(${i * 6} 200 250)"/>`;
+    }
+    bezel += `<circle cx="200" cy="250" r="118" fill="none" stroke="${bezelMetal}" stroke-width="3"/>`;
+  } else if (a.bezel === 'fluted') {
+    bezel = `<circle cx="200" cy="250" r="119" fill="${bezelMetal}"/>`;
+    for (let i = 0; i < 72; i++) bezel += `<rect x="198.6" y="132" width="2.8" height="20" fill="#000" opacity="${i % 2 ? .07 : .2}" transform="rotate(${i * 5} 200 250)"/>`;
+  } else if (a.bezel === 'thin') {
+    bezel = `<circle cx="200" cy="250" r="119" fill="${caseFill}"/>`;
+  } else {
+    bezel = `<circle cx="200" cy="250" r="118" fill="${caseFill}"/><circle cx="200" cy="250" r="110" fill="none" stroke="#fff" stroke-opacity=".35"/>`;
+  }
+  // Dial furniture
+  const dr = a.bezel === 'thin' ? 112 : 96;
+  let idx = '';
+  for (let h = 0; h < 12; h++) {
+    if (a.diamonds && h % 3 !== 0) { idx += `<circle cx="200" cy="${250 - dr + 18}" r="4" fill="#fff" stroke="#BFC4C9" stroke-width=".8" transform="rotate(${h * 30} 200 250)"/>`; continue; }
+    if (a.small && h % 3 !== 0) { idx += `<circle cx="200" cy="${250 - dr + 14}" r="2" fill="${idxC}" transform="rotate(${h * 30} 200 250)"/>`; continue; }
+    if (h === 3 && a.date) continue;
+    if (a.chrono && (h === 3 || h === 9 || h === 6)) continue;
+    const len = h === 0 ? 22 : h % 3 === 0 ? 20 : 15;
+    if (h === 0 && !a.small) idx += `<rect x="193.5" y="${250 - dr + 8}" width="5" height="${len}" fill="${idxC}"/><rect x="201.5" y="${250 - dr + 8}" width="5" height="${len}" fill="${idxC}"/>`;
+    else idx += `<rect x="197.5" y="${250 - dr + 8}" width="5" height="${len}" fill="${idxC}" transform="rotate(${h * 30} 200 250)"/>`;
+  }
+  let subs = '';
+  if (a.chrono) {
+    [[160, 250], [240, 250], [200, 292]].forEach(([x, y]) => {
+      subs += `<circle cx="${x}" cy="${y}" r="20" fill="${a.sub || '#0F1112'}" stroke="${idxC}" stroke-opacity=".55"/><path d="M${x} ${y}v-15" stroke="${idxC}" stroke-width="1.5"/>`;
+    });
+  }
+  if (a.small) subs += `<circle cx="200" cy="292" r="24" fill="none" stroke="${idxC}" stroke-opacity=".45"/><circle cx="222" cy="214" r="16" fill="none" stroke="${idxC}" stroke-opacity=".45"/>`;
+  const date = a.date ? `<rect x="${200 + dr - 38}" y="241" width="24" height="18" fill="#fff" stroke="#000" stroke-opacity=".25"/><text x="${200 + dr - 26}" y="254.5" text-anchor="middle" font-family="Manrope, sans-serif" font-size="11" fill="#111">7</text>` : '';
+  const gmtHand = a.gmt ? `<g transform="rotate(118 200 250)"><path d="M200 172v80" stroke="#B5232C" stroke-width="2.2"/><path d="M193 176h14l-7-12z" fill="#B5232C"/></g>` : '';
+  const label = decorative ? 'aria-hidden="true" focusable="false"' : `role="img" aria-label="Illustration of a ${esc(w.brand)} ${esc(w.model)} (not a photograph)"`;
+  const rot = view === 'angle' ? 'transform="rotate(-14 200 250)"' : '';
+  return `<svg viewBox="${vb}" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" ${label}>
+<defs>
+<linearGradient id="${id}m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${m[0]}"/><stop offset=".45" stop-color="${m[1]}"/><stop offset="1" stop-color="${m[2]}"/></linearGradient>
+<linearGradient id="${id}g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${gold[0]}"/><stop offset=".45" stop-color="${gold[1]}"/><stop offset="1" stop-color="${gold[2]}"/></linearGradient>
+<linearGradient id="${id}b" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${m[2]}"/><stop offset=".5" stop-color="${m[0]}"/><stop offset="1" stop-color="${m[2]}"/></linearGradient>
+<linearGradient id="${id}gb" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${gold[2]}"/><stop offset=".5" stop-color="${gold[0]}"/><stop offset="1" stop-color="${gold[2]}"/></linearGradient>
+<radialGradient id="${id}d" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#fff" stop-opacity="${lightDial ? .25 : .12}"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="${lightDial ? .08 : .25}"/></radialGradient>
+<radialGradient id="${id}sh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".22"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+</defs>
+<rect x="-60" y="-60" width="540" height="640" fill="${bg}"/>
+<g ${rot}>
+<ellipse cx="206" cy="262" rx="150" ry="150" fill="url(#${id}sh)"/>
+${band}
+<rect x="${200 + R - 8}" y="235" width="20" height="30" rx="4" fill="${caseFill}"/>
+<circle cx="200" cy="250" r="${R}" fill="${caseFill}"/>
+${bezel}
+<circle cx="200" cy="250" r="${dr + 3}" fill="#000" opacity=".35"/>
+<circle cx="200" cy="250" r="${dr}" fill="${a.dial}"/>
+${subs}${idx}${date}
+<text x="200" y="${250 - dr * .42}" text-anchor="middle" font-family="Bodoni Moda, Didot, Georgia, serif" font-size="${dr * .085}" letter-spacing="1.5" fill="${idxC}" opacity=".75">MERIDIAN</text>
+${gmtHand}
+<g transform="rotate(-50 200 250)"><path d="M200 ${250 - dr * .55}l5 ${dr * .55}-5 11-5-11z" fill="${handC}"/></g>
+<g transform="rotate(64 200 250)"><path d="M200 ${250 - dr * .86}l3.6 ${dr * .86}-3.6 11-3.6-11z" fill="${handC}"/></g>
+<g transform="rotate(205 200 250)"><path d="M200 ${250 - dr * .9}v${dr * 1.1}" stroke="${a.chrono ? '#B5232C' : '#B8955A'}" stroke-width="1.4"/></g>
+<circle cx="200" cy="250" r="5" fill="${handC}"/>
+<circle cx="200" cy="250" r="${dr}" fill="url(#${id}d)"/>
+</g>
+</svg>`;
+}
+function isLight(hex) {
+  const h = (hex || '#000').replace('#', ''); const n = parseInt(h.length === 3 ? h.split('').map(c => c + c).join('') : h, 16);
+  const r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255; return (0.299 * r + 0.587 * g + 0.114 * b) > 150;
+}
+function media(w, view = 'front', opts = {}) {
+  if (w.photos && w.photos.length && view === 'front') return `<img src="${esc(w.photos[0].src)}" alt="${opts.decorative ? '' : esc(w.photos[0].alt)}" loading="lazy">`;
+  return watchArt(w, view, opts);
+}
+
+/* ---------- Live dial (About page) ---------- */
+function heroDial() {
+  let t = '';
+  for (let i = 0; i < 60; i++) {
+    if (i % 5 === 0) {
+      if (i === 0) t += '<rect x="191" y="40" width="5" height="26" fill="#C9AE78"/><rect x="204" y="40" width="5" height="26" fill="#C9AE78"/>';
+      else t += `<rect x="197.5" y="40" width="5" height="21" fill="#C9AE78" transform="rotate(${i * 6} 200 200)"/>`;
+    } else t += `<line x1="200" y1="24" x2="200" y2="32" stroke="#F7F3EA" stroke-opacity=".38" stroke-width="1.2" transform="rotate(${i * 6} 200 200)"/>`;
+  }
+  return `<svg viewBox="0 0 400 400" role="img" aria-label="Meridian dial showing your local time"><circle cx="200" cy="200" r="191" fill="none" stroke="#A88A55" stroke-width="1.2"/><circle cx="200" cy="200" r="179" fill="none" stroke="#F7F3EA" stroke-opacity=".18"/>${t}<text x="200" y="128" text-anchor="middle" font-family="Bodoni Moda, Didot, Georgia, serif" font-size="15" letter-spacing="6" fill="#F7F3EA">MERIDIAN</text><text x="200" y="146" text-anchor="middle" font-family="Manrope, sans-serif" font-size="7" letter-spacing="4.2" fill="#C9AE78">CHRONO GROUP</text><g class="hand" id="hand-h"><path d="M200 104l6 96-6 16-6-16z" fill="#F7F3EA"/></g><g class="hand" id="hand-m"><path d="M200 56l4 144-4 16-4-16z" fill="#F7F3EA"/></g><g class="hand hand-sec" id="hand-s"><path d="M200 246V50" stroke="#C9AE78" stroke-width="1.5"/><circle cx="200" cy="233" r="6" fill="none" stroke="#C9AE78" stroke-width="1.5"/></g><circle cx="200" cy="200" r="7" fill="#F7F3EA"/><circle cx="200" cy="200" r="2.4" fill="#152724"/></svg>`;
+}
+function startDial() {
+  const svg = $('.dial svg'); if (!svg) return;
+  const hands = { h: $('#hand-h'), m: $('#hand-m'), s: $('#hand-s') };
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const turns = { h: 0, m: 0, s: 0 }, prev = { h: 0, m: 0, s: 0 };
+  const set = (k, deg) => { if (deg + turns[k] * 360 < prev[k] - 1) turns[k]++; const v = deg + turns[k] * 360; prev[k] = v; hands[k].style.transform = `rotate(${v}deg)`; };
+  const tick = () => { const d = new Date(), s = d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds(); set('h', (s % 43200) / 120); set('m', (s % 3600) / 10); set('s', (s % 60) * 6); };
+  if (reduce) tick(); else { svg.classList.add('settle'); requestAnimationFrame(() => requestAnimationFrame(tick)); const t = setTimeout(() => svg.classList.remove('settle'), 1700); onCleanup(() => clearTimeout(t)); }
+  const iv = setInterval(tick, reduce ? 20000 : 1000); onCleanup(() => clearInterval(iv));
+}
+
+/* ---------- Data helpers ---------- */
+const visible = () => watches.filter(w => siteConfig.demoMode || w.source !== 'sample');
+const inStock = () => visible().filter(w => w.status !== 'sold');
+const byId = (id) => watches.find(w => w.id === id);
+const money = (n) => '$' + Number(n).toLocaleString('en-US');
+const isNew = (w) => w.status !== 'sold' && (TODAY - new Date(w.added)) / 864e5 <= 21;
+const fullSet = (w) => w.box === true && w.papers === true;
+const titleOf = (w) => `${w.brand} ${w.model}`;
+const subOf = (w) => [w.reference ? `Ref. ${w.reference}` : null, w.nickname ? `“${w.nickname}”` : null, w.year].filter(Boolean).join(' · ');
+function priceLabel(w) {
+  if (w.status === 'sold') return 'Sold';
+  return w.priceUsd != null ? money(w.priceUsd) : 'Price on request';
+}
+function tagsFor(w, max = 2) {
+  const t = [];
+  if (w.status === 'sold') t.push(['Sold', 'tag-sold']);
+  else if (w.status === 'reserved') t.push(['Reserved', 'tag-reserved']);
+  if (isNew(w)) t.push(['New arrival', 'tag-new']);
+  if (w.condition === 'Unworn') t.push(['Unworn', 'tag-unworn']);
+  if (fullSet(w)) t.push(['Full set', '']);
+  if (w.condition === 'Vintage') t.push(['Vintage', '']);
+  return t.slice(0, max);
+}
+const scopeOf = (w) => w.box === true && w.papers === true ? 'Box and papers' : w.box === false && w.papers === true ? 'Papers only' : w.box === true && w.papers === false ? 'Box only' : w.box === false && w.papers === false ? 'Watch only' : 'Ask for details';
+const sizeBucket = (w) => w.caseSizeMm == null ? null : w.caseSizeMm < 38 ? 'Under 38 mm' : w.caseSizeMm <= 40 ? '38–40 mm' : '41 mm and over';
+const priceBucket = (w) => w.priceUsd == null ? 'Price on request' : w.priceUsd < 15000 ? 'Under $15,000' : w.priceUsd < 30000 ? '$15,000–$30,000' : w.priceUsd < 60000 ? '$30,000–$60,000' : '$60,000 and over';
+const metalOf = (w) => !w.material ? null : /and (yellow|white|rose|18k)/i.test(w.material) ? 'Steel and gold' : /yellow gold/i.test(w.material) ? 'Yellow gold' : /white gold/i.test(w.material) ? 'White gold' : /platinum/i.test(w.material) ? 'Platinum' : /tantalum/i.test(w.material) ? 'Tantalum' : 'Steel';
+const DIAL_SWATCH = { Black: '#141716', Blue: '#1F3B66', White: '#F1EFEA', 'Mint green': '#9CC3AE', 'Ivory lacquer': '#F1E9D6', Silver: '#D9DADB', 'Diamond-set': '#E9E6DF' };
+const brandCounts = () => { const m = new Map(); inStock().forEach(w => m.set(w.brand, (m.get(w.brand) || 0) + 1)); return [...m].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])); };
+
+/* ---------- Saved & bag (IDs only) ---------- */
+const store = {
+  get(k) { try { return new Set(JSON.parse(localStorage.getItem(k) || '[]')); } catch (e) { return new Set(); } },
+  set(k, s) { try { localStorage.setItem(k, JSON.stringify([...s])); } catch (e) {} }
+};
+let saved = store.get('meridian-saved'), bag = store.get('meridian-bag');
+[...bag].forEach(id => { const w = byId(id); if (!w || w.status !== 'available' || w.priceUsd == null) bag.delete(id); });
+function updateCounts() {
+  $$('[data-count="saved"]').forEach(n => { n.textContent = saved.size; n.dataset.n = saved.size; });
+  $$('[data-count="bag"]').forEach(n => { n.textContent = bag.size; n.dataset.n = bag.size; });
+  const sb = $('#tool-saved'); sb && sb.setAttribute('aria-label', `Saved watches (${saved.size})`);
+  const bb = $('#tool-bag'); bb && bb.setAttribute('aria-label', `Bag (${bag.size})`);
+}
+function heartBtn(w, extra = '') {
+  const on = saved.has(w.id);
+  return `<button type="button" class="heart ${extra}" data-save="${esc(w.id)}" aria-pressed="${on}" aria-label="${on ? 'Remove' : 'Save'} ${esc(titleOf(w))}${on ? ' from saved' : ''}">${I.heart}</button>`;
+}
+function toggleSaved(id) {
+  saved.has(id) ? saved.delete(id) : saved.add(id);
+  store.set('meridian-saved', saved);
+  const w = byId(id), on = saved.has(id);
+  $$(`[data-save="${CSS.escape(id)}"]`).forEach(b => { b.setAttribute('aria-pressed', String(on)); b.setAttribute('aria-label', `${on ? 'Remove' : 'Save'} ${titleOf(w)}${on ? ' from saved' : ''}`); });
+  updateCounts();
+  if (current.refreshSaved) current.refreshSaved();
+}
+function addToBag(id, trigger) {
+  bag.add(id); store.set('meridian-bag', bag); updateCounts();
+  $$(`[data-add="${CSS.escape(id)}"]`).forEach(b => { b.textContent = 'In your bag'; });
+  openBag(trigger);
+}
+function removeFromBag(id) {
+  bag.delete(id); store.set('meridian-bag', bag); updateCounts();
+  $$(`[data-add="${CSS.escape(id)}"]`).forEach(b => { b.textContent = 'Add to bag'; });
+  renderBagDrawer();
+  if (current.refreshBag) current.refreshBag();
+}
+
+/* ---------- Card ---------- */
+function cardHTML(w, level = 3) {
+  const t = tagsFor(w);
+  return `<article class="card${w.status === 'sold' ? ' is-sold' : ''}">
+<div class="card-media">${media(w, 'front', { decorative: true })}${t.length ? `<div class="card-badges">${t.map(([l, c]) => `<span class="tag ${c}">${l}</span>`).join('')}</div>` : ''}${heartBtn(w)}</div>
+<div class="card-body">
+<p class="card-brand">${esc(w.brand.toUpperCase())}</p>
+<h${level} class="card-title"><a href="#/watch/${esc(w.id)}">${esc(w.model)}</a></h${level}>
+<p class="card-sub">${esc(subOf(w) || w.condition)}</p>
+<p class="card-price">${priceLabel(w)}${w.localPriceUsd && w.status !== 'sold' ? `<small>Local pickup ${money(w.localPriceUsd)}</small>` : ''}</p>
+</div></article>`;
+}
+
+/* ---------- Routing ---------- */
+let cleanups = [], current = {}, firstRender = true;
+const onCleanup = (fn) => cleanups.push(fn);
+/* Navigation works even inside sandboxed previews, where '#/…' links would
+   otherwise resolve against the outer page. The address bar is updated when allowed. */
+let currentRoute = location.hash || '#/';
+function setUrl(href, replace) {
+  currentRoute = href;
+  try { history[replace ? 'replaceState' : 'pushState'](null, '', href); } catch (e) { /* sandboxed: keep internal route only */ }
+}
+function navigate(href) { setUrl(href, false); render(); }
+document.addEventListener('click', (e) => {
+  if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  const a = e.target.closest('a[href^="#/"]'); if (!a) return;
+  e.preventDefault(); navigate(a.getAttribute('href'));
+});
+window.addEventListener('popstate', () => { currentRoute = location.hash || '#/'; render(); });
+window.addEventListener('hashchange', () => { if (location.hash !== currentRoute) { currentRoute = location.hash || '#/'; render(); } });
+function parseHash() {
+  const raw = currentRoute.replace(/^#/, '') || '/';
+  const [path, qs = ''] = raw.split('?');
+  return { parts: path.split('/').filter(Boolean).map(decodeURIComponent), params: new URLSearchParams(qs) };
+}
+const ROUTES = { '': viewHome, watches: viewCatalog, sold: viewSold, saved: viewSaved, checkout: viewCheckout, 'sell-trade': viewSellTrade, source: viewSource, about: viewAbout, contact: viewContact, 'client-care': viewClientCare };
+function render() {
+  cleanups.forEach(f => { try { f(); } catch (e) {} }); cleanups = []; current = {};
+  $$('dialog[open]').forEach(d => d.close());
+  closeMega();
+  const { parts, params } = parseHash();
+  let view;
+  if (parts[0] === 'watch' && parts[1] && parts.length === 2) {
+    const w = byId(parts[1]);
+    view = w && visible().includes(w) ? viewDetail(w) : viewNotFound();
+  } else if (parts.length > 1 || !Object.prototype.hasOwnProperty.call(ROUTES, parts[0] || '')) view = viewNotFound();
+  else view = ROUTES[parts[0] || ''](params);
+  document.title = view.title ? `${view.title} | ${siteConfig.name}` : `${siteConfig.name} | ${siteConfig.tagline}`;
+  $('#main').innerHTML = view.html;
+  view.init && view.init();
+  const section = parts[0] === 'watch' ? 'watches' : (parts[0] || '');
+  $$('[data-nav]').forEach(a => a.dataset.nav === section ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
+  window.scrollTo(0, 0);
+  if (!firstRender) { const h = $('#main h1'); if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); } }
+  firstRender = false;
+}
+
+/* ---------- Chrome: utility bar, header, mega menu, drawers, footer ---------- */
+const telHref = () => 'tel:' + siteConfig.phone.replace(/[^+\d]/g, '');
+const smsHref = () => 'sms:' + siteConfig.phone.replace(/[^+\d]/g, '');
+function renderChrome() {
+  const banner = $('#preview-banner');
+  banner.hidden = !siteConfig.demoMode;
+  banner.textContent = 'Website preview: sample inventory and prices for layout. Inquiries and orders are not sent.';
+  $('#utility').innerHTML = `<div class="container"><span class="services">Buy · Sell · Trade · Source</span><span class="contacts"><a href="${telHref()}">${esc(siteConfig.phone)}</a><a class="hide-sm" href="mailto:${esc(siteConfig.email)}">${esc(siteConfig.email)}</a><a href="${esc(siteConfig.instagramUrl)}" target="_blank" rel="noopener noreferrer">Instagram<span class="vh"> (opens in a new tab)</span></a></span></div>`;
+  const brands = brandCounts();
+  const feature = byId(siteConfig.heroWatchId);
+  $('#site-header').innerHTML = `<div class="container header-row">
+<button type="button" class="tool menu-button" id="menu-button" aria-haspopup="dialog" aria-controls="menu-drawer" aria-label="Open menu">${I.menu}</button>
+${lockup()}
+<nav class="primary-nav" aria-label="Main">
+  <button type="button" id="mega-button" aria-expanded="false" aria-controls="mega" data-nav="watches">Watches${I.caret}</button>
+  <a href="#/watches?sort=newest" data-nav="new">New arrivals</a>
+  ${siteConfig.enableSellTrade ? '<a href="#/sell-trade" data-nav="sell-trade">Sell or trade</a>' : ''}
+  ${siteConfig.enableSourcing ? '<a href="#/source" data-nav="source">Find a watch</a>' : ''}
+  <a href="#/about" data-nav="about">Our story</a>
+  <a href="#/contact" data-nav="contact">Contact</a>
+</nav>
+<div class="header-tools">
+  <form class="header-search" role="search" id="header-search"><label class="vh" for="hq">Search watches</label>${I.search}<input id="hq" type="search" placeholder="Search brand, model, reference" autocomplete="off"></form>
+  <a class="tool" id="tool-saved" href="#/saved" aria-label="Saved watches">${I.heart}<span class="badge" data-count="saved"></span></a>
+  ${siteConfig.enableBag ? `<button type="button" class="tool" id="tool-bag" aria-haspopup="dialog" aria-controls="bag-drawer" aria-label="Bag">${I.bag}<span class="badge" data-count="bag"></span></button>` : ''}
+</div>
+</div>
+<div class="mega" id="mega" hidden>
+  <div class="container mega-inner">
+    <div><h2>Shop by brand</h2><ul>${brands.map(([b, n]) => `<li><a class="brand-link" href="#/watches?brand=${encodeURIComponent(b)}">${esc(b)}<small>${n}</small></a></li>`).join('')}</ul></div>
+    <div><h2>Collections</h2><ul>
+      <li><a href="#/watches?sort=newest">New arrivals</a></li>
+      <li><a href="#/watches?condition=Unworn">Unworn</a></li>
+      <li><a href="#/watches?scope=${encodeURIComponent('Box and papers')}">Full set: box and papers</a></li>
+      <li><a href="#/watches?price=${encodeURIComponent('Under $15,000')}">Under $15,000</a></li>
+      <li><a href="#/sold">Recently sold</a></li>
+      <li><a href="#/watches">All watches</a></li>
+    </ul></div>
+    <div><h2>Popular models</h2><ul>${['Submariner', 'Datejust', 'GMT-Master II', 'Daytona', 'Royal Oak', 'Overseas'].map(f => `<li><a href="#/watches?q=${encodeURIComponent(f)}">${esc(f)}</a></li>`).join('')}</ul></div>
+    ${feature ? `<a class="mega-feature" href="#/watch/${esc(feature.id)}"><div class="art">${media(feature, 'front', { decorative: true })}</div><div><p>Just landed</p><strong>${esc(titleOf(feature))}</strong><p>${esc(subOf(feature))} · ${esc(feature.condition)}</p></div></a>` : '<div></div>'}
+  </div>
+</div>`;
+  // Menu drawer
+  $('#menu-drawer').innerHTML = `<div class="drawer-head"><h2 id="menu-title">Menu</h2><button type="button" class="icon-btn" data-close aria-label="Close menu">${I.close}</button></div>
+<div class="drawer-body">
+  <form role="search" id="drawer-search" style="position:relative"><label class="vh" for="dq">Search watches</label><input id="dq" type="search" placeholder="Search brand, model, reference" autocomplete="off"></form>
+  <ul class="drawer-nav">
+    <li><a href="#/watches" data-nav="watches">All watches</a></li>
+    <li><a href="#/watches?sort=newest">New arrivals</a></li>
+    ${siteConfig.enableSellTrade ? '<li><a href="#/sell-trade" data-nav="sell-trade">Sell or trade</a></li>' : ''}
+    ${siteConfig.enableSourcing ? '<li><a href="#/source" data-nav="source">Find a watch</a></li>' : ''}
+    <li><a href="#/about" data-nav="about">Our story</a></li>
+    <li><a href="#/sold">Recently sold</a></li>
+    <li><a href="#/contact" data-nav="contact">Contact</a></li>
+  </ul>
+  <div class="drawer-sub"><h3>Shop by brand</h3>${brands.map(([b, n]) => `<a href="#/watches?brand=${encodeURIComponent(b)}">${esc(b)} <span class="muted">(${n})</span></a>`).join('')}</div>
+  <div class="drawer-contact"><a href="${telHref()}">Call ${esc(siteConfig.phone)}</a><a href="${smsHref()}">Text us</a><a href="mailto:${esc(siteConfig.email)}">${esc(siteConfig.email)}</a></div>
+</div>`;
+  // Footer
+  $('#site-footer').innerHTML = `<div class="container footer-grid">
+<div>${lockup(true)}<p>${esc(siteConfig.descriptor)}</p></div>
+<nav aria-labelledby="f-shop"><h2 id="f-shop">Shop</h2><ul><li><a href="#/watches">All watches</a></li><li><a href="#/watches?sort=newest">New arrivals</a></li>${brandCounts().slice(0, 4).map(([b]) => `<li><a href="#/watches?brand=${encodeURIComponent(b)}">${esc(b)}</a></li>`).join('')}<li><a href="#/sold">Recently sold</a></li></ul></nav>
+<nav aria-labelledby="f-serv"><h2 id="f-serv">Services</h2><ul>${siteConfig.enableSellTrade ? '<li><a href="#/sell-trade">Sell your watch</a></li><li><a href="#/sell-trade?type=Trade">Trade in</a></li>' : ''}${siteConfig.enableSourcing ? '<li><a href="#/source">Find a watch</a></li>' : ''}<li><a href="#/client-care">Client care</a></li><li><a href="#/about">Our story</a></li></ul></nav>
+<div><h2 id="f-contact">Contact</h2><ul aria-labelledby="f-contact"><li><a href="${telHref()}">${esc(siteConfig.phone)}</a></li><li><a href="mailto:${esc(siteConfig.email)}">${esc(siteConfig.email)}</a></li><li><a href="${esc(siteConfig.instagramUrl)}" target="_blank" rel="noopener noreferrer">Instagram ${esc(siteConfig.instagramHandle)}</a></li><li>${esc(siteConfig.location)}</li></ul></div>
+</div>
+<div class="container footer-base"><span>© ${TODAY.getFullYear()} ${esc(siteConfig.name)}. Brand names are trademarks of their owners; Meridian is not affiliated with them.</span>${siteConfig.demoMode ? '<span>Website preview. Orders and inquiries are not sent.</span>' : ''}</div>`;
+  // Events
+  const mb = $('#mega-button'), mega = $('#mega');
+  let hoverT, hoverOpenedAt = 0;
+  mb.addEventListener('click', () => { if (mega.hidden) openMega(); else if (Date.now() - hoverOpenedAt > 600) closeMega(true); });
+  const header = $('#site-header');
+  if (matchMedia('(hover: hover)').matches) {
+    mb.addEventListener('mouseenter', () => { clearTimeout(hoverT); if (mega.hidden) { hoverOpenedAt = Date.now(); openMega(); } });
+    header.addEventListener('mouseleave', () => { hoverT = setTimeout(() => closeMega(false), 180); });
+    mega.addEventListener('mouseenter', () => clearTimeout(hoverT));
+  }
+  mega.addEventListener('click', (e) => { if (e.target.closest('a')) closeMega(false); });
+  const goSearch = (q) => navigate('#/watches' + (q ? '?q=' + encodeURIComponent(q) : ''));
+  $('#header-search').addEventListener('submit', (e) => { e.preventDefault(); goSearch($('#hq').value.trim()); $('#hq').blur(); });
+  $('#drawer-search').addEventListener('submit', (e) => { e.preventDefault(); goSearch($('#dq').value.trim()); });
+  $('#menu-button').addEventListener('click', (e) => openDialog($('#menu-drawer'), e.currentTarget));
+  $('#menu-drawer').addEventListener('click', (e) => { if (e.target.closest('a')) $('#menu-drawer').close(); });
+  const tb = $('#tool-bag'); tb && tb.addEventListener('click', (e) => openBag(e.currentTarget));
+  const fav = encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" rx="20" fill="#152724"/>${logoMark({ ink: '#F7F3EA', gold: '#C9AE78' }).replace(/<svg[^>]*>|<\/svg>/g, '')}</svg>`);
+  $('#favicon').href = 'data:image/svg+xml,' + fav;
+  updateCounts();
+}
+function openMega() { $('#mega').hidden = false; $('#mega-button').setAttribute('aria-expanded', 'true'); }
+function closeMega(returnFocus) { const m = $('#mega'); if (!m || m.hidden) return; m.hidden = true; $('#mega-button').setAttribute('aria-expanded', 'false'); if (returnFocus) $('#mega-button').focus(); }
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && $('#mega') && !$('#mega').hidden) closeMega(true); });
+document.addEventListener('click', (e) => { if ($('#mega') && !$('#mega').hidden && !e.target.closest('#mega, #mega-button')) closeMega(false); });
+
+/* ---------- Bag drawer ---------- */
+function bagTotals() {
+  const items = [...bag].map(byId).filter(Boolean);
+  return { items, subtotal: items.reduce((s, w) => s + (w.priceUsd || 0), 0) };
+}
+function bagItemHTML(w, removable = true) {
+  return `<li class="bag-item"><div class="art">${media(w, 'front', { decorative: true })}</div>
+<div class="meta"><small>${esc(w.brand.toUpperCase())}</small><a href="#/watch/${esc(w.id)}">${esc(w.model)}</a><span>${esc(subOf(w))}</span></div>
+<div class="right"><b>${priceLabel(w)}</b>${removable ? `<button type="button" class="link-button" data-remove="${esc(w.id)}">Remove<span class="vh"> ${esc(titleOf(w))}</span></button>` : ''}</div></li>`;
+}
+function renderBagDrawer() {
+  const { items, subtotal } = bagTotals();
+  $('#bag-drawer').innerHTML = `<div class="drawer-head"><h2 id="bag-title">Your bag</h2><button type="button" class="icon-btn" data-close aria-label="Close bag">${I.close}</button></div>
+<div class="drawer-body">${items.length ? `<ul class="bag-items">${items.map(w => bagItemHTML(w)).join('')}</ul>
+<div class="summary-rows" style="margin-top:18px"><div><span>Subtotal</span><span>${money(subtotal)}</span></div><div class="muted"><span>Insured shipping</span><span>Included</span></div></div>
+<p class="note-box">No payment is taken on this site. Meridian confirms availability with you and arranges payment and delivery directly.</p>`
+    : `<p class="muted" style="margin-top:8px">Your bag is empty.</p><div class="actions"><a class="btn btn-primary" href="#/watches">Shop watches</a></div>`}</div>
+${items.length ? `<div class="drawer-foot"><a class="btn btn-primary btn-block" href="#/checkout">Request to buy</a></div>` : ''}`;
+}
+function openBag(trigger) { renderBagDrawer(); openDialog($('#bag-drawer'), trigger); }
+$('#bag-drawer').addEventListener('click', (e) => { if (e.target.closest('a')) $('#bag-drawer').close(); });
+
+/* ---------- Dialog helpers ---------- */
+let dialogTrigger = null;
+function openDialog(d, trigger) { dialogTrigger = trigger || document.activeElement; if (!d.open) d.showModal(); document.body.classList.add('dialog-open'); }
+function attachDialog(d) {
+  if (d._attached) return; d._attached = true;
+  d.addEventListener('close', () => {
+    if (!$$('dialog').some(x => x.open)) document.body.classList.remove('dialog-open');
+    if (dialogTrigger && document.contains(dialogTrigger) && !currentRoute.startsWith('#/checkout')) dialogTrigger.focus();
+    dialogTrigger = null;
+  });
+  d.addEventListener('click', (e) => { if (e.target === d) d.close(); });
+}
+$$('dialog').forEach(attachDialog);
+
+/* ---------- Global delegation ---------- */
+document.addEventListener('click', (e) => {
+  const s = e.target.closest('[data-save]'); if (s) { e.preventDefault(); toggleSaved(s.dataset.save); return; }
+  const a = e.target.closest('[data-add]'); if (a) { bag.has(a.dataset.add) ? openBag(a) : addToBag(a.dataset.add, a); return; }
+  const r = e.target.closest('[data-remove]'); if (r) { removeFromBag(r.dataset.remove); return; }
+  const q = e.target.closest('[data-inquire]'); if (q) { openInquiry(q.dataset.inquire, q.dataset.kind || 'inquire', q); return; }
+  const c = e.target.closest('[data-close]'); if (c) { c.closest('dialog').close(); return; }
+});
+
+/* =====================================================================
+   VIEWS
+   ===================================================================== */
+function viewHome() {
+  const hero = byId(siteConfig.heroWatchId);
+  const fresh = inStock().slice().sort((a, b) => b.added.localeCompare(a.added)).slice(0, 8);
+  const sold = visible().filter(w => w.status === 'sold').slice(0, 4);
+  const brands = brandCounts();
+  const tileArt = (id) => { const w = byId(id); return w ? `<div class="art" aria-hidden="true">${watchArt(w, 'front', { decorative: true, bg: '#152724' })}</div>` : ''; };
+  const count = (fn) => inStock().filter(fn).length;
+  const svc = [
+    siteConfig.enableSellTrade && { i: I.tag, t: 'Sell your watch', p: 'Tell us what you have. Share photos and details, and Meridian will talk you through the options.', a: 'Start selling', h: '#/sell-trade' },
+    siteConfig.enableSellTrade && { i: I.swap, t: 'Trade in', p: 'Put the watch you own toward the one you want, from our collection or one we source.', a: 'Start a trade', h: '#/sell-trade?type=Trade' },
+    siteConfig.enableSourcing && { i: I.find, t: 'Find a specific watch', p: 'Looking for a particular reference, dial or year? Tell us, and we will look through our network.', a: 'Request a watch', h: '#/source' }
+  ].filter(Boolean);
+  return {
+    title: '', html: `
+<section class="hero on-dark" aria-labelledby="hero-title">
+  <div class="container hero-inner">
+    <div>
+      <h1 id="hero-title">${esc(siteConfig.tagline)}</h1>
+      <p class="lede">${esc(siteConfig.heroSubcopy)}</p>
+      <div class="actions"><a class="btn btn-primary" href="#/watches">Shop the collection</a>${siteConfig.enableSellTrade ? '<a class="btn" href="#/sell-trade">Sell or trade</a>' : ''}</div>
+      <div class="hero-services" aria-label="Services"><span>Buy</span><span>Sell</span><span>Trade</span><span>Source</span></div>
+    </div>
+    ${hero ? `<a class="hero-feature" href="#/watch/${esc(hero.id)}"><div class="art">${watchArt(hero, 'front', { decorative: true, bg: 'transparent' }).replace('preserveAspectRatio="xMidYMid slice"', 'preserveAspectRatio="xMidYMid meet"')}</div>
+      <div class="hero-tag"><small>JUST LANDED</small><strong>${esc(titleOf(hero))}${hero.nickname ? ` “${esc(hero.nickname)}”` : ''}</strong><span>${esc([hero.reference, hero.year, hero.condition, fullSet(hero) ? 'full set' : null].filter(Boolean).join(' · '))}</span></div></a>` : ''}
+  </div>
+</section>
+<section class="trust" aria-label="Why Meridian">
+  <div class="container"><ul>
+    <li>${I.shield}<div><b>Collector-chosen</b><span>Every watch picked by our founder</span></div></li>
+    <li>${I.box}<div><b>Shipped fully insured</b><span>Or pick up locally in Arizona</span></div></li>
+    <li>${I.tag}<div><b>Unworn and full-set pieces</b><span>Box, papers and tags listed on each watch</span></div></li>
+    <li>${I.swap}<div><b>Buy, sell, trade, source</b><span>Talk to a person, not a checkout</span></div></li>
+  </ul></div>
+</section>
+<section class="section" aria-labelledby="new-title">
+  <div class="container">
+    <div class="section-head"><div><h2 id="new-title">New arrivals</h2><p>The latest additions to the collection.</p></div><a class="text-link" href="#/watches?sort=newest">Shop all new arrivals</a></div>
+    <div class="grid">${fresh.map(w => cardHTML(w)).join('')}</div>
+  </div>
+</section>
+<section class="section tint" aria-labelledby="brand-title" style="padding-block:clamp(40px,5vw,64px)">
+  <div class="container">
+    <div class="section-head"><h2 id="brand-title">Shop by brand</h2><a class="text-link" href="#/watches">View all watches</a></div>
+    <div class="brand-rail">${brands.slice(0, 5).map(([b, n]) => `<a href="#/watches?brand=${encodeURIComponent(b)}"><b>${esc(b)}</b><small>${n} ${n === 1 ? 'watch' : 'watches'}</small></a>`).join('')}</div>
+  </div>
+</section>
+<section class="section" aria-labelledby="col-title">
+  <div class="container">
+    <div class="section-head"><h2 id="col-title">Shop by collection</h2></div>
+    <div class="tiles">
+      <a class="tile" href="#/watches?condition=Unworn">${tileArt('rolex-submariner-126610lv')}<b>Unworn</b><span>${count(w => w.condition === 'Unworn')} watches, never worn</span></a>
+      <a class="tile" href="#/watches?scope=${encodeURIComponent('Box and papers')}">${tileArt('rolex-gmt-master-ii-126710blro')}<b>Full set</b><span>${count(fullSet)} with box and papers</span></a>
+      <a class="tile" href="#/watches?q=Datejust">${tileArt('rolex-datejust-41-two-tone-black')}<b>Datejust and Day-Date</b><span>Everyday dress watches</span></a>
+      <a class="tile" href="#/watches?price=${encodeURIComponent('Under $15,000')}">${tileArt('rolex-explorer-224270')}<b>Under $15,000</b><span>${count(w => w.priceUsd != null && w.priceUsd < 15000)} watches</span></a>
+    </div>
+  </div>
+</section>
+${svc.length ? `<section class="section tint" aria-labelledby="svc-title"><div class="container">
+  <div class="section-head"><div><h2 id="svc-title">More than a shop</h2><p>Meridian buys, sells, trades and sources watches, and every conversation is with a collector.</p></div></div>
+  <div class="services">${svc.map(s => `<div class="service">${s.i}<h3>${s.t}</h3><p>${s.p}</p><div class="actions"><a class="btn" href="${s.h}">${s.a}</a></div></div>`).join('')}</div>
+</div></section>` : ''}
+<section class="section" aria-labelledby="founder-title">
+  <div class="container founder">
+    <figure class="portrait" style="margin:0">${founder.photo ? `<img src="${esc(founder.photo.src)}" alt="${esc(founder.photo.alt)}" style="width:100%;height:100%;object-fit:cover">` : `${logoMark({ ink: '#F7F3EA', gold: '#C9AE78' })}${siteConfig.demoMode ? '<figcaption>Founder portrait to come</figcaption>' : ''}`}</figure>
+    <div>
+      <h2 id="founder-title" class="vh">Our founder</h2>
+      <blockquote>“${esc(founder.pull)}”</blockquote>
+      <p class="by">${esc(founder.name)}, ${esc(founder.role)}</p>
+      <p class="body">A passion that began in the late 2000s became a collection of ten luxury watches, and then a company. Today Meridian holds between 50 and 70 new and pre-owned timepieces at any given time.</p>
+      <ul class="milestones"><li><b>Late 2000s</b><span>The passion begins</span></li><li><b>10</b><span>Luxury watches collected</span></li><li><b>50–70</b><span>Timepieces in inventory</span></li></ul>
+      <div class="actions"><a class="btn" href="#/about">Read our story</a></div>
+    </div>
+  </div>
+</section>
+${sold.length ? `<section class="section tint" aria-labelledby="sold-title"><div class="container">
+  <div class="section-head"><div><h2 id="sold-title">Recently sold</h2><p>Missed one? Meridian can look for another.</p></div><a class="text-link" href="#/sold">See all sold watches</a></div>
+  <div class="grid">${sold.map(w => cardHTML(w)).join('')}</div>
+</div></section>` : ''}
+<section class="section" aria-labelledby="ig-title"><div class="container"><div class="ig-band">
+  <div><h2 id="ig-title">Follow the collection on Instagram</h2><p>${esc(siteConfig.instagramFollowers)} collectors follow ${esc(siteConfig.instagramHandle)} for new arrivals, wrist shots and sold pieces.</p></div>
+  <div class="actions" style="margin:0"><a class="btn btn-primary" href="${esc(siteConfig.instagramUrl)}" target="_blank" rel="noopener noreferrer">${esc(siteConfig.instagramHandle)}<span class="vh"> (opens in a new tab)</span></a><a class="btn" href="${smsHref()}">Text us</a></div>
+</div></div></section>` };
+}
+
+/* ---------- Catalog with faceted filters ---------- */
+const FACETS = [
+  { key: 'brand', label: 'Brand', get: w => w.brand },
+  { key: 'price', label: 'Price', get: priceBucket, order: ['Under $15,000', '$15,000–$30,000', '$30,000–$60,000', '$60,000 and over', 'Price on request'] },
+  { key: 'condition', label: 'Condition', get: w => w.condition, order: ['Unworn', 'Excellent', 'Very good', 'Pre-owned', 'Vintage'] },
+  { key: 'scope', label: 'Box and papers', get: scopeOf, order: ['Box and papers', 'Papers only', 'Box only', 'Watch only', 'Ask for details'] },
+  { key: 'size', label: 'Case size', get: sizeBucket, order: ['Under 38 mm', '38–40 mm', '41 mm and over'] },
+  { key: 'metal', label: 'Case material', get: metalOf },
+  { key: 'dial', label: 'Dial colour', get: w => w.dial, swatch: true }
+];
+const SORTS = [['featured', 'Featured'], ['newest', 'Newest arrivals'], ['price-asc', 'Price: low to high'], ['price-desc', 'Price: high to low'], ['year-desc', 'Year: newest first'], ['brand', 'Brand A–Z']];
+function viewCatalog(params) {
+  const brandOnly = params.getAll('brand').length === 1 ? params.get('brand') : null;
+  const title = brandOnly ? brandOnly : params.get('sort') === 'newest' && [...params.keys()].length === 1 ? 'New arrivals' : 'All watches';
+  return {
+    title, html: `
+<div class="container page-head">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="#/">Home</a></li><li${brandOnly ? '' : ' aria-current="page"'}>${brandOnly ? '<a href="#/watches">Watches</a>' : 'Watches'}</li>${brandOnly ? `<li aria-current="page">${esc(brandOnly)}</li>` : ''}</ol></nav>
+  <div class="catalog-head"><h1 id="catalog-title">${esc(title)}</h1></div>
+  <div class="catalog-bar">
+    <div class="left">
+      <button type="button" class="btn btn-small filter-toggle" id="filter-toggle" aria-haspopup="dialog" aria-controls="filter-dialog">Filter<span class="pill" id="filter-count" data-n="0"></span></button>
+      <p class="count" id="result-count" role="status" aria-live="polite"></p>
+    </div>
+    <div class="sort-wrap"><label for="sort">Sort by</label><select id="sort">${SORTS.map(([v, l]) => `<option value="${v}"${(params.get('sort') || 'featured') === v ? ' selected' : ''}>${l}</option>`).join('')}</select></div>
+  </div>
+</div>
+<div class="container catalog-layout">
+  <div id="filter-home"><form class="filter-form" id="filter-form" aria-label="Filter watches">
+    <div class="field" style="padding-bottom:14px;border-bottom:1px solid var(--border)"><label for="q">Search</label><input id="q" name="q" type="search" placeholder="Brand, model or reference" autocomplete="off" value="${esc(params.get('q') || '')}"></div>
+    <div id="facets"></div>
+    <label class="toggle-row"><input type="checkbox" id="show-sold" ${params.get('sold') === '1' ? 'checked' : ''}> Include sold watches</label>
+  </form></div>
+  <section aria-labelledby="catalog-title">
+    <div class="chips" id="chips"></div>
+    <div class="grid cols-3" id="results"></div>
+    <div class="empty" id="empty" hidden><h2 style="font-size:1.6rem">No watches match these filters</h2><p id="empty-why"></p>
+      <div class="actions"><button type="button" class="btn btn-primary" data-clear-all>Clear filters</button>${siteConfig.enableSourcing ? '<a class="btn" href="#/source">Ask Meridian to find it</a>' : ''}</div></div>
+  </section>
+</div>
+<dialog class="drawer" id="filter-dialog" aria-labelledby="filter-dialog-title">
+  <div class="drawer-head"><h2 id="filter-dialog-title">Filter</h2><button type="button" class="icon-btn" data-close aria-label="Close filters">${I.close}</button></div>
+  <div class="drawer-body" id="filter-slot"></div>
+  <div class="drawer-foot" style="display:grid;grid-template-columns:1fr 1.5fr;gap:10px"><button type="button" class="btn" data-clear-all>Clear all</button><button type="button" class="btn btn-primary" id="sheet-show">Show results</button></div>
+</dialog>`,
+    init: () => initCatalog(params)
+  };
+}
+function initCatalog(params) {
+  const form = $('#filter-form'), dlg = $('#filter-dialog');
+  attachDialog(dlg);
+  const sel = {}; FACETS.forEach(f => sel[f.key] = new Set(params.getAll(f.key).flatMap(v => v.split('|')).filter(Boolean)));
+  const openFacets = new Set(['brand', 'price']); FACETS.forEach(f => sel[f.key].size && openFacets.add(f.key));
+  const state = () => ({ q: $('#q').value.trim(), sort: $('#sort').value, sold: $('#show-sold').checked });
+  const matchQ = (w, q) => { const terms = q.toLowerCase().split(/\s+/).filter(Boolean); const hay = `${w.brand} ${w.family} ${w.model} ${w.reference || ''} ${w.nickname || ''} ${w.dial || ''}`.toLowerCase(); return terms.every(t => hay.includes(t)); };
+  function filter(except) {
+    const s = state();
+    return visible().filter(w => {
+      if (!s.sold && w.status === 'sold') return false;
+      if (s.q && !matchQ(w, s.q)) return false;
+      for (const f of FACETS) { if (f.key === except || !sel[f.key].size) continue; if (!sel[f.key].has(f.get(w))) return false; }
+      return true;
+    });
+  }
+  const nl = (a, b, dir) => a == null && b == null ? 0 : a == null ? 1 : b == null ? -1 : dir * (a - b);
+  function sortList(list, sort) {
+    const L = list.slice();
+    const avail = (w) => w.status === 'sold' ? 1 : 0;
+    if (sort === 'newest') L.sort((a, b) => avail(a) - avail(b) || b.added.localeCompare(a.added));
+    else if (sort === 'price-asc') L.sort((a, b) => avail(a) - avail(b) || nl(a.priceUsd, b.priceUsd, 1));
+    else if (sort === 'price-desc') L.sort((a, b) => avail(a) - avail(b) || nl(a.priceUsd, b.priceUsd, -1));
+    else if (sort === 'year-desc') L.sort((a, b) => avail(a) - avail(b) || nl(a.year, b.year, -1));
+    else if (sort === 'brand') L.sort((a, b) => avail(a) - avail(b) || a.brand.localeCompare(b.brand) || a.model.localeCompare(b.model));
+    else L.sort((a, b) => avail(a) - avail(b));
+    return L;
+  }
+  function renderFacets() {
+    const html = FACETS.map(f => {
+      const base = filter(f.key);
+      const all = new Map();
+      visible().forEach(w => { const v = f.get(w); if (v != null) all.set(v, 0); });
+      base.forEach(w => { const v = f.get(w); if (v != null) all.set(v, (all.get(v) || 0) + 1); });
+      let opts = [...all.keys()];
+      opts.sort(f.order ? (a, b) => f.order.indexOf(a) - f.order.indexOf(b) : (a, b) => (all.get(b) - all.get(a)) || String(a).localeCompare(String(b)));
+      if (!opts.length) return '';
+      const n = sel[f.key].size;
+      return `<details class="facet" data-facet="${f.key}"${openFacets.has(f.key) ? ' open' : ''}><summary>${f.label}${n ? `<span class="n">${n}</span>` : ''}</summary>
+<fieldset><legend>${f.label}</legend>${opts.map((v, i) => { const c = all.get(v), on = sel[f.key].has(v); const id = `f-${f.key}-${i}`;
+  return `<label class="opt${!c && !on ? ' is-empty' : ''}" for="${id}"><input type="checkbox" id="${id}" data-facet-opt="${f.key}" value="${esc(v)}"${on ? ' checked' : ''}${!c && !on ? ' disabled' : ''}>${f.swatch ? `<span class="swatch" style="background:${DIAL_SWATCH[v] || '#ccc'}"></span>` : ''}<span>${esc(v)}</span><span class="c">${c}</span></label>`; }).join('')}</fieldset></details>`;
+    }).join('');
+    $('#facets').innerHTML = html;
+  }
+  function chips(s) {
+    const c = [];
+    if (s.q) c.push(['q', '', `“${s.q}”`]);
+    FACETS.forEach(f => sel[f.key].forEach(v => c.push([f.key, v, v])));
+    if (s.sold) c.push(['sold', '', 'Including sold']);
+    return c;
+  }
+  function syncUrl(s) {
+    const p = new URLSearchParams();
+    if (s.q) p.set('q', s.q);
+    FACETS.forEach(f => sel[f.key].forEach(v => p.append(f.key, v)));
+    if (s.sold) p.set('sold', '1');
+    if (s.sort !== 'featured') p.set('sort', s.sort);
+    const qs = p.toString(); setUrl('#/watches' + (qs ? '?' + qs : ''), true);
+  }
+  function refresh() {
+    const s = state();
+    const list = sortList(filter(null), s.sort);
+    $('#results').innerHTML = list.map(w => cardHTML(w, 2)).join('');
+    $('#result-count').textContent = `${list.length} ${list.length === 1 ? 'watch' : 'watches'}`;
+    $('#empty').hidden = list.length > 0;
+    $('#empty-why').textContent = 'Try removing a filter, or tell Meridian what you are looking for. New pieces arrive every week.';
+    const c = chips(s);
+    $('#chips').innerHTML = c.length ? c.map(([k, v, l]) => `<button type="button" class="chip" data-chip="${esc(k)}" data-v="${esc(v)}">${esc(l)}${I.chipX}<span class="vh">, remove filter</span></button>`).join('') + '<button type="button" class="link-button" data-clear-all>Clear all</button>' : '';
+    const n = FACETS.reduce((t, f) => t + sel[f.key].size, 0) + (s.sold ? 1 : 0);
+    const fc = $('#filter-count'); fc.textContent = n; fc.dataset.n = n;
+    $('#sheet-show').textContent = `Show ${list.length} ${list.length === 1 ? 'watch' : 'watches'}`;
+    renderFacets();
+    syncUrl(s);
+  }
+  function clearAll() { FACETS.forEach(f => sel[f.key].clear()); $('#q').value = ''; $('#show-sold').checked = false; refresh(); }
+  form.addEventListener('change', (e) => {
+    const o = e.target.closest('[data-facet-opt]');
+    if (o) { const k = o.dataset.facetOpt; o.checked ? sel[k].add(o.value) : sel[k].delete(o.value); const id = o.id; refresh(); const again = document.getElementById(id); again && again.focus(); return; }
+    if (e.target.id === 'show-sold') refresh();
+  });
+  form.addEventListener('toggle', (e) => { const d = e.target.closest('details[data-facet]'); if (d) d.open ? openFacets.add(d.dataset.facet) : openFacets.delete(d.dataset.facet); }, true);
+  form.addEventListener('submit', e => e.preventDefault());
+  let qt; $('#q').addEventListener('input', () => { clearTimeout(qt); qt = setTimeout(refresh, 120); });
+  $('#sort').addEventListener('change', refresh);
+  const onClick = (e) => {
+    const chip = e.target.closest('[data-chip]');
+    if (chip) { const k = chip.dataset.chip; if (k === 'q') $('#q').value = ''; else if (k === 'sold') $('#show-sold').checked = false; else sel[k].delete(chip.dataset.v); refresh(); ($('#chips .chip') || $('#sort')).focus(); return; }
+    if (e.target.closest('[data-clear-all]')) { clearAll(); if (!dlg.open) $('#sort').focus(); }
+  };
+  document.addEventListener('click', onClick); onCleanup(() => document.removeEventListener('click', onClick));
+  $('#filter-toggle').addEventListener('click', (e) => { $('#filter-slot').appendChild(form); openDialog(dlg, e.currentTarget); });
+  dlg.addEventListener('close', () => $('#filter-home').appendChild(form));
+  $('#sheet-show').addEventListener('click', () => dlg.close());
+  current.refreshSaved = null;
+  refresh();
+}
+
+function viewSold() {
+  const list = visible().filter(w => w.status === 'sold');
+  return { title: 'Recently sold', html: `<div class="container page-head"><nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="#/">Home</a></li><li aria-current="page">Recently sold</li></ol></nav><h1>Recently sold</h1><p class="lede">These have found new owners. If one of them is the watch you were after, Meridian can look for another.</p>${siteConfig.enableSourcing ? '<div class="actions"><a class="btn btn-primary" href="#/source">Find me one like these</a></div>' : ''}</div>
+<div class="container section" style="padding-top:12px"><div class="grid">${list.map(w => cardHTML(w, 2)).join('')}</div></div>` };
+}
+
+function viewSaved() {
+  return { title: 'Saved watches', html: `<div class="container page-head"><nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="#/">Home</a></li><li aria-current="page">Saved</li></ol></nav><h1>Saved watches</h1><p class="lede" id="saved-lede"></p></div><div class="container section" style="padding-top:12px"><div class="grid" id="saved-grid"></div></div>`,
+    init: () => {
+      const draw = () => {
+        const list = [...saved].map(byId).filter(w => w && visible().includes(w));
+        $('#saved-grid').innerHTML = list.map(w => cardHTML(w, 2)).join('');
+        $('#saved-lede').innerHTML = list.length ? `${list.length} saved on this device.` : 'Nothing saved yet. Tap the heart on any watch to keep it here. <a class="text-link" href="#/watches">Shop watches</a>';
+      };
+      current.refreshSaved = draw; draw();
+    } };
+}
+
+/* ---------- Product page ---------- */
+function galleryViews(w) {
+  if (w.photos && w.photos.length) return w.photos.map(p => ({ type: 'photo', src: p.src, alt: p.alt, label: p.label || p.alt }));
+  return [{ type: 'art', view: 'front', label: 'Front' }, { type: 'art', view: 'detail', label: 'Dial detail' }, { type: 'art', view: 'angle', label: 'Angled' }];
+}
+const viewMarkup = (w, v, decorative) => v.type === 'photo' ? `<img src="${esc(v.src)}" alt="${decorative ? '' : esc(v.alt)}">` : watchArt(w, v.view, { decorative });
+function viewDetail(w) {
+  const views = galleryViews(w);
+  const sold = w.status === 'sold', reserved = w.status === 'reserved';
+  const buyable = siteConfig.enableBag && w.status === 'available' && w.priceUsd != null;
+  const related = inStock().filter(x => x.id !== w.id).sort((a, b) => (b.family === w.family) - (a.family === w.family) || (b.brand === w.brand) - (a.brand === w.brand)).slice(0, 4);
+  const nl = (v, s = '') => v == null || v === '' ? 'Ask for details' : `${v}${s}`;
+  const yn = (v) => v === true ? 'Included' : v === false ? 'Not included' : 'Ask for details';
+  const specs = [['Brand', w.brand], ['Model', w.model], ['Reference', nl(w.reference)], ['Year', nl(w.year)], ['Case size', nl(w.caseSizeMm, ' mm')], ['Case material', nl(w.material)], ['Dial', nl(w.dial)], ['Bezel', nl(w.bezel)], ['Bracelet or strap', nl(w.bracelet)], ['Movement', nl(w.movement)]];
+  const policies = Object.entries(policyContent).filter(([, v]) => v);
+  const PT = { authentication: 'Authentication', warranty: 'Warranty', payment: 'Payment', returns: 'Returns' };
+  const desc = w.source === 'sample' ? `This is a sample listing that shows how a ${w.brand} ${w.model} would appear. Live listings include Meridian’s own description and photographs.` : w.description;
+  const primary = sold
+    ? (siteConfig.enableSourcing ? `<a class="btn btn-primary btn-block" href="#/source?watch=${encodeURIComponent(w.id)}">Find me one like this</a>` : `<button type="button" class="btn btn-primary btn-block" data-inquire="${esc(w.id)}" data-kind="similar">Ask about a similar watch</button>`)
+    : reserved ? `<button type="button" class="btn btn-primary btn-block" data-inquire="${esc(w.id)}" data-kind="waitlist">Join the waiting list</button>`
+    : buyable ? `<button type="button" class="btn btn-primary btn-block" data-add="${esc(w.id)}">${bag.has(w.id) ? 'In your bag' : 'Add to bag'}</button>`
+    : `<button type="button" class="btn btn-primary btn-block" data-inquire="${esc(w.id)}" data-kind="price">Request price</button>`;
+  const mobilePrimary = primary;
+  return {
+    title: `${titleOf(w)}${w.reference ? ' ' + w.reference : ''}`,
+    html: `
+<div class="container" style="padding-top:clamp(16px,2.4vw,28px)">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="#/">Home</a></li><li><a href="#/watches">Watches</a></li><li><a href="#/watches?brand=${encodeURIComponent(w.brand)}">${esc(w.brand)}</a></li><li aria-current="page">${esc(w.model)}</li></ol></nav>
+  <div class="product">
+    <section class="gallery" aria-label="Gallery" id="gallery">
+      <div class="thumbs">${views.map((v, i) => `<button type="button" class="thumb" data-thumb="${i}" aria-label="Show ${esc(v.label)} view">${viewMarkup(w, v, true)}</button>`).join('')}</div>
+      <div class="stage">
+        <button type="button" class="zoom-trigger" id="zoom-open" aria-label="Enlarge image"><span id="stage-main" style="display:block;width:100%;height:100%"></span></button>
+        ${!(w.photos && w.photos.length) ? '<span class="stage-note" aria-hidden="true">Illustration · photographs to come</span>' : ''}
+        <div class="stage-nav"><button type="button" class="icon-btn" id="g-prev" aria-label="Previous image">${I.prev}</button><button type="button" class="icon-btn" id="g-next" aria-label="Next image">${I.next}</button></div>
+      </div>
+      <p class="gallery-caption" id="gallery-caption" aria-live="polite"></p>
+    </section>
+    <div class="buybox">
+      <div class="tags">${tagsFor(w, 4).map(([l, c]) => `<span class="tag ${c}">${l}</span>`).join('')}</div>
+      <p class="brand">${esc(w.brand.toUpperCase())}</p>
+      <h1>${esc(w.model)}${w.nickname ? ` <span style="color:var(--muted)">“${esc(w.nickname)}”</span>` : ''}</h1>
+      <p class="ref">${esc([w.reference ? `Reference ${w.reference}` : null, w.year, w.condition].filter(Boolean).join(' · '))}</p>
+      <div class="price-block">
+        <p class="price">${priceLabel(w)}</p>
+        <p class="price-note">${sold ? 'This watch has sold.' : reserved ? 'This watch is reserved for another client.' : w.priceUsd != null ? 'Includes fully insured shipping.' : 'Ask for today’s price. Meridian replies personally.'}</p>
+        ${w.localPriceUsd && !sold ? `<p class="local"><span>Local pickup in Arizona</span><b>${money(w.localPriceUsd)}</b></p>` : ''}
+      </div>
+      <div class="buy-actions">
+        <div class="row">${primary}${heartBtn(w)}</div>
+        ${!sold ? `<button type="button" class="btn btn-block" data-inquire="${esc(w.id)}" data-kind="inquire">Ask a question</button>` : ''}
+        ${!sold && siteConfig.enableSellTrade ? `<a class="text-link" style="justify-self:start;padding:6px 0" href="#/sell-trade?type=Trade&watch=${encodeURIComponent(w.id)}">Trade your watch toward this one</a>` : ''}
+      </div>
+      <ul class="assure">
+        <li>${I.box}<span><b>Shipped fully insured</b>, or collect locally in Arizona.</span></li>
+        <li>${I.shield}<span><b>Condition described plainly</b>: wear, inclusions and service history below.</span></li>
+        <li>${I.chat}<span><b>Questions?</b> Call or text <a href="${telHref()}">${esc(siteConfig.phone)}</a></span></li>
+      </ul>
+      <dl class="key-specs">${[['Condition', w.condition], ['Box and papers', scopeOf(w)], ['Case size', nl(w.caseSizeMm, ' mm')], ['Year', nl(w.year)]].map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
+    </div>
+  </div>
+  <div class="accordion" style="max-width:920px">
+    <details open><summary>Description</summary><div class="acc-body"><p>${esc(desc)}</p></div></details>
+    <details><summary>Condition</summary><div class="acc-body"><p><strong>${esc(w.condition)}.</strong> ${w.condition === 'Unworn' ? 'Never worn; any protective stickers remain as delivered.' : 'Ask Meridian for close-up photographs of any marks or wear.'}</p></div></details>
+    <details><summary>Box, papers and accessories</summary><div class="acc-body"><ul><li>Box: ${yn(w.box)}</li><li>Papers: ${yn(w.papers)}</li>${w.extras.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div></details>
+    <details><summary>Specifications</summary><div class="acc-body"><table class="spec-table"><tbody>${specs.map(([k, v]) => `<tr><th scope="row">${k}</th><td>${esc(v)}</td></tr>`).join('')}</tbody></table></div></details>
+    <details><summary>Shipping and pickup</summary><div class="acc-body"><p>Listed prices include fully insured shipping. Where a local price is shown, you can collect in Arizona for that amount instead. Meridian confirms timing and delivery with you directly.</p></div></details>
+    <details><summary>Purchase information</summary><div class="acc-body">${policies.length ? policies.map(([k, v]) => `<p><strong>${PT[k]}.</strong> ${esc(v)}</p>`).join('') : `<p>Payment and purchase terms are confirmed with you before any sale. <a href="#/contact?watch=${encodeURIComponent(w.id)}">Ask Meridian</a> anything you need to know.</p>`}</div></details>
+  </div>
+</div>
+${related.length ? `<section class="section" aria-labelledby="rel-title"><div class="container"><div class="section-head"><h2 id="rel-title">You may also like</h2><a class="text-link" href="#/watches">View all watches</a></div><div class="grid">${related.map(x => cardHTML(x)).join('')}</div></div></section>` : ''}
+<div class="mobile-bar" id="mobile-bar"><div class="inner"><p class="p">${priceLabel(w)}<small>${esc(w.model)}</small></p>${mobilePrimary}</div></div>`,
+    init: () => initDetail(w, views)
+  };
+}
+let galleryCtl = null;
+function initDetail(w, views) {
+  let idx = 0;
+  const show = (i) => {
+    idx = (i + views.length) % views.length;
+    $('#stage-main').innerHTML = viewMarkup(w, views[idx], false);
+    const cap = `${views[idx].label} (${idx + 1} of ${views.length})`;
+    $('#gallery-caption').textContent = cap;
+    $$('[data-thumb]').forEach((t, j) => t.setAttribute('aria-current', j === idx ? 'true' : 'false'));
+    $('#zoom-stage').innerHTML = viewMarkup(w, views[idx], false);
+    $('#zoom-caption').textContent = cap;
+  };
+  galleryCtl = { prev: () => show(idx - 1), next: () => show(idx + 1) };
+  onCleanup(() => { galleryCtl = null; });
+  $('#g-prev').addEventListener('click', galleryCtl.prev);
+  $('#g-next').addEventListener('click', galleryCtl.next);
+  $$('[data-thumb]').forEach(t => t.addEventListener('click', () => show(Number(t.dataset.thumb))));
+  $('#gallery').addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') { e.preventDefault(); galleryCtl.prev(); } if (e.key === 'ArrowRight') { e.preventDefault(); galleryCtl.next(); } });
+  $('#zoom-open').addEventListener('click', (e) => { $('#zoom-title').textContent = titleOf(w); openDialog($('#zoom-dialog'), e.currentTarget); });
+  show(0);
+  const bar = $('#mobile-bar'), target = $('.buy-actions');
+  if ('IntersectionObserver' in window && bar && target) {
+    const io = new IntersectionObserver(([en]) => bar.classList.toggle('is-hidden', en.isIntersecting), { threshold: 0 });
+    io.observe(target); onCleanup(() => io.disconnect());
+  }
+}
+$('#zoom-prev').addEventListener('click', () => galleryCtl && galleryCtl.prev());
+$('#zoom-next').addEventListener('click', () => galleryCtl && galleryCtl.next());
+$('#zoom-dialog').addEventListener('keydown', (e) => { if (!galleryCtl) return; if (e.key === 'ArrowLeft') galleryCtl.prev(); if (e.key === 'ArrowRight') galleryCtl.next(); });
+
+/* ---------- Checkout (request to buy; no payment) ---------- */
+function viewCheckout() {
+  if (!siteConfig.enableBag) return viewNotFound();
+  const p = 'co';
+  return { title: 'Request to buy', html: `
+<div class="container page-head"><nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="#/">Home</a></li><li aria-current="page">Request to buy</li></ol></nav><h1>Request to buy</h1><p class="lede">Send your request and Meridian will confirm availability, arrange payment and plan delivery with you. Nothing is charged on this site.</p></div>
+<div class="container checkout" id="checkout-wrap">
+  <form class="form-card" data-form="purchase-request" novalidate id="checkout-form">
+    <div class="form-grid">
+      <h2 class="form-section-title">Your details</h2>
+      ${NAME(p)}${EMAIL(p)}
+      ${field(p, { name: 'phone', label: 'Phone', type: 'tel', required: true, err: 'a phone number', span: true, attrs: 'autocomplete="tel" inputmode="tel"', hint: 'Meridian usually confirms by phone or text.' })}
+      <h2 class="form-section-title">Delivery</h2>
+      <fieldset class="field span-2"><legend>How would you like to receive it?</legend><div class="segmented">
+        <label><input type="radio" name="delivery" value="Insured shipping" checked><span>Insured shipping</span></label>
+        <label><input type="radio" name="delivery" value="Local pickup"><span>Local pickup, Arizona</span></label>
+      </div></fieldset>
+      ${field(p, { name: 'address1', label: 'Street address', required: true, span: true, err: 'a street address', attrs: 'autocomplete="address-line1"' })}
+      ${field(p, { name: 'city', label: 'City', required: true, err: 'a city', attrs: 'autocomplete="address-level2"' })}
+      ${field(p, { name: 'state', label: 'State', required: true, err: 'a state', attrs: 'autocomplete="address-level1"' })}
+      ${field(p, { name: 'zip', label: 'ZIP code', required: true, err: 'a ZIP code', attrs: 'autocomplete="postal-code" inputmode="numeric"' })}
+      ${field(p, { name: 'notes', label: 'Notes for Meridian', type: 'textarea', span: true, rows: 3, placeholder: 'Questions, trade-in ideas or timing.' })}
+      ${consent(p)}
+    </div>
+    <div class="form-actions"><button type="submit" class="btn btn-primary btn-block">Send purchase request</button></div>
+    ${STATUS_EL}
+  </form>
+  <aside class="order-summary" aria-labelledby="sum-title"><h2 id="sum-title">Your order</h2><div id="sum-body"></div></aside>
+</div>`,
+    init: () => {
+      const form = $('#checkout-form');
+      const draw = () => {
+        const { items, subtotal } = bagTotals();
+        if (!items.length) { $('#checkout-wrap').innerHTML = `<div class="empty" style="grid-column:1/-1"><h2 style="font-size:1.6rem">Your bag is empty</h2><p>Add a watch to your bag to request it.</p><div class="actions"><a class="btn btn-primary" href="#/watches">Shop watches</a></div></div>`; return; }
+        const local = form.elements.delivery.value === 'Local pickup';
+        const localTotal = items.reduce((s, w) => s + (w.localPriceUsd || w.priceUsd || 0), 0);
+        $('#sum-body').innerHTML = `<ul class="bag-items">${items.map(w => bagItemHTML(w)).join('')}</ul>
+<div class="summary-rows" style="margin-top:16px"><div><span>Subtotal</span><span>${money(subtotal)}</span></div>
+<div><span>${local ? 'Local pickup' : 'Insured shipping'}</span><span>${local && localTotal !== subtotal ? '−' + money(subtotal - localTotal) : 'Included'}</span></div>
+<div class="total"><span>Estimated total</span><span>${money(local ? localTotal : subtotal)}</span></div></div>
+<p class="note-box">Sales tax, if any, is confirmed by Meridian. No payment is collected online.</p>`;
+        $$('[data-field="address1"],[data-field="city"],[data-field="state"],[data-field="zip"]', form).forEach(el => el.hidden = local);
+      };
+      form.addEventListener('change', (e) => { if (e.target.name === 'delivery') draw(); });
+      current.refreshBag = draw; draw();
+    } };
+}
+
+/* ---------- Not found ---------- */
+function viewNotFound() {
+  return { title: 'Page not found', html: `<section class="container notice"><h1>We can’t find that page</h1><p class="lede">The watch may have sold, or the address may have changed.</p><div class="actions"><a class="btn btn-primary" href="#/watches">Shop watches</a><a class="btn" href="#/sold">Recently sold</a></div></section>` };
+}
+function viewUnavailable(name) {
+  return { title: name, html: `<section class="container notice"><h1>${esc(name)} isn’t available right now</h1><p class="lede">Call, text or email Meridian and we’ll help directly.</p><div class="actions"><a class="btn btn-primary" href="#/contact">Contact Meridian</a></div></section>` };
+}
+
+/* ---------- Forms ---------- */
+function field(p, f) {
+  const id = `${p}-${f.name}`;
+  const tag = f.required ? '<span class="req">Required</span>' : (f.noTag ? '' : '<span class="req">Optional</span>');
+  const desc = [f.hint ? `${id}-hint` : '', `${id}-err`].filter(Boolean).join(' ');
+  const common = `id="${id}" name="${f.name}"${f.required ? ' data-required' : ''} data-label="${esc(f.err || f.label.toLowerCase())}" aria-describedby="${desc}" ${f.attrs || ''}`;
+  let control;
+  if (f.type === 'select') control = `<select ${common}>${f.options.map(o => { const [v, l] = Array.isArray(o) ? o : [o, o]; return `<option value="${esc(v)}"${String(v) === String(f.value ?? '') ? ' selected' : ''}>${esc(l)}</option>`; }).join('')}</select>`;
+  else if (f.type === 'textarea') control = `<textarea ${common} rows="${f.rows || 5}"${f.placeholder ? ` placeholder="${esc(f.placeholder)}"` : ''}>${esc(f.value || '')}</textarea>`;
+  else control = `<input type="${f.type || 'text'}" ${common} value="${esc(f.value ?? '')}"${f.placeholder ? ` placeholder="${esc(f.placeholder)}"` : ''}>`;
+  return `<div class="field${f.span ? ' span-2' : ''}" data-field="${f.name}"${f.hidden ? ' hidden' : ''}><label for="${id}">${esc(f.label)}${tag}</label>${control}${f.hint ? `<p class="field-hint" id="${id}-hint">${esc(f.hint)}</p>` : ''}<p class="field-error" id="${id}-err" hidden></p></div>`;
+}
+function consent(p) {
+  return `<div class="field span-2" data-field="consent"><div class="consent"><input type="checkbox" id="${p}-consent" name="consent" value="yes" data-required data-label="consent" aria-describedby="${p}-consent-err"><label for="${p}-consent">Meridian may contact me about this request.<span class="req">Required</span></label></div><p class="field-error" id="${p}-consent-err" hidden></p></div>`;
+}
+const NAME = (p) => field(p, { name: 'name', label: 'Your name', required: true, err: 'your name', attrs: 'autocomplete="name"' });
+const EMAIL = (p) => field(p, { name: 'email', label: 'Email', type: 'email', required: true, err: 'your email address', attrs: 'autocomplete="email" inputmode="email"' });
+const STATUS_EL = '<p class="form-status" tabindex="-1" aria-live="polite"></p>';
+function setError(el, msg) {
+  const err = document.getElementById(el.id + '-err');
+  el.setAttribute('aria-invalid', msg ? 'true' : 'false');
+  if (err) { err.textContent = msg; err.hidden = !msg; }
+}
+function validateForm(form) {
+  const bad = [];
+  $$('input, select, textarea', form).forEach(el => {
+    if (!el.name || el.type === 'hidden' || el.type === 'file' || el.type === 'radio' || el.closest('[hidden]')) { if (el.id) setError(el, ''); return; }
+    const v = el.type === 'checkbox' ? el.checked : el.value.trim();
+    const label = el.dataset.label || 'this field';
+    let msg = '';
+    if (el.hasAttribute('data-required') && !v) msg = el.type === 'checkbox' ? 'Confirm that Meridian may contact you about this request.' : (el.tagName === 'SELECT' ? `Choose ${label}.` : `Enter ${label}.`);
+    else if (el.type === 'email' && v && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) msg = 'Enter an email address in the format name@example.com.';
+    else if (el.type === 'tel' && v && v.replace(/\D/g, '').length < 7) msg = 'Enter a phone number with at least 7 digits.';
+    else if (el.type === 'number' && v !== '') {
+      const n = Number(v);
+      if (Number.isNaN(n)) msg = 'Enter a number.';
+      else if (el.min !== '' && n < Number(el.min)) msg = `Enter ${el.min} or more.`;
+      else if (el.max !== '' && n > Number(el.max)) msg = `Enter ${el.max} or less.`;
+    }
+    setError(el, msg); if (msg) bad.push(el);
+  });
+  if (form.dataset.form === 'source') {
+    const mn = form.elements.budgetMin, mx = form.elements.budgetMax;
+    if (mn.value !== '' && mx.value !== '' && Number(mn.value) > Number(mx.value) && !bad.includes(mx)) { setError(mx, 'Maximum budget must be at least the minimum.'); bad.push(mx); }
+  }
+  return bad.sort((a, b) => a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1);
+}
+function showStatus(el, kind, text) { el.className = 'form-status ' + (kind === 'success' ? 'is-success' : 'is-error'); el.setAttribute('role', kind === 'success' ? 'status' : 'alert'); el.textContent = text; }
+document.addEventListener('submit', async (e) => {
+  const form = e.target.closest('form[data-form]'); if (!form) return;
+  e.preventDefault();
+  const status = $('.form-status', form);
+  status.className = 'form-status'; status.textContent = '';
+  const bad = validateForm(form);
+  if (bad.length) { showStatus(status, 'error', `Check ${bad.length} ${bad.length === 1 ? 'field' : 'fields'} before sending. Everything else you entered is kept.`); bad[0].focus(); return; }
+  const btn = $('[type="submit"]', form), label = btn.innerHTML;
+  btn.disabled = true; btn.textContent = 'Sending…'; form.setAttribute('aria-busy', 'true');
+  try {
+    if (siteConfig.demoMode) { await wait(500); showStatus(status, 'success', 'Preview complete. No request has been sent.'); }
+    else if (!siteConfig.inquiryEndpoint) throw new Error('This form cannot send yet because no delivery address is configured. Your details are still in the form.');
+    else {
+      const data = {}; new FormData(form).forEach((v, k) => { if (!(v instanceof File)) data[k] = v; });
+      data.formType = form.dataset.form; if (form.dataset.form === 'purchase-request') data.watchIds = [...bag];
+      const res = await fetch(siteConfig.inquiryEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+      if (!res.ok) throw new Error('The request was not accepted. Your details are still in the form; please try again.');
+      showStatus(status, 'success', 'Request sent. Meridian will be in touch shortly.');
+    }
+  } catch (err) { showStatus(status, 'error', err.message || 'The request could not be sent. Your details are still in the form.'); }
+  finally { btn.disabled = false; btn.innerHTML = label; form.removeAttribute('aria-busy'); status.focus(); }
+});
+document.addEventListener('input', (e) => { const el = e.target; if (el.getAttribute && el.getAttribute('aria-invalid') === 'true' && el.closest('form[data-form]')) { const v = el.type === 'checkbox' ? el.checked : el.value.trim(); if (v) setError(el, ''); } });
+document.addEventListener('change', (e) => { const el = e.target; if (el.type === 'checkbox' && el.checked && el.getAttribute('aria-invalid') === 'true') setError(el, ''); });
+
+/* ---------- Inquiry dialog ---------- */
+function openInquiry(id, kind, trigger) {
+  const w = byId(id); if (!w) return;
+  const f = $('#inquiry-form');
+  const T = { price: ['Request price', 'Send price request', `Could you share today's price for the ${titleOf(w)}${w.reference ? ` (ref. ${w.reference})` : ''}?`],
+    waitlist: ['Join the waiting list', 'Join waiting list', `Please let me know if the ${titleOf(w)} becomes available, or if you find one like it.`],
+    similar: ['Ask about a similar watch', 'Send request', `I'm looking for a watch like the ${titleOf(w)}${w.reference ? ` (ref. ${w.reference})` : ''}.`],
+    inquire: ['Ask a question', 'Send question', ''] }[kind] || ['Ask a question', 'Send question', ''];
+  $('#inquiry-title').textContent = T[0];
+  $('#inquiry-watch').innerHTML = `<div class="art">${media(w, 'front', { decorative: true })}</div><div><strong>${esc(titleOf(w))}</strong>${esc(subOf(w))}<br>${priceLabel(w)}</div>`;
+  $('#inquiry-fields').innerHTML = NAME('iq') + EMAIL('iq') + field('iq', { name: 'phone', label: 'Phone', type: 'tel', span: true, attrs: 'autocomplete="tel"' }) + field('iq', { name: 'message', label: 'Message', type: 'textarea', required: true, span: true, rows: 4, err: 'a message', value: T[2] }) + consent('iq');
+  f.elements.watchId.value = w.id;
+  $('.form-status', f).className = 'form-status'; $('.form-status', f).textContent = '';
+  $('#inquiry-submit').textContent = T[1];
+  openDialog($('#inquiry-dialog'), trigger);
+  $('#iq-name').focus();
+}
+
+/* ---------- Sell or trade ---------- */
+function viewSellTrade(params) {
+  if (!siteConfig.enableSellTrade) return viewUnavailable('Sell or trade');
+  const p = 'st', type = params.get('type') === 'Trade' ? 'Trade' : 'Sell';
+  const target = byId(params.get('watch'));
+  return { title: 'Sell or trade', html: `
+<div class="container form-layout">
+  <div class="intro">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="#/">Home</a></li><li aria-current="page">Sell or trade</li></ol></nav>
+    <h1>Sell or trade your watch</h1>
+    <p class="lede">Tell us about your watch. Meridian reviews every submission personally and talks you through the options before anything is decided.</p>
+    <ol class="steps">
+      <li><div><b>Share the details</b><span>Model, condition, what is included and a few photos.</span></div></li>
+      <li><div><b>Talk it through</b><span>Meridian reviews your watch and gets back to you.</span></div></li>
+      <li><div><b>Decide together</b><span>Sell outright, or put it toward a watch you want.</span></div></li>
+    </ol>
+    <p class="fine" style="margin-top:28px">We are especially interested in:</p>
+    <div class="we-buy">${siteConfig.focusBrands.concat(['Vacheron Constantin']).map(b => `<span>${esc(b)}</span>`).join('')}</div>
+    <p class="fine">Sending details does not create an offer or a commitment to buy.</p>
+  </div>
+  <form class="form-card" data-form="sell-trade" novalidate>
+    ${target ? `<div class="context-chip"><span>Trading toward <strong>${esc(titleOf(target))}</strong>${target.reference ? `, ref. ${esc(target.reference)}` : ''}</span><input type="hidden" name="targetWatchId" value="${esc(target.id)}"></div>` : ''}
+    <div class="form-grid">
+      <h2 class="form-section-title">Your watch</h2>
+      <fieldset class="field span-2"><legend>I would like to</legend><div class="segmented">
+        <label><input type="radio" name="inquiryType" value="Sell"${type === 'Sell' ? ' checked' : ''}><span>Sell</span></label>
+        <label><input type="radio" name="inquiryType" value="Trade"${type === 'Trade' ? ' checked' : ''}><span>Trade</span></label>
+      </div></fieldset>
+      ${field(p, { name: 'brand', label: 'Brand', required: true, err: 'the brand', attrs: 'autocomplete="off" list="brand-list"' })}
+      ${field(p, { name: 'model', label: 'Model', required: true, err: 'the model' })}
+      ${field(p, { name: 'reference', label: 'Reference', hint: 'Usually on the papers or between the lugs.' })}
+      ${field(p, { name: 'year', label: 'Year', type: 'number', attrs: 'min="1900" max="2027" inputmode="numeric"' })}
+      ${field(p, { name: 'inclusions', label: 'Box and papers', type: 'select', noTag: true, options: ['Not sure', 'Box and papers', 'Box only', 'Papers only', 'Watch only'] })}
+      ${field(p, { name: 'priceExpectation', label: 'Price in mind (USD)', type: 'number', attrs: 'min="0" step="100" inputmode="numeric"' })}
+      ${field(p, { name: 'tradeTarget', label: 'Watch you would like in return', span: true, hidden: type !== 'Trade', placeholder: 'Brand, model or reference', value: target ? `${titleOf(target)}${target.reference ? ' ' + target.reference : ''}` : '' })}
+      ${field(p, { name: 'condition', label: 'Condition and history', type: 'textarea', required: true, span: true, err: 'a description of the condition', placeholder: 'Wear, servicing, polishing, anything worth knowing.' })}
+      <div class="field span-2"><label for="${p}-photos">Photos<span class="req">Optional</span></label><input type="file" id="${p}-photos" name="photos" accept="image/jpeg,image/png,image/webp" multiple aria-describedby="${p}-photos-hint ${p}-photos-err"><p class="field-hint" id="${p}-photos-hint">Up to 6 JPEG, PNG or WebP images, 10 MB each. In this preview photos stay on your device.</p><p class="field-error" id="${p}-photos-err" hidden></p><div class="photo-previews" id="photo-previews"></div></div>
+      <h2 class="form-section-title">Your details</h2>
+      ${NAME(p)}${EMAIL(p)}
+      ${field(p, { name: 'phone', label: 'Phone', type: 'tel', attrs: 'autocomplete="tel"' })}
+      ${consent(p)}
+    </div>
+    <datalist id="brand-list">${siteConfig.focusBrands.concat(['Vacheron Constantin', 'Cartier', 'Omega', 'Tudor']).map(b => `<option value="${esc(b)}">`).join('')}</datalist>
+    <div class="form-actions"><button type="submit" class="btn btn-primary btn-block">Submit my watch</button></div>
+    ${STATUS_EL}
+  </form>
+</div>`,
+    init: () => {
+      const form = $('form[data-form="sell-trade"]');
+      form.addEventListener('change', (e) => { if (e.target.name === 'inquiryType') $('[data-field="tradeTarget"]', form).hidden = e.target.value !== 'Trade'; });
+      let urls = []; const input = $('#st-photos'), prev = $('#photo-previews');
+      input.addEventListener('change', () => {
+        urls.forEach(URL.revokeObjectURL); urls = []; prev.replaceChildren(); setError(input, '');
+        const files = Array.from(input.files), ok = ['image/jpeg', 'image/png', 'image/webp'];
+        let msg = '';
+        if (files.length > 6) msg = `Choose up to 6 images. You selected ${files.length}.`;
+        else if (files.some(f => !ok.includes(f.type))) msg = 'Choose JPEG, PNG or WebP images only.';
+        else if (files.some(f => f.size > 10 * 1024 * 1024)) msg = 'Each image must be 10 MB or smaller.';
+        if (msg) { setError(input, msg); input.value = ''; return; }
+        files.forEach(f => { const u = URL.createObjectURL(f); urls.push(u); const img = document.createElement('img'); img.src = u; img.alt = 'Preview of ' + f.name; prev.appendChild(img); });
+      });
+      onCleanup(() => urls.forEach(URL.revokeObjectURL));
+    } };
+}
+
+/* ---------- Find a watch ---------- */
+function viewSource(params) {
+  if (!siteConfig.enableSourcing) return viewUnavailable('Find a watch');
+  const p = 'src', from = byId(params.get('watch'));
+  const brands = [...new Set(siteConfig.focusBrands.concat(brandCounts().map(([b]) => b)))];
+  return { title: 'Find a watch', html: `
+<div class="container form-layout">
+  <div class="intro">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="#/">Home</a></li><li aria-current="page">Find a watch</li></ol></nav>
+    <h1>Find a specific watch</h1>
+    <p class="lede">Not in the collection? Tell Meridian the reference, dial or year you are after. &ldquo;Not sure&rdquo; is a perfectly good answer.</p>
+    <ol class="steps">
+      <li><div><b>Tell us what you want</b><span>Brand, reference, configuration and budget.</span></div></li>
+      <li><div><b>We search</b><span>Meridian looks through its network of collectors and dealers.</span></div></li>
+      <li><div><b>You decide</b><span>We bring options; you choose whether to go ahead.</span></div></li>
+    </ol>
+    <p class="fine">A request is not a guarantee that a watch can be found at a given price or time.</p>
+  </div>
+  <form class="form-card" data-form="source" novalidate>
+    ${from ? `<div class="context-chip"><span>Like the <strong>${esc(titleOf(from))}</strong>${from.reference ? `, ref. ${esc(from.reference)}` : ''}</span><input type="hidden" name="watchId" value="${esc(from.id)}"></div>` : ''}
+    <div class="form-grid">
+      <h2 class="form-section-title">The watch</h2>
+      ${field(p, { name: 'brand', label: 'Brand', type: 'select', required: true, err: 'a brand', options: [['', 'Choose a brand'], ...brands.map(b => [b, b]), ['Another brand', 'Another brand'], ['Not sure', 'Not sure']], value: from ? from.brand : '' })}
+      ${field(p, { name: 'reference', label: 'Model or reference', value: from ? [from.model, from.reference].filter(Boolean).join(' ') : '' })}
+      ${field(p, { name: 'configuration', label: 'Configuration', span: true, placeholder: 'Dial colour, case size, metal, bracelet' })}
+      ${field(p, { name: 'budgetMin', label: 'Budget from (USD)', type: 'number', attrs: 'min="0" step="500" inputmode="numeric"' })}
+      ${field(p, { name: 'budgetMax', label: 'Budget up to (USD)', type: 'number', attrs: 'min="0" step="500" inputmode="numeric"' })}
+      ${field(p, { name: 'conditionPref', label: 'Condition', type: 'select', noTag: true, options: ['Either', 'Unworn', 'Pre-owned', 'Vintage', 'Not sure'] })}
+      ${field(p, { name: 'timeline', label: 'Timeline', type: 'select', noTag: true, options: ['No fixed timeline', 'Within a month', 'Within three months', 'Not sure'] })}
+      <h2 class="form-section-title">Your details</h2>
+      ${NAME(p)}${EMAIL(p)}
+      ${field(p, { name: 'phone', label: 'Phone', type: 'tel', span: true, attrs: 'autocomplete="tel"' })}
+      ${field(p, { name: 'notes', label: 'Anything else', type: 'textarea', span: true, rows: 4 })}
+      ${consent(p)}
+    </div>
+    <div class="form-actions"><button type="submit" class="btn btn-primary btn-block">Send my request</button></div>
+    ${STATUS_EL}
+  </form>
+</div>` };
+}
+
+/* ---------- About / Our story ---------- */
+function viewAbout() {
+  return { title: 'Our story', html: `
+<section class="about-hero on-dark" aria-labelledby="about-title"><div class="container">
+  <div>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><ol style="color:#AEB9B2"><li><a href="#/">Home</a></li><li aria-current="page">Our story</li></ol></nav>
+    <h1 id="about-title">A collector’s company</h1>
+    <p class="lede">Meridian Chrono Group began with one person’s fascination with fine watches. It grew into a collection, and then into a company that holds between 50 and 70 timepieces at any given time.</p>
+  </div>
+  <div class="dial">${heroDial()}</div>
+</div></section>
+<section class="section" aria-labelledby="story-title"><div class="container story">
+  <div>
+    <figure class="portrait" style="margin:0">${founder.photo ? `<img src="${esc(founder.photo.src)}" alt="${esc(founder.photo.alt)}" style="width:100%;height:100%;object-fit:cover">` : `${logoMark({ ink: '#F7F3EA', gold: '#C9AE78' })}${siteConfig.demoMode ? '<figcaption>Founder portrait to come</figcaption>' : ''}`}</figure>
+    <p style="margin-top:14px"><strong style="color:var(--ink);font-weight:500">${esc(founder.name)}</strong><br><span class="muted">Founder, Meridian Chrono Group</span></p>
+  </div>
+  <div class="prose">
+    <h2 id="story-title" style="margin-bottom:24px">Meet the founder</h2>
+    <p class="drop">Rushik Dave’s passion for watches began in the late 2000s. It started with admiration for the engineering inside a mechanical movement, and with a dream of one day studying watchmaking in Switzerland.</p>
+    <p>That passion turned into a collection. Over the years Rushik bought ten luxury watches of his own, learning the market the way every serious collector does: one reference, one dealer and one conversation at a time. Precise by profession, he spent nearly a decade leading data science and analytics teams at some of the largest healthcare organizations in the country, and he brought the same rigor to every watch he considered.</p>
+    <p>Eventually there were more watches than wrists. Rather than sell them off, he built something around them: a trusted place where collectors can buy, sell, trade and discover watches, with full transparency, genuine expertise and room for the independent makers that rarely get the spotlight.</p>
+    <p>Today Meridian Chrono Group holds between 50 and 70 new and pre-owned timepieces at any given time, from Rolex sports models to Patek Philippe, Audemars Piguet and F. P. Journe. It started in Arizona, and it is built for collectors everywhere.</p>
+  </div>
+</div></section>
+<section class="section tint" aria-labelledby="tl-title"><div class="container story">
+  <div><h2 id="tl-title">From collector to company</h2><p class="lede">How a personal passion became a collection, and then Meridian.</p></div>
+  <ol class="timeline">
+    <li><small>LATE 2000s</small><b>The fascination begins</b><span>Rushik falls for mechanical watchmaking and dreams of studying it in Switzerland.</span></li>
+    <li><small>THE COLLECTOR YEARS</small><b>Ten luxury watches</b><span>He builds a personal collection, learning the market from the buyer’s side of the table.</span></li>
+    <li><small>MERIDIAN CHRONO GROUP</small><b>A company built around a collection</b><span>Founded in Arizona to buy, sell, trade and source watches for fellow collectors.</span></li>
+    <li><small>TODAY</small><b>50 to 70 timepieces in stock</b><span>New and pre-owned watches available at any given time, with more sourced on request.</span></li>
+  </ol>
+</div></section>
+<section class="section" aria-labelledby="val-title"><div class="container">
+  <div class="section-head"><h2 id="val-title">What we stand for</h2></div>
+  <div class="values">
+    <div><h3>Full transparency</h3><p>Condition, inclusions and history are described plainly on every watch, with prices shown wherever we can show them.</p></div>
+    <div><h3>Genuine expertise</h3><p>Every piece is chosen by a collector who has bought on the other side of the table and knows what matters.</p></div>
+    <div><h3>Curated relationships</h3><p>Less grey-market gamble, more conversation. You deal with a person who answers the phone and remembers what you’re looking for.</p></div>
+  </div>
+</div></section>
+<section class="section tint"><div class="container founder" style="grid-template-columns:1fr auto">
+  <div><p class="pull">“The story’s just getting started.”</p><p class="pull-by">${esc(founder.name)}, ${esc(founder.role)}</p></div>
+  <div class="actions" style="margin:0"><a class="btn btn-primary" href="#/watches">Shop the collection</a><a class="btn" href="#/contact">Talk to Meridian</a></div>
+</div></section>`, init: startDial };
+}
+
+/* ---------- Contact ---------- */
+function viewContact(params) {
+  const p = 'ct', w = byId(params.get('watch'));
+  const topics = ['General question', 'A watch on the site', 'Buying', 'Selling or trading', 'Finding a watch'];
+  return { title: 'Contact', html: `
+<div class="container page-head"><nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="#/">Home</a></li><li aria-current="page">Contact</li></ol></nav>
+  <h1>Talk to Meridian</h1><p class="lede">Call, text, email or send a message. A collector reads every one.</p>
+  <div class="contact-cards">
+    <a class="contact-card" href="${telHref()}">${I.phone}<small>Call</small><b>${esc(siteConfig.phone)}</b></a>
+    <a class="contact-card" href="${smsHref()}">${I.chat}<small>Text</small><b>${esc(siteConfig.phone)}</b></a>
+    <a class="contact-card" href="mailto:${esc(siteConfig.email)}">${I.mail}<small>Email</small><b>${esc(siteConfig.email)}</b></a>
+    <a class="contact-card" href="${esc(siteConfig.instagramUrl)}" target="_blank" rel="noopener noreferrer">${I.ig}<small>Instagram</small><b>${esc(siteConfig.instagramHandle)}</b><span class="vh"> (opens in a new tab)</span></a>
+  </div>
+</div>
+<div class="container form-layout" style="padding-top:12px">
+  <div class="intro"><h2>Send a message</h2><p class="lede">Based in ${esc(siteConfig.location)}. Meetings by appointment; ask when you get in touch.</p></div>
+  <form class="form-card" data-form="contact" novalidate>
+    ${w ? `<div class="context-chip" id="watch-context"><span>About the <strong>${esc(titleOf(w))}</strong>${w.reference ? `, ref. ${esc(w.reference)}` : ''}</span><button type="button" class="link-button" id="remove-watch">Remove</button><input type="hidden" name="watchId" value="${esc(w.id)}"></div>` : ''}
+    <div class="form-grid">
+      ${NAME(p)}${EMAIL(p)}
+      ${field(p, { name: 'phone', label: 'Phone', type: 'tel', attrs: 'autocomplete="tel"' })}
+      ${field(p, { name: 'topic', label: 'Topic', type: 'select', noTag: true, options: topics, value: w ? 'A watch on the site' : 'General question' })}
+      ${field(p, { name: 'message', label: 'Message', type: 'textarea', required: true, span: true, err: 'a message' })}
+      ${consent(p)}
+    </div>
+    <div class="form-actions"><button type="submit" class="btn btn-primary btn-block">Send message</button></div>
+    ${STATUS_EL}
+  </form>
+</div>`,
+    init: () => { const r = $('#remove-watch'); r && r.addEventListener('click', () => { $('#watch-context').remove(); setUrl('#/contact', true); $('#ct-topic').value = 'General question'; $('#ct-message').focus(); }); } };
+}
+
+/* ---------- Client care ---------- */
+function viewClientCare() {
+  const faqs = [
+    ['How do I buy a watch?', `Add a priced watch to your bag and send a purchase request, or ask a question from the watch page. Meridian confirms availability, payment and delivery with you directly. You can also call or text <a href="${telHref()}">${esc(siteConfig.phone)}</a>.`],
+    ['Why do some watches say “Price on request”?', 'Prices for some references move quickly. Ask from the watch page and Meridian will reply with today’s price.'],
+    ['Do you ship?', 'Yes. Listed prices include fully insured shipping. Some watches also show a lower local-pickup price for collection in Arizona.'],
+    ['What do “unworn” and “full set” mean?', 'Unworn means the watch has never been worn. Full set means it comes with its original box and papers. Each watch page lists exactly what is included.'],
+    ['Can I sell or trade my watch?', `Yes. <a href="#/sell-trade">Send the details</a> with a few photos and Meridian will talk you through selling or trading it toward another watch.`],
+    ['Can you find a watch that isn’t listed?', `Yes. <a href="#/source">Tell us what you’re after</a>. We hold 50 to 70 pieces at any time and can search beyond that.`],
+    ['Can I see more photos?', 'Of course. Use “Ask a question” on any watch and Meridian will send close-ups or a video.']
+  ];
+  const policies = Object.entries(policyContent).filter(([, v]) => v);
+  const PT = { authentication: 'Authentication', warranty: 'Warranty', payment: 'Payment', returns: 'Returns' };
+  return { title: 'Client care', html: `
+<div class="container page-head"><nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="#/">Home</a></li><li aria-current="page">Client care</li></ol></nav><h1>Client care</h1><p class="lede">Answers to common questions about buying, selling and shipping.</p></div>
+<div class="container care-grid">
+  <div>
+    <div class="accordion">${faqs.map(([q, a]) => `<details><summary>${esc(q)}</summary><div class="acc-body"><p>${a}</p></div></details>`).join('')}</div>
+    ${policies.length ? `<div style="margin-top:40px"><h2>Purchase terms</h2>${policies.map(([k, v]) => `<h3 style="margin-top:20px">${PT[k]}</h3><p style="margin-top:6px">${esc(v)}</p>`).join('')}</div>` : ''}
+  </div>
+  <aside class="aside-card" aria-labelledby="ask-title"><h2 id="ask-title" style="font-size:1.7rem">Still have a question?</h2><p>Call or text ${esc(siteConfig.phone)}, or send a message.</p><div class="actions" style="margin-top:18px"><a class="btn btn-primary btn-block" href="#/contact">Contact Meridian</a></div></aside>
+</div>` };
+}
+
+/* ---------- Boot ---------- */
+renderChrome();
+render();
+</script>
+</body>
+</html>
