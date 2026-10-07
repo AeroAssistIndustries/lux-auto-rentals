@@ -16,7 +16,7 @@ Everything editable sits at the top of the script: `siteConfig`, `founder`, `pol
 
 ## Must replace before launch
 - [ ] **Sample listings** (`source: 'sample'`): 13 placeholder watches and their prices. Replace with live inventory, then set `demoMode: false` (which also hides any remaining samples).
-- [ ] **Photos**: every watch currently shows a drawn illustration. Add real photos to each record's `photos` array.
+- [ ] **Photos**: staging uses openly licensed Wikimedia Commons photos as *representative* images (labelled on each watch page, credited at `#/credits`). Replace with Meridian's own photos by filling each watch's `photos` array; the Vacheron and Journe Chronomètre Bleu still use illustrations.
 - [ ] Confirm status and price of each Instagram-sourced watch (some may have sold).
 - [ ] Founder portrait (`founder.photo`) and Rushik's approval of the About copy.
 - [ ] Purchase terms: authentication, warranty, payment, returns (`policyContent`) — hidden until supplied.
@@ -30,6 +30,12 @@ Everything editable sits at the top of the script: `siteConfig`, `founder`, `pol
 - Footer: embedded Instagram posts and a world-time strip (Scottsdale, New York, London, Geneva, Dubai, Hong Kong, Tokyo) with day/night dials.
 - Terms of use and Privacy notice pages, linked from the footer and under every form.
 - Tighter spacing: product details now sit under the gallery, smaller founder block, shorter hero, Instagram band moved into the footer.
+
+## Added October 7 (round 2)
+- Representative photos for 19 watches (Wikimedia Commons, credited) plus Meridian's own Instagram post in the gallery of each Instagram-sourced watch.
+- Compare up to 3 watches side by side (`#/compare`), with differences highlighted.
+- Make an offer on any available watch; Recently viewed on watch pages; "Get first call on new arrivals" alert sign-up on the home page.
+- Floating "Text us" button; Photo credits page.
 
 ## Typography
 - Site text: Manrope (Google Fonts), falling back to Avenir Next / Segoe UI / system sans.
