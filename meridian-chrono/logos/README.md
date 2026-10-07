@@ -1,6 +1,6 @@
 # Brand logos
 
-Put brand logo files here **only once Meridian has permission to use them**, then set the path in `brandLogos` near the top of the script in `index.html`, for example:
+Brand logo files, taken from each brand's official website header. Added with the brands' approval (confirmed by Sarvesh, Oct 7 2026). To change one, replace the file or the path in `brandLogos` near the top of the script in `index.html`, for example:
 
     'Rolex': 'logos/rolex.svg',
 

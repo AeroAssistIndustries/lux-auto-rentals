@@ -396,8 +396,20 @@ body[data-route="compare"] .compare-tray,body[data-route="checkout"] .compare-tr
 .credit-list li{padding:12px 0;border-bottom:1px solid var(--border);display:grid;gap:2px}
 .credit-list span{font-size:.9rem;color:var(--muted)}
 
-.brand-logo{max-height:34px;max-width:70%;object-fit:contain}
-.house-logo{max-height:28px;max-width:80%;object-fit:contain;align-self:flex-start;margin:2px 0}
+.logo-wrap{display:inline-flex;flex-direction:column;align-items:center;gap:4px}
+.brand-logo{height:38px;max-width:min(180px,100%);object-fit:contain}
+.brand-rail a{min-width:0}
+.brand-logo-wrap{max-width:100%}
+.brand-logo.is-symbol{height:42px}
+.house-logo-wrap{align-items:flex-start;margin:4px 0 2px}
+.house-logo{height:36px;max-width:min(170px,100%);object-fit:contain;object-position:left center}
+.house-logo.is-symbol{height:34px}
+.logo-word{font-size:.72rem;font-weight:700;letter-spacing:.32em;color:var(--ink);margin-right:-.32em}
+.brand-rail a{gap:10px}
+.marquee .m-logo{display:inline-flex;align-items:center}
+.marquee .m-logo img{height:26px;width:150px;object-fit:contain;flex:none;filter:brightness(0) invert(1);opacity:.88}
+.marquee .m-logo::after{content:"";display:inline-block;flex:none;width:6px;height:6px;margin:0 32px;background:var(--gold);transform:rotate(45deg);opacity:.7}
+.marquee .m-logo.sym img{height:30px;width:40px;filter:none;opacity:1}
 .footer-base span:first-child{max-width:80ch}
 
 /* Legal pages */
@@ -880,13 +892,15 @@ const qualityFlow = {
 /* Brand logos. Add a file path once Meridian has permission to use a brand's logo
    (e.g. 'logos/rolex.svg'). Until then the brand name is shown as text. */
 const brandLogos = {
-  'Rolex': null,
-  'Patek Philippe': null,
-  'Audemars Piguet': null,
-  'Vacheron Constantin': null,
-  'F. P. Journe': null
+  'Rolex': 'logos/rolex.svg',
+  'Patek Philippe': 'logos/patek-philippe.svg',
+  'Audemars Piguet': 'logos/audemars-piguet.svg',
+  'Vacheron Constantin': 'logos/vacheron-constantin.svg',
+  'F. P. Journe': 'logos/fp-journe.svg'
 };
-const brandMark = (b, cls = 'brand-logo') => brandLogos[b] ? `<img class="${cls}" src="${esc(brandLogos[b])}" alt="${esc(b)}" loading="lazy">` : '';
+// Logos that are a symbol only (no name) get the brand name set beneath them.
+const symbolOnlyLogos = ['Rolex'];
+const brandMark = (b, cls = 'brand-logo') => brandLogos[b] ? `<span class="logo-wrap ${cls}-wrap"><img class="${cls}${symbolOnlyLogos.includes(b) ? ' is-symbol' : ''}" src="${esc(brandLogos[b])}" alt="${esc(b)}" loading="lazy">${symbolOnlyLogos.includes(b) ? `<span class="logo-word" aria-hidden="true">${esc(b.toUpperCase())}</span>` : ''}</span>` : '';
 
 const houses = [
   { brand: 'Rolex', since: 'Since 1905', home: 'Geneva', text: 'The benchmark for luxury sports and everyday watches: Submariner, GMT-Master II, Daytona, Datejust and Day-Date.' },
@@ -1595,7 +1609,7 @@ function viewHome() {
       <div class="hero-tag"><small>JUST LANDED</small><strong>${esc(titleOf(hero))}${hero.nickname ? ` “${esc(hero.nickname)}”` : ''}</strong><span>${esc([hero.reference, hero.year, hero.condition, fullSet(hero) ? 'full set' : null].filter(Boolean).join(' · '))}</span></div></a>` : ''}
   </div>
 </section>
-<div class="marquee on-dark" aria-hidden="true"><div class="track">${[0, 1].map(() => houses.map(h => `<span>${esc(h.brand)}</span>`).join('') + '<span>Buy</span><span>Sell</span><span>Trade</span><span>Source</span>').join('')}</div></div>
+<div class="marquee on-dark" aria-hidden="true"><div class="track">${[0, 1].map(() => houses.map(h => brandLogos[h.brand] ? `<span class="m-logo${symbolOnlyLogos.includes(h.brand) ? ' sym' : ''}"><img src="${esc(brandLogos[h.brand])}" alt=""></span>` : `<span>${esc(h.brand)}</span>`).join('') + '<span>Buy</span><span>Sell</span><span>Trade</span><span>Source</span>').join('')}</div></div>
 <section class="trust" aria-label="Why Meridian">
   <div class="container"><ul>
     <li>${I.shield}<div><b>Genuine only</b><span>Checked twice. No fakes or replicas, ever</span></div></li>

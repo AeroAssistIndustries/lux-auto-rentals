@@ -23,7 +23,7 @@ Everything editable sits at the top of the script: `siteConfig`, `founder`, `pol
 - [ ] **Quality check wording** (`qualityFlow`): confirm it matches the real process, including who does the independent check.
 - [ ] **Terms and Privacy** (`#/terms`, `#/privacy`): basic drafts written to match how the site works. Have them reviewed by Meridian's legal adviser, then set `legal.draft: false`.
 - [ ] **Instagram feed** (`instagramPosts`): four post shortcodes shown in the footer. Swap in newer posts any time.
-- [ ] **Brand logos** (`brandLogos`, `logos/`): slots are ready on Shop by brand and the About page. Add each logo file and path only once Meridian has the brand's permission; until then names show as text.
+- [x] **Brand logos** (`logos/`): official logos from each brand's own website header (Rolex crown, Patek Philippe, Audemars Piguet, Vacheron Constantin, F. P. Journe), shown on Shop by brand, the About brand cards and the ticker. Added on Sarvesh's confirmation that Meridian has approval from all five brands; keep those approvals on file.
 - [ ] A server endpoint for inquiries and purchase requests (`inquiryEndpoint`). No payment processing is built in; checkout is a request that Meridian follows up.
 
 ## Added October 7
