@@ -23,6 +23,7 @@ Everything editable sits at the top of the script: `siteConfig`, `founder`, `pol
 - [ ] **Quality check wording** (`qualityFlow`): confirm it matches the real process, including who does the independent check.
 - [ ] **Terms and Privacy** (`#/terms`, `#/privacy`): basic drafts written to match how the site works. Have them reviewed by Meridian's legal adviser, then set `legal.draft: false`.
 - [ ] **Instagram feed** (`instagramPosts`): four post shortcodes shown in the footer. Swap in newer posts any time.
+- [ ] **Brand logos** (`brandLogos`, `logos/`): slots are ready on Shop by brand and the About page. Add each logo file and path only once Meridian has the brand's permission; until then names show as text.
 - [ ] A server endpoint for inquiries and purchase requests (`inquiryEndpoint`). No payment processing is built in; checkout is a request that Meridian follows up.
 
 ## Added October 7
