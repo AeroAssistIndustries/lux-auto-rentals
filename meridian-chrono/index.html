@@ -864,7 +864,9 @@ const siteConfig = {
   enableSourcing: true,
   enableSellTrade: true,
   enableBag: true,          // "Add to bag" + request-to-buy checkout (no online payment)
-  demoMode: true,           // sample inventory + preview banner; forms never send
+  demoMode: true,           // shows sample inventory; forms don't send unless formsLive is on
+  showPreviewBanner: false, // thin 'website preview' strip at the very top
+  formsLive: false,         // true = forms POST to inquiryEndpoint (set automatically by the WordPress theme)
   inquiryEndpoint: null     // production: server URL that accepts JSON leads
 };
 
@@ -1000,6 +1002,9 @@ const watches = [
   { id:'patek-philippe-nautilus-5711-1a', brand:'Patek Philippe', family:'Nautilus', model:'Nautilus', reference:'5711/1A-010', year:2019, caseSizeMm:40, material:'Stainless steel', dial:'Blue', bezel:null, bracelet:'Integrated steel bracelet', movement:'Automatic, calibre 26-330 S C', condition:'Excellent', box:true, papers:true, extras:[], priceUsd:null, localPriceUsd:null, status:'sold', added:'2026-04-30', source:'sample',
     description:'Sample listing.', art:{bezel:'smooth', dial:'#25406B', metal:'steel', bracelet:'integrated', date:true} }
 ];
+
+// Host overrides (the WordPress theme sets window.MERIDIAN_CONFIG).
+if (window.MERIDIAN_CONFIG) Object.assign(siteConfig, window.MERIDIAN_CONFIG);
 
 /* =====================================================================
    APPLICATION
@@ -1357,7 +1362,7 @@ const telHref = () => 'tel:' + siteConfig.phone.replace(/[^+\d]/g, '');
 const smsHref = () => 'sms:' + siteConfig.phone.replace(/[^+\d]/g, '');
 function renderChrome() {
   const banner = $('#preview-banner');
-  banner.hidden = !siteConfig.demoMode;
+  banner.hidden = !(siteConfig.demoMode && siteConfig.showPreviewBanner);
   banner.textContent = 'Website preview: sample inventory and prices for layout. Inquiries and orders are not sent.';
   $('#utility').innerHTML = `<div class="container"><span class="services">Buy · Sell · Trade · Source</span><span class="contacts"><a href="${telHref()}">${esc(siteConfig.phone)}</a><a class="hide-sm" href="mailto:${esc(siteConfig.email)}">${esc(siteConfig.email)}</a><a href="${esc(siteConfig.instagramUrl)}" target="_blank" rel="noopener noreferrer">Instagram<span class="vh"> (opens in a new tab)</span></a></span></div>`;
   const brands = brandCounts();
@@ -1427,7 +1432,7 @@ ${lockup()}
 <nav aria-labelledby="f-serv"><h2 id="f-serv">Services</h2><ul>${siteConfig.enableSellTrade ? '<li><a href="#/sell-trade">Sell your watch</a></li><li><a href="#/sell-trade?type=Trade">Trade in</a></li>' : ''}${siteConfig.enableSourcing ? '<li><a href="#/source">Find a watch</a></li>' : ''}<li><a href="#/client-care">Client care</a></li><li><a href="#/about">Our story</a></li><li><a href="#/terms">Terms</a></li><li><a href="#/privacy">Privacy</a></li><li><a href="#/credits">Photo credits</a></li></ul></nav>
 <div><h2 id="f-contact">Contact</h2><ul aria-labelledby="f-contact"><li><a href="${telHref()}">${esc(siteConfig.phone)}</a></li><li><a href="mailto:${esc(siteConfig.email)}">${esc(siteConfig.email)}</a></li><li><a href="${esc(siteConfig.instagramUrl)}" target="_blank" rel="noopener noreferrer">Instagram ${esc(siteConfig.instagramHandle)}</a></li><li>${esc(siteConfig.location)}</li></ul></div>
 </div>
-<div class="container footer-base"><span>© ${TODAY.getFullYear()} ${esc(siteConfig.name)}. ${esc(houses.map(h => h.brand).join(', '))} and all other brand names, model names and logos are trademarks of their respective owners. ${esc(siteConfig.name)} is an independent business and is not affiliated with, sponsored by or endorsed by any of these brands.</span><span><a href="#/terms">Terms</a> · <a href="#/privacy">Privacy</a></span>${siteConfig.demoMode ? '<span>Website preview. Orders and inquiries are not sent.</span>' : ''}</div>`;
+<div class="container footer-base"><span>© ${TODAY.getFullYear()} ${esc(siteConfig.name)}. ${esc(houses.map(h => h.brand).join(', '))} and all other brand names, model names and logos are trademarks of their respective owners. ${esc(siteConfig.name)} is an independent business and is not affiliated with, sponsored by or endorsed by any of these brands.</span><span><a href="#/terms">Terms</a> · <a href="#/privacy">Privacy</a></span>${siteConfig.demoMode && siteConfig.showPreviewBanner ? '<span>Website preview. Orders and inquiries are not sent.</span>' : ''}</div>`;
   // Events
   const mb = $('#mega-button'), mega = $('#mega');
   let hoverT, hoverOpenedAt = 0;
@@ -2053,7 +2058,7 @@ function field(p, f) {
   return `<div class="field${f.span ? ' span-2' : ''}" data-field="${f.name}"${f.hidden ? ' hidden' : ''}><label for="${id}">${esc(f.label)}${tag}</label>${control}${f.hint ? `<p class="field-hint" id="${id}-hint">${esc(f.hint)}</p>` : ''}<p class="field-error" id="${id}-err" hidden></p></div>`;
 }
 function consent(p) {
-  return `<div class="field span-2" data-field="consent"><div class="consent"><input type="checkbox" id="${p}-consent" name="consent" value="yes" data-required data-label="consent" aria-describedby="${p}-consent-err"><label for="${p}-consent">Meridian may contact me about this request.<span class="req">Required</span></label></div><p class="field-error" id="${p}-consent-err" hidden></p></div>`;
+  return `<div class="field span-2" data-field="consent"><div class="consent"><input type="checkbox" id="${p}-consent" name="consent" value="yes" data-required data-label="consent" aria-describedby="${p}-consent-err"><label for="${p}-consent">Meridian may contact me about this request.<span class="req">Required</span></label></div><p class="field-error" id="${p}-consent-err" hidden></p><input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0"></div>`;
 }
 const NAME = (p) => field(p, { name: 'name', label: 'Your name', required: true, err: 'your name', attrs: 'autocomplete="name"' });
 const EMAIL = (p) => field(p, { name: 'email', label: 'Email', type: 'email', required: true, err: 'your email address', attrs: 'autocomplete="email" inputmode="email"' });
@@ -2098,12 +2103,13 @@ document.addEventListener('submit', async (e) => {
   const btn = $('[type="submit"]', form), label = btn.innerHTML;
   btn.disabled = true; btn.textContent = 'Sending…'; form.setAttribute('aria-busy', 'true');
   try {
-    if (siteConfig.demoMode) { await wait(500); showStatus(status, 'success', 'Preview complete. No request has been sent.'); }
+    if (!(siteConfig.formsLive && siteConfig.inquiryEndpoint)) { await wait(500); showStatus(status, 'success', 'Preview complete. No request has been sent.'); }
     else if (!siteConfig.inquiryEndpoint) throw new Error('This form cannot send yet because no delivery address is configured. Your details are still in the form.');
     else {
       const data = {}; new FormData(form).forEach((v, k) => { if (!(v instanceof File)) data[k] = v; });
       data.formType = form.dataset.form; if (form.dataset.form === 'purchase-request') data.watchIds = [...bag];
-      const res = await fetch(siteConfig.inquiryEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+      const headers = { 'Content-Type': 'application/json' }; if (siteConfig.wpNonce) headers['X-WP-Nonce'] = siteConfig.wpNonce;
+      const res = await fetch(siteConfig.inquiryEndpoint, { method: 'POST', headers, credentials: 'same-origin', body: JSON.stringify(data) });
       if (!res.ok) throw new Error('The request was not accepted. Your details are still in the form; please try again.');
       showStatus(status, 'success', 'Request sent. Meridian will be in touch shortly.');
     }

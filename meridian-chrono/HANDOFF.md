@@ -1,10 +1,12 @@
 # Meridian Chrono Group — store prototype handoff
 
-Updated October 7, 2026. Working prototype, not yet published.
+Updated October 8, 2026. Staging site live on GitHub Pages; WordPress theme ready.
 
 ## What's here
 - `index.html` — the full store in one file. Open it in any browser; no build step.
 - `logo/` — emblem and lockup (SVG + 1024 px PNG).
+- `logos/` — brand logos (Rolex, Patek Philippe, AP, Vacheron Constantin, F. P. Journe).
+- `wordpress/` — WordPress theme (`theme/`), build script, built zip (`dist/`) and `INSTALL.md`.
 
 Everything editable sits at the top of the script: `siteConfig`, `founder`, `policyContent`, `watches`.
 
@@ -24,7 +26,7 @@ Everything editable sits at the top of the script: `siteConfig`, `founder`, `pol
 - [ ] **Terms and Privacy** (`#/terms`, `#/privacy`): basic drafts written to match how the site works. Have them reviewed by Meridian's legal adviser, then set `legal.draft: false`.
 - [ ] **Instagram feed** (`instagramPosts`): four post shortcodes shown in the footer. Swap in newer posts any time.
 - [x] **Brand logos** (`logos/`): official logos from each brand's own website header (Rolex crown, Patek Philippe, Audemars Piguet, Vacheron Constantin, F. P. Journe), shown on Shop by brand, the About brand cards and the ticker. Added on Sarvesh's confirmation that Meridian has approval from all five brands; keep those approvals on file.
-- [ ] A server endpoint for inquiries and purchase requests (`inquiryEndpoint`). No payment processing is built in; checkout is a request that Meridian follows up.
+- [x] Form delivery: the WordPress theme emails every form to the address set in Appearance › Customize › Meridian site (off until ticked). GitHub Pages staging still sends nothing. No payment processing is built in; checkout is a request that Meridian follows up.
 
 ## Added October 7
 - Home page "Every watch is checked twice" flow: in-house inspection, independent check, honest listing, genuine-only promise (no fakes or replicas). Also in the trust bar, product pages and Client care FAQ.
@@ -41,6 +43,10 @@ Everything editable sits at the top of the script: `siteConfig`, `founder`, `pol
 ## Added October 7 (round 3)
 - Home: hero photo slideshow (`heroSlides`), moving brand ticker, "Watch of the week" spotlight (`spotlightWatchId`), stats band, gentle scroll-in animations (off when the visitor prefers reduced motion).
 - About: Rushik's own founder reel embedded (`founder.video`) until a portrait is supplied, "The houses we know best" (Rolex, Patek Philippe, AP, Vacheron Constantin, F. P. Journe), and "How buying from Meridian works".
+
+## Added October 8
+- Removed the "Website preview" banner and footer note (`showPreviewBanner: false`). Sample watches still show until `demoMode` is off.
+- WordPress export: theme zip, Customizer settings (send forms by email, recipient, show sample watches), REST endpoint `meridian/v1/inquiry` with same-site check, rate limit (5 per 10 min) and hidden spam trap. Tested on WordPress with a real form submission.
 
 ## Typography
 - Site text: Manrope (Google Fonts), falling back to Avenir Next / Segoe UI / system sans.

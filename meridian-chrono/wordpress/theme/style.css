@@ -1,0 +1,13 @@
+/*
+Theme Name: Meridian Chrono Group
+Theme URI: https://meridianchrono.com
+Author: Meridian Chrono Group
+Description: The Meridian Chrono Group store as a WordPress theme. The whole storefront (shop, watch pages, bag, sell or trade, about, client care) runs from app.html; WordPress serves it and emails form submissions to the address set under Appearance > Customize > Meridian site.
+Version: 1.0.0
+Requires at least: 6.0
+Requires PHP: 7.4
+License: Proprietary
+Text Domain: meridian-chrono
+*/
+
+/* The storefront carries its own styles inside app.html. */
